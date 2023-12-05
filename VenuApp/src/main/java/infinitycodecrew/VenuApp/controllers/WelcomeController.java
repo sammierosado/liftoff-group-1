@@ -8,11 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 
 public class WelcomeController {
-
-
-
-
-   @GetMapping("/")
+    @GetMapping("/")
     public String welcome(){
         return "welcome/gnr";
     }
