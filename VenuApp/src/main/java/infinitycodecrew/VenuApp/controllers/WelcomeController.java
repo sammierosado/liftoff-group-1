@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class WelcomeController {
     @GetMapping("/")
     public String welcome(){
-        return "welcome/gnr";
+        return "welcome/infinityCodeCrew";
     }
 }
