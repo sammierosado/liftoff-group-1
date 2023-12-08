@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<h3>Here is where we add an artist.</h3>
+
+
+<form action='/artists/add' method='POST'>
+   <div>
+    <label th:for="artistName">Artist Name</label>
+    <input th:field="${artist.artistName}" />
+    <p class="error" th:errors="${artist.artistName}"></p>
+   </div>
+    <div>
+        <label th:for="genre">Genre</label>
+        <input th:field="${artist.genre}" />
+        <p class="error" th:errors="${artist.genre}"></p>
+    </div>
+    <button type="submit">Add Artist</button>
+</form>
+</body>
+</html>
