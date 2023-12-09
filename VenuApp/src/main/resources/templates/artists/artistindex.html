@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<h2>
+    Artists
+</h2>
+<p th:unless="${artists} and ${artists.size()}">
+    <em>No contents to display.</em>
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>Artist Id</th>
+        <th>Artist Name</th>
+        <th>Artist Genre</th>
+    </tr>
+    </thead>
+    <tr th:each="artist : ${artists}">
+        <td th:text="${artist.id}"></td>
+        <td th:text="${artist.artistName}"></td>
+        <td th:text="${artist.genre}"></td>
+
+    </tr>
+</table>
+</body>
+</html>
