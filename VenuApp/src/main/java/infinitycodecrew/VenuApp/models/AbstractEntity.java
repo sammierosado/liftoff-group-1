@@ -1,7 +1,6 @@
 package infinitycodecrew.VenuApp.models;
 
-
-
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
@@ -12,7 +11,10 @@ import java.util.Objects;
 public abstract class AbstractEntity {
 
     @Id
+    @GeneratedValue
     private int id;
+
+    public int getId() {return id;}
 
 
     @Override
@@ -22,4 +24,7 @@ public abstract class AbstractEntity {
         AbstractEntity entity = (AbstractEntity) o;
         return id == entity.id;
     }
+
+    @Override
+    public int hashCode() {return Objects.hash(id);}
 }
