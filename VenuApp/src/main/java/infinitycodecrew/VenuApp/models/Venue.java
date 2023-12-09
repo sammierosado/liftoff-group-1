@@ -14,11 +14,10 @@ public class Venue extends AbstractEntity{
     private String venueName;
 
     @NotBlank(message = "Venue Street Address is Required")
-   @Size(min = 1, max = 8)
-    private Integer venueStreetNumber;
+   @Size(min = 1, max = 35)
+    private String venueAddress;
 
-    @NotBlank(message = "Venue Street Name is Required")
-    private String venueStreetName;
+
 
     @NotBlank(message = "Venue City is Required")
     private String venueCity;
@@ -28,7 +27,7 @@ public class Venue extends AbstractEntity{
 
     @NotBlank(message = "5 Digit Venue Zip Code is Required")
     @Size(min = 5, max = 5)
-    private Integer venueZip;
+    private String venueZip;
 
     public String getVenueName() {
         return venueName;
@@ -38,21 +37,15 @@ public class Venue extends AbstractEntity{
         this.venueName = venueName;
     }
 
-    public Integer getVenueStreetNumber() {
-        return venueStreetNumber;
+    public String getVenueAddress() {
+        return venueAddress;
     }
 
-    public void setVenueStreetNumber(Integer venueStreetNumber) {
-        this.venueStreetNumber = venueStreetNumber;
+    public void setVenueAddress(String venueAddress) {
+        this.venueAddress = venueAddress;
     }
 
-    public String getVenueStreetName() {
-        return venueStreetName;
-    }
 
-    public void setVenueStreetName(String venueStreetName) {
-        this.venueStreetName = venueStreetName;
-    }
 
     public String getVenueCity() {
         return venueCity;
@@ -70,11 +63,11 @@ public class Venue extends AbstractEntity{
         this.venueState = venueState;
     }
 
-    public Integer getVenueZip() {
+    public String getVenueZip() {
         return venueZip;
     }
 
-    public void setVenueZip(Integer venueZip) {
+    public void setVenueZip(String venueZip) {
         this.venueZip = venueZip;
     }
 
@@ -84,11 +77,11 @@ public class Venue extends AbstractEntity{
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Venue venue = (Venue) o;
-        return Objects.equals(venueName, venue.venueName) && Objects.equals(venueStreetNumber, venue.venueStreetNumber) && Objects.equals(venueStreetName, venue.venueStreetName) && Objects.equals(venueCity, venue.venueCity) && Objects.equals(venueState, venue.venueState) && Objects.equals(venueZip, venue.venueZip);
+        return Objects.equals(venueName, venue.venueName) && Objects.equals(venueAddress, venue.venueAddress) && Objects.equals(venueCity, venue.venueCity) && Objects.equals(venueState, venue.venueState) && Objects.equals(venueZip, venue.venueZip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), venueName, venueStreetNumber, venueStreetName, venueCity, venueState, venueZip);
+        return Objects.hash(super.hashCode(), venueName, venueAddress, venueCity, venueState, venueZip);
     }
 }

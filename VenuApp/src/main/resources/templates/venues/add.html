@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<h3>Here is where we add a venue.</h3>
+
+
+<form action='/venues/add' method='POST'>
+    <div>
+        <label th:for="venueName">Venue Name</label>
+        <input th:field="${venue.venueName}" />
+        <p class="error" th:errors="${venue.venueName}"></p>
+    </div>
+    <div>
+        <label th:for="venueAddress">Venue Address</label>
+        <input th:field="${venue.venueAddress}" />
+        <p class="error" th:errors="${venue.venueAddress}"></p>
+    </div>
+
+    <div>
+        <label th:for="venueCity">Venue City</label>
+        <input th:field="${venue.venueCity}" />
+        <p class="error" th:errors="${venue.venueCity}"></p>
+    </div>
+    <div>
+        <label th:for="venueState">Venue State</label>
+        <input th:field="${venue.venueState}" />
+        <p class="error" th:errors="${venue.venueState}"></p>
+    </div>
+    <div>
+        <label th:for="venueZip">Venue Zip Code</label>
+        <input th:field="${venue.venueZip}" />
+        <p class="error" th:errors="${venue.venueZip}"></p>
+    </div>
+    <button type="submit">Add Your Venue!</button>
+</form>
+</body>
+</html>

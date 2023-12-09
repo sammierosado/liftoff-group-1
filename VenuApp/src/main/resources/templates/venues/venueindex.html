@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<h2>
+    Artists
+</h2>
+<p th:unless="${venues} and ${venues.size()}">
+    <em>No contents to display.</em>
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>Venue Id</th>
+        <th>Venue Name</th>
+        <th>Venue Address</th>
+        <th>Venue City</th>
+        <th>Venue State</th>
+        <th>Venue Zip Code</th>
+
+    </tr>
+    </thead>
+    <tr th:each="venue : ${venues}">
+        <td th:text="${venue.id}"></td>
+        <td th:text="${venue.venueName}"></td>
+        <td th:text="${venue.venueAddress}"></td>
+
+        <td th:text="${venue.venueCity}"></td>
+        <td th:text="${venue.venueState}"></td>
+        <td th:text="${venue.venueZip}"></td>
+
+
+    </tr>
+</table>
+</body>
+</html>
