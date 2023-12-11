@@ -13,6 +13,8 @@ public class User extends AbstractEntity {
     @NotNull
     private String pwHash;
 
+    private boolean emailVerified;
+
     private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public User() {}
