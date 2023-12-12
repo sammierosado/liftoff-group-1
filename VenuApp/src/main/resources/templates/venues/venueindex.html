@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>
-    Artists
+    Venues
 </h2>
 <p th:unless="${venues} and ${venues.size()}">
     <em>No contents to display.</em>
@@ -20,6 +20,15 @@
         <th>Venue City</th>
         <th>Venue State</th>
         <th>Venue Zip Code</th>
+        <th>Wheelchair Accessible</th>
+        <th>ADA Bathrooms</th>
+        <th>ADA Seating</th>
+        <th>Bus Stop Close</th>
+        <th>Sign Language</th>
+        <th>Clear Pathways</th>
+        <th>Descriptive Audio</th>
+        <th>Multi Level</th>
+        <th>Elevators</th>
 
     </tr>
     </thead>
@@ -31,9 +40,19 @@
         <td th:text="${venue.venueCity}"></td>
         <td th:text="${venue.venueState}"></td>
         <td th:text="${venue.venueZip}"></td>
-
+        <td th:text="${venue.wheelchairAccessible}"></td>
+        <td th:text="${venue.ADABathrooms}"></td>
+        <td th:text="${venue.ADASeating}"></td>
+        <td th:text="${venue.busStopClose}"></td>
+        <td th:text="${venue.signLanguage}"></td>
+        <td th:text="${venue.clearPathways}"></td>
+        <td th:text="${venue.descriptiveAudio}"></td>
+        <td th:text="${venue.elevators}"></td>
+        <td th:text="${venue.multiLevel}"></td>
 
     </tr>
 </table>
+<button><a href = "artists">Show List of Artists!</a></button>
+
 </body>
 </html>

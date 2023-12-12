@@ -21,9 +21,9 @@ public class VenueController {
 
 
     @GetMapping
-    public String displayArtistsPage(Model model){
+    public String displayVenuesPage(Model model){
         model.addAttribute("venues", venueRepository.findAll());
-        return "/venues/venueindex";
+        return "venues/venueindex";
     }
     @GetMapping("/add")
     public String displayAddVenueForm(Model model){

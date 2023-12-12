@@ -35,6 +35,53 @@
         <input th:field="${venue.venueZip}" />
         <p class="error" th:errors="${venue.venueZip}"></p>
     </div>
+    <div>
+        <label th:for="wheelchairAccessible">Wheelchair Accessible</label>
+        <input type="checkbox" name="wheelchairAccessible" th:field="${venue.wheelchairAccessible}">
+    </div>
+    <div>
+        <label th:for="ADABathrooms">ADA Bathrooms</label>
+        <input type="checkbox" name="ADABathrooms" th:field="${venue.ADABathrooms}">
+    </div>
+
+    <div>
+        <label th:for="ADASeating">ADA Seating Options</label>
+        <input type="checkbox" name="ADASeating" th:field="${venue.ADASeating}">
+    </div>
+
+    <div>
+        <label th:for="busStopClose">Public Transportation Nearby</label>
+        <input type="checkbox" name="busStopClose" th:field="${venue.busStopClose}">
+    </div>
+
+    <div>
+        <label th:for="signLanguage">Sign Language</label>
+        <input type="checkbox" name="signLanguage" th:field="${venue.signLanguage}">
+    </div>
+
+    <div>
+        <label th:for="clearPathways">Clear Pathways</label>
+        <input type="checkbox" name="clearPathways" th:field="${venue.clearPathways}">
+    </div>
+
+    <div>
+        <label th:for="descriptiveAudio">Descriptive Audio</label>
+        <input type="checkbox" name="descriptiveAudio" th:field="${venue.descriptiveAudio}">
+    </div>
+
+    <div>
+        <label th:for="elevators">Elevators</label>
+        <input type="checkbox" name="descriptiveAudio" th:field="${venue.elevators}">
+    </div>
+
+    <div>
+        <label th:for="multiLevel">Multiple Levels</label>
+        <input type="checkbox" name="multiLevel" th:field="${venue.multiLevel}">
+    </div>
+
+
+
+
     <button type="submit">Add Your Venue!</button>
 </form>
 </body>
