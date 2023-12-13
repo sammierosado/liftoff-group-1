@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
+  <meta charset="UTF-8"/>
+  <title>Register</title>
 </head>
 <body class="container">
 
@@ -15,18 +15,18 @@
   </div>
   <div class="form-group">
     <label>Password
-      <input class="form-control" th:field="${registerFormDTO.password}" />
+      <input class="form-control" th:field="${registerFormDTO.password}" type="password"/>
     </label>
     <p class="error" th:errors="${registerFormDTO.password}"></p>
   </div>
   <div class="form-group">
     <label>Verify Password
-      <input class="form-control" th:field="${registerFormDTO.verifyPassword}" />
+      <input class="form-control" th:field="${registerFormDTO.verifyPassword}" type="password"/>
 
     </label>
   </div>
 
-  <input type="submit" class="btn-primary" value="Join the Party" />
+  <input type="submit" class="btn btn-primary" value="Join the Party" />
 </form>
 
 </body>
