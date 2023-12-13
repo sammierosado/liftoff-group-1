@@ -1,2 +1,4 @@
-package infinitycodecrew.VenuApp.models;public class Event {
+package infinitycodecrew.VenuApp.models;
+
+public class Event {
 }
