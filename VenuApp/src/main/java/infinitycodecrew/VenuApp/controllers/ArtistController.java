@@ -24,7 +24,7 @@ public class ArtistController {
    @GetMapping
    public String displayArtistsPage(Model model){
        model.addAttribute("artists", artistRepository.findAll());
-       return "/artists/artistindex";
+       return "artists/artistindex";
    }
 
 

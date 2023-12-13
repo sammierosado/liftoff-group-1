@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<h3>Here is where we add a venue.</h3>
+
+
+<form action='/venues/add' method='POST'>
+    <div>
+        <label th:for="venueName">Venue Name</label>
+        <input th:field="${venue.venueName}" />
+        <p class="error" th:errors="${venue.venueName}"></p>
+    </div>
+    <div>
+        <label th:for="venueAddress">Venue Address</label>
+        <input th:field="${venue.venueAddress}" />
+        <p class="error" th:errors="${venue.venueAddress}"></p>
+    </div>
+
+    <div>
+        <label th:for="venueCity">Venue City</label>
+        <input th:field="${venue.venueCity}" />
+        <p class="error" th:errors="${venue.venueCity}"></p>
+    </div>
+    <div>
+        <label th:for="venueState">Venue State</label>
+        <input th:field="${venue.venueState}" />
+        <p class="error" th:errors="${venue.venueState}"></p>
+    </div>
+    <div>
+        <label th:for="venueZip">Venue Zip Code</label>
+        <input th:field="${venue.venueZip}" />
+        <p class="error" th:errors="${venue.venueZip}"></p>
+    </div>
+    <div>
+        <label th:for="wheelchairAccessible">Wheelchair Accessible</label>
+        <input type="checkbox" name="wheelchairAccessible" th:field="${venue.wheelchairAccessible}">
+    </div>
+    <div>
+        <label th:for="ADABathrooms">ADA Bathrooms</label>
+        <input type="checkbox" name="ADABathrooms" th:field="${venue.ADABathrooms}">
+    </div>
+
+    <div>
+        <label th:for="ADASeating">ADA Seating Options</label>
+        <input type="checkbox" name="ADASeating" th:field="${venue.ADASeating}">
+    </div>
+
+    <div>
+        <label th:for="busStopClose">Public Transportation Nearby</label>
+        <input type="checkbox" name="busStopClose" th:field="${venue.busStopClose}">
+    </div>
+
+    <div>
+        <label th:for="signLanguage">Sign Language</label>
+        <input type="checkbox" name="signLanguage" th:field="${venue.signLanguage}">
+    </div>
+
+    <div>
+        <label th:for="clearPathways">Clear Pathways</label>
+        <input type="checkbox" name="clearPathways" th:field="${venue.clearPathways}">
+    </div>
+
+    <div>
+        <label th:for="descriptiveAudio">Descriptive Audio</label>
+        <input type="checkbox" name="descriptiveAudio" th:field="${venue.descriptiveAudio}">
+    </div>
+
+    <div>
+        <label th:for="elevators">Elevators</label>
+        <input type="checkbox" name="descriptiveAudio" th:field="${venue.elevators}">
+    </div>
+
+    <div>
+        <label th:for="multiLevel">Multiple Levels</label>
+        <input type="checkbox" name="multiLevel" th:field="${venue.multiLevel}">
+    </div>
+
+
+
+
+    <button type="submit">Add Your Venue!</button>
+</form>
+</body>
+</html>
