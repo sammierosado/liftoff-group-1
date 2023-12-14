@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -14,8 +15,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #282c34; */
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +36,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+.title{
+  text-align: center;
+  padding-top: 25px;
+}
+
+body {
+  background-image: url('./public/images/concertbg.png');
 }
