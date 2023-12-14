@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
 <head>
     <meta charset="UTF-8"/>
     <title></title>
 </head>
 <body>
-<h2>
+<h2 class="headTitle">
     Artists
 </h2>
 <p th:unless="${artists} and ${artists.size()}">
     <em>No contents to display.</em>
 </p>
-<table>
+<table id="venuTable">
     <thead>
     <tr>
         <th>Artist Id</th>
@@ -26,5 +28,7 @@
 
     </tr>
 </table>
+<button><a href = "venues">Show List of Venues!</a></button>
+
 </body>
 </html>
