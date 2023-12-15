@@ -168,4 +168,9 @@ public class Venue extends AbstractEntity{
     public int hashCode() {
         return Objects.hash(super.hashCode(), venueName, venueAddress, venueCity, venueState, venueZip, wheelchairAccessible, ADABathrooms, ADASeating, busStopClose, signLanguage, clearPathways, descriptiveAudio, elevators, multiLevel);
     }
+
+    @Override
+    public String toString() {
+        return venueName;
+    }
 }
