@@ -7,7 +7,9 @@ import java.time.LocalDate;
 
 @Entity
 public class Event extends AbstractEntity {
+
     private String eventName;
+
     private double price;
 
     @DateTimeFormat(pattern = "MM-dd-yyyy")

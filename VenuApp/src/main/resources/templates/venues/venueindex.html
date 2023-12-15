@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
 <body>
-<h2>
+<h2 class ="headTitle">
     Venues
 </h2>
 <p th:unless="${venues} and ${venues.size()}">
     <em>No contents to display.</em>
 </p>
-<table>
+<table id="venuTable">
     <thead>
     <tr>
         <th>Venue Id</th>
@@ -47,8 +45,8 @@
         <td th:text="${venue.signLanguage}"></td>
         <td th:text="${venue.clearPathways}"></td>
         <td th:text="${venue.descriptiveAudio}"></td>
-        <td th:text="${venue.elevators}"></td>
         <td th:text="${venue.multiLevel}"></td>
+        <td th:text="${venue.elevators}"></td>
 
     </tr>
 </table>

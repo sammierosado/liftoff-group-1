@@ -23,19 +23,19 @@ public class EventController {
     @GetMapping
     public String index(Model model) {
         model.addAttribute("events", eventRepository.findAll());
-        return "events/list";
+        return "events/eventindex";
     }
 
-    @GetMapping("/create")
+    @GetMapping("/add")
     public String createEventForm(Model model) {
         model.addAttribute("event", new Event());
-        return "events/create";
+        return "events/add";
     }
 
-    @PostMapping("/create")
+    @PostMapping("/add")
     public String createEvent(@ModelAttribute @Valid Event event, Errors errors) {
         if (errors.hasErrors()) {
-            return "events/create";
+            return "events/add";
         } else {
             eventRepository.save(event);
             return "redirect:/events";

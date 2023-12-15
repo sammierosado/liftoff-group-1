@@ -1,0 +1,93 @@
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: white;
+    color: white;
+    height: 100px;
+}
+a {
+color: white;
+}
+
+button {
+    color: white;
+    background-color: #612847;
+    margin-top: 20px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+}
+
+button.delete {
+    background-color: #B03A2E;
+}
+
+.error {
+    color: #B03A2E;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.all-errors {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+.headTitle
+{
+    color: white;
+    background-color: #0f89c5;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 6px;
+    width: auto;
+    border-radius: 2px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.header img {
+  float: left;
+
+  width: 100px;
+  height: 100px;
+}
+
+#venuTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin: 20px;
+}
+
+#venuTable td, #venuTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#venuTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#venuTable tr:hover {background-color: #ddd;}
+
+#venuTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+
