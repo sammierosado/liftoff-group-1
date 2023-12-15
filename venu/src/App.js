@@ -1,12 +1,17 @@
-import background from './public/images/concertbg.png';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App" >
       <header className="App-header">
-        {/* <img src={background} className="App-logo" alt="logo" /> */}
+        
+      <ul class="topmenu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#createevent">Create Event</a></li>
+        <li><a href="#venues">Venues</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
