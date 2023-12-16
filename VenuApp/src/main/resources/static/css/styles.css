@@ -3,11 +3,21 @@
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-end;
-    background-color: white;
+    background-color: black;
     color: white;
     height: 100px;
+}
+
+.navbar{
+background-color:black;
+}
+
+.nav{
+margin:10px;
+padding:10px;
+background-color:darkolivegreen;
 }
 a {
 color: white;
