@@ -6,6 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /*Should make the bg show up in App.css instead?? Is App.css for site-wide css and index is landing page?*/
   background-image: url('./public/images/concertbg.png');
   background-size: cover;
   background-repeat: no-repeat;

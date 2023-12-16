@@ -42,18 +42,18 @@
 }
 
 body {
+  /*TODO add bg image formatting here instead of index*/
   background-image: url('./public/images/concertbg.png');
+
   /*shadow box behind map screen position and color/transparency*/
-  div.overlay {
+  div.VENU-map {
     position: fixed;  
     top: 25%; 
     left: 25%;
     width: 100dvh;
     height: 60dvh;
-    background-color:#00000088;
+    background-color:#00000088; /*for testing*/ 
     box-shadow: #222;
   }
-  /* { div.overlay div 
-    map box styling etc here } */
   
 }
