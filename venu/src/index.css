@@ -1,17 +1,11 @@
+/* i /think/ this is default for the site?? but same as App.css mostly just been scared to break something lol */
 body {
-  /*basic homepage info*/
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*Should make the bg show up in App.css instead?? Is App.css for site-wide css and index is landing page?*/
-  background-image: url('./public/images/concertbg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  /* alt: background-size: 100dvw 100dvh; */
 }
 
 code {
