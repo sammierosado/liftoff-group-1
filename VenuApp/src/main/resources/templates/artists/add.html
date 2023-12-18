@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
 <body>
-<h3>Here is where we add an artist.</h3>
+<h2 class ="headTitle">
+    Add An Artist
+</h2>
+
+<h3>Welcome.  Add an artist or band to the list to create events.</h3>
 
 
 <form action='/artists/add' method='POST'>
@@ -19,7 +21,6 @@
         <input th:field="${artist.genre}" />
         <p class="error" th:errors="${artist.genre}"></p>
     </div>
-    <button type="submit">Add Artist</button>
 </form>
 </body>
 </html>
