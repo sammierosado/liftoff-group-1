@@ -32,6 +32,10 @@ button {
     border: none;
     border-radius: 4px;
 }
+body{
+background-image: url('/images/mic on stage.png');
+}
+
 
 button.delete {
     background-color: #B03A2E;
@@ -79,7 +83,7 @@ textarea {
 #venuTable {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 90%;
+  width: 50%;
   margin: 20px;
 }
 
@@ -96,7 +100,7 @@ textarea {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color: #1b3d30;
   color: white;
 }
 

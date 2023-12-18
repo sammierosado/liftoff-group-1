@@ -1,7 +1,9 @@
 package infinitycodecrew.VenuApp.controllers;
 
 import infinitycodecrew.VenuApp.models.Event;
+import infinitycodecrew.VenuApp.models.data.ArtistRepository;
 import infinitycodecrew.VenuApp.models.data.EventRepository;
+import infinitycodecrew.VenuApp.models.data.VenueRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -19,6 +21,10 @@ public class EventController {
 
     @Autowired
     private EventRepository eventRepository;
+    @Autowired
+    private ArtistRepository artistRepository;
+    @Autowired
+    private VenueRepository venueRepository;
 
     @GetMapping
     public String index(Model model) {
@@ -29,6 +35,8 @@ public class EventController {
     @GetMapping("/add")
     public String createEventForm(Model model) {
         model.addAttribute("event", new Event());
+        model.addAttribute("artists", artistRepository.findAll());
+        model.addAttribute("venues", venueRepository.findAll());
         return "events/add";
     }
 

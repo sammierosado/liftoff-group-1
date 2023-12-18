@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Create Event</title>
-</head>
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
+
 <body>
 
 <h2>Create Event</h2>
@@ -12,6 +11,25 @@
         <label th:for="eventName">Event Name</label>
         <input th:field="${event.eventName}" />
     </div>
+    <div>
+        <label th:for="artist">Artist</label>
+        <select th:field="${event.artist}">
+
+            <option th:each ="artist : ${artists}"
+                    th:value ="${artist.id}"
+                    th:text = "${artist}"></option>
+        </select>
+    </div>
+    <div>
+        <label th:for="venue">Venue</label>
+        <select th:field="${event.venue}">
+
+            <option th:each ="venue : ${venues}"
+                    th:value ="${venue.id}"
+                    th:text = "${venue}"></option>
+        </select>
+    </div>
+
     <div>
         <label th:for="price">Price</label>
         <input th:field="${event.price}" />
