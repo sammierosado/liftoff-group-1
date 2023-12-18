@@ -1,0 +1,20 @@
+.Home {
+    /* background */
+    min-height: 100dvh;
+    min-width: 100dvw;
+
+    background-image: url('../../public/images/concertbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: relative;
+    /* alt: background-size: 100dvw 100dvh; */
+}
+
+/* map screen position/size */
+.VENU-map {
+    position: absolute;  
+    top: 25%; 
+    left: 25%;
+    width: 100dvh;
+    height: 60dvh;
+}
