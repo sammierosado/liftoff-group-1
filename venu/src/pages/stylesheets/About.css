@@ -1,7 +1,8 @@
 .About {
-    /* Home page background, will change later. blank white was just burning my eyes */
+    /* Temporarily using home page background, will change later. blank white was just burning my retinas */
     min-height: 100dvh;
     min-width: 100dvw;
+    overflow: hidden;
 
     background-image: url('../../public/images/concertbg.png');
     background-size: cover;

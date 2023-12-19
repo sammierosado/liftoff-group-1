@@ -7,15 +7,17 @@ function About() {
     <div>   
         <Navbar/>
 
-        <div className="About"/>
-        <p>Intros!</p> 
+        <div className="About">
+            <p>Intros!</p>
+            <div className="Team">
+                
+                <ul>
 
-        <div className="Team">
-            <ul>
-            <li>People!</li>
-            <li>Things!</li>
-            <li>Words!</li>
-            </ul>
+                <li>People!</li>
+                <li>Things!</li>
+                <li>Words!</li>
+                </ul>
+            </div>
         </div>
     </div>
     );

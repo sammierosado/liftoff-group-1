@@ -3,6 +3,7 @@ import {useJsApiLoader, GoogleMap} from '@react-google-maps/api';
 import Navbar from '../components/Navbar';
 
 // geographical location on which the Google map is centered. feel free to change it!
+// TODO add a comment with lat/lng of 3 cities for ease of access
 const mapCenter = {lat: 38.627003, lng: -90.199402}
 
 function Home() {
