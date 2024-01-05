@@ -13,6 +13,8 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
+        <th>Arist</th>
+        <th>Venue</th>
         <th>Date</th>
         <th>Price</th>
     </tr>
@@ -21,8 +23,10 @@
     <tr th:each="event : ${events}">
         <td th:text="${event.id}"></td>
         <td th:text="${event.eventName}"></td>
+        <td th:text="${event.artist}"></td>
+        <td th:text="${event.venue}"></td>
         <td th:text="${event.date}"></td>
-        <td th:text="${event.price}"></td>
+       <td th:text="${event.price}"></td>
     </tr>
 </table>
 </body>
