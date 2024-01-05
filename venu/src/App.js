@@ -9,6 +9,7 @@ function App() {
      <Routes>
         <Route path="/" element={<Pages.Home />} />
         <Route path="/about" element={<Pages.About />} />
+        <Route path="/events" element={<Pages.Events />} />
       </Routes>    
     </Router>
   );
