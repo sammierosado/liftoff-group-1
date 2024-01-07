@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
+
 <head>
     <meta charset="UTF-8"/>
-    <title>Events List</title>
+    <title></title>
 </head>
 <body>
 
-<h2>Events</h2>
+<h2 class = "headTitle">Events</h2>
 
-<table>
+<table id="venuTable">
     <thead>
     <tr>
         <th>ID</th>
