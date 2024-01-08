@@ -10,10 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/events")
@@ -49,4 +46,19 @@ public class EventController {
             return "redirect:/events";
         }
     }
+
+    @GetMapping("/delete")
+    public String displayEventDeleteForm(Model model) {
+        model.addAttribute("eventList", eventRepository.findAll());
+        return "events/delete";
+    }
+
+    @PostMapping("/delete")
+    public String processDeleteEventForm(@RequestParam(required = false) int[] eventIds) {
+        for (int id : eventIds) {
+            eventRepository.deleteById(id);
+        }
+        return "redirect:/events";
+    }
+
 }
