@@ -1,3 +1,6 @@
+import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
+import EventDetails from '../components/EventDetails';
 import React, { useState, useEffect } from 'react';
 
 const Events = () => {
@@ -29,21 +32,17 @@ const Events = () => {
    }, []);
 
    return (
-       <div>
-         <h2>Upcoming Events</h2>
-         <ul>
-           {events.map(event => (
-             <li key={event.id}>
-               <strong>{event.eventName}</strong> <br />
-               <strong>Artist:</strong> {event.artist.artistName} <br />
-               <strong>Venue:</strong> {event.venue.venueName} <br />
-               <strong>Price:</strong> ${event.price.toFixed(2)} <br />
-               <strong>Date:</strong> {event.date} <br />
-             </li>
-           ))}
-         </ul>
-       </div>
-     );
-   };
+         <div>
+             {events.map(event => (
+               <div key={event.id} style={{ marginBottom: '10px' }}>
+                 <Link to={`/events/${event.id}`}>
+                   <strong>{event.eventName}</strong>
+                 </Link>
+                 <div>{event.date}</div>
+               </div>
+             ))}
+           </div>
+       );
+     };
 
 export default Events;
