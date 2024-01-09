@@ -1,5 +1,6 @@
 import * as Pages from './pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import EventDetails from './components/EventDetails';
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<Pages.Home />} />
         <Route path="/about" element={<Pages.About />} />
         <Route path="/events" element={<Pages.Events />} />
+        <Route path="/events/:id" element={<EventDetails />} />
       </Routes>    
     </Router>
   );
