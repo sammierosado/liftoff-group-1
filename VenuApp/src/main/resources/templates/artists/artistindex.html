@@ -3,29 +3,44 @@
 <head th:replace="~{fragments :: head}"></head>
 <header th:replace="~{fragments :: header}"></header>
 
+<div class="container mt-4">
 <body>
 <h2 class="headTitle">
     Artists
+    <a th:href="@{/artists/add}" class="btn btn-primary btn-sm ml-2 btn-custom">Add an Artist</a>
 </h2>
 <p th:unless="${artists} and ${artists.size()}">
     <em>No contents to display.</em>
 </p>
-<table id="venuTable">
+<table class="table table-striped mt-3">
     <thead>
     <tr>
         <th>Artist Id</th>
         <th>Artist Name</th>
         <th>Artist Genre</th>
+        <th>Update Artist</th>
+        <th>Delete Artist</th>
     </tr>
     </thead>
     <tr th:each="artist : ${artists}">
         <td th:text="${artist.id}"></td>
         <td th:text="${artist.artistName}"></td>
         <td th:text="${artist.genre}"></td>
+        <td>
+            <form th:action="@{/artists/update/{id}(id=${artist.id})}" method="post">
+
+                <button type="submit" class="btn btn-primary btn-sm">Update</button>
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/artists/delete/{id}(id=${artist.id})}" method="post">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+        </td>
 
     </tr>
 </table>
-
+</div>
 
 </body>
 </html>
