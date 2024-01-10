@@ -2,6 +2,9 @@ import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import EventDetails from '../components/EventDetails';
 import React, { useState, useEffect } from 'react';
+import StarRating from '../components/StarRating';
+import './stylesheets/StarRating.css';
+
 
 const Events = () => {
  const [events, setEvents] = useState([]);
@@ -39,6 +42,7 @@ const Events = () => {
                    <strong>{event.eventName}</strong>
                  </Link>
                  <div>{event.date}</div>
+                 <StarRating />
                </div>
              ))}
            </div>
