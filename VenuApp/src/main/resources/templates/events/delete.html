@@ -8,6 +8,7 @@
     <title>Delete Events</title>
 </head>
 <body>
+<div class="container">
 <form action='/events/delete' method='POST'>
     <h3>Delete an event from the list.</h3>
     <th:block th:each="event : ${eventList}">
@@ -19,5 +20,6 @@
     <button type="submit">Delete</button>
 </form>
 <a th:href="@{/events}">Back to Events</a>
+</div>
 </body>
 </html>
