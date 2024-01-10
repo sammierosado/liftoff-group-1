@@ -13,28 +13,50 @@
 <header th:fragment = "header">
 <div class = "header">
     <div class ="navbar">
-        <button class="nav"><a href = "/events/add">Add an Event</a></button>
 
-        <button class="nav"><a href = "/artists">Show List of Artists</a></button>
-        <button class="nav"><a href = "/artists/add">Add an Artist</a></button>
-        <button class="nav"><a href = "/artists/delete">Delete Artist</a></button>
-        <img width="100%" th:src="@{/images/venulogo3.png}" class = "logo" />
-        <button class="nav"><a href = "/venues">Show List of Venues</a></button>
-        <button class="nav"><a href = "/venues/add">Add a Venue</a></button>
-        <button class="nav"><a href = "/venues/delete">Delete a Venue</a></button>
+        <div class="dropdown">
+            <button class="nav">Events</button>
+            <div class="dropdown-content">
+                <a href="/events/add">Add Event</a>
+                <a href="/events/delete">Delete Event</a>
+                <a href="/events">View All Events</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="nav">Arists</button>
+            <div class="dropdown-content">
+                <a href="/artists/add">Add Artist</a>
+                <a href="/artists/delete">Delete Artist</a>
+                <a href="/artists">View All Artists</a>
+            </div>
+        </div>
+        <a href = "/"> <img width="100%" th:src="@{/images/venulogo3.png}" class = "logo" /></a>
+
+        <div class="dropdown">
+            <button class="nav">Venues</button>
+            <div class="dropdown-content">
+                <a href="/venues/add">Add Venue</a>
+                <a href="/venues/delete">Delete Venue</a>
+                <a href="/venues">View All Venues</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="nav">User</button>
+            <div class="dropdown-content">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </div>
+        </div>
+
+
+
+
     </div>
 </div>
 </header>
-<adminNavBar th:fragment = "adminNavBar">
-    <div class ="navbar">
-        <button><a href = "/artists">Show List of Artists</a></button>
-        <button><a href = "/artists/add">Add an Artist</a></button>
-        <button><a href = "/artists/delete">Delete Artist</a></button>
-        <button><a href = "/venues">Show List of Venues</a></button>
-        <button><a href = "/venues/add">Add a Venue</a></button>
-        <button><a href = "/venues/delete">Delete a Venue</a></button>
-    </div>
-</adminNavBar>
+
 
 
 

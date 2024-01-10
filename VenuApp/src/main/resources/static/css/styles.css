@@ -35,7 +35,9 @@ button {
 body{
 background-image: url('/images/mic on stage.png');
 }
-
+.adminHome{
+background-image:none;
+}
 
 button.delete {
     background-color: #B03A2E;
@@ -103,5 +105,86 @@ textarea {
   background-color: #1b3d30;
   color: white;
 }
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #7daed1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.centered{
+text-align:center;
+}
+
+.container {
+   background-color: rgba(255, 255, 255, 0.7);
+   padding: 10px;
+   border-radius: 10px;
+}
+
+.btn-custom {
+   background-color: #965CD3;
+   color: white;
+}
+
+.btn-custom:hover {
+   background-color: #2CABAF;
+}
+
+
+.venue-header {
+   font-size: 15px;
+}
+
+.venue-header-sm {
+   font-size: 14px;
+}
+
+.venue-content {
+   font-size: 13px;
+}
+
+.venue-content-sm {
+   font-size: 12px;
+}
+
+
+
+
 
 

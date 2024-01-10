@@ -5,41 +5,42 @@
 
 <body>
 
-<h2>Create Event</h2>
-<form action="/events/add" method="POST">
-    <div>
-        <label th:for="eventName">Event Name</label>
-        <input th:field="${event.eventName}" />
-    </div>
-    <div>
-        <label th:for="artist">Artist</label>
-        <select th:field="${event.artist}">
+<div class="container">
+    <h2 class="headTitle">Create Event</h2>
 
-            <option th:each ="artist : ${artists}"
-                    th:value ="${artist.id}"
-                    th:text = "${artist}"></option>
-        </select>
-    </div>
-    <div>
-        <label th:for="venue">Venue</label>
-        <select th:field="${event.venue}">
+    <form action="/events/add" method="POST">
+        <div class="form-group">
+            <label th:for="eventName" class="form-label">Event Name:</label>
+            <input type="text" class="form-control" th:field="${event.eventName}" />
+        </div>
 
-            <option th:each ="venue : ${venues}"
-                    th:value ="${venue.id}"
-                    th:text = "${venue}"></option>
-        </select>
-    </div>
+        <div class="form-group">
+            <label th:for="artist" class="form-label">Artist:</label>
+            <select class="form-control" th:field="${event.artist}">
+                <option th:each="artist : ${artists}" th:value="${artist.id}" th:text="${artist.artistName}"></option>
+            </select>
+        </div>
 
-    <div>
-        <label th:for="price">Price</label>
-        <input th:field="${event.price}" />
-    </div>
-    <div>
-        <label th:for="date">Date</label>
-        <input input type="date" th:field="${event.date}" />
-    </div>
+        <div class="form-group">
+            <label th:for="venue" class="form-label">Venue:</label>
+            <select class="form-control" th:field="${event.venue}">
+                <option th:each="venue : ${venues}" th:value="${venue.id}" th:text="${venue.venueName}"></option>
+            </select>
+        </div>
 
-    <button type="submit">Create Event</button>
-</form>
+        <div class="form-group">
+            <label th:for="price" class="form-label">Price:</label>
+            <input type="text" class="form-control" th:field="${event.price}" />
+        </div>
+
+        <div class="form-group">
+            <label th:for="date" class="form-label">Date:</label>
+            <input type="date" class="form-control" th:field="${event.date}" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Event</button>
+    </form>
+</div>
+
 </body>
 </html>

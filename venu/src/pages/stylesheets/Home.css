@@ -18,3 +18,12 @@
     width: 100dvh;
     height: 60dvh;
 }
+
+.upcoming-events-container {
+    background: linear-gradient(to bottom, #FFA500, #FFFF00);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}

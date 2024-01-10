@@ -10,10 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/events")
@@ -49,4 +46,64 @@ public class EventController {
             return "redirect:/events";
         }
     }
+
+    @GetMapping("/delete")
+    public String displayEventDeleteForm(Model model) {
+        model.addAttribute("eventList", eventRepository.findAll());
+        return "events/delete";
+    }
+
+    @PostMapping("/delete")
+    public String processDeleteEventForm(@RequestParam(required = false) int[] eventIds) {
+        for (int id : eventIds) {
+            eventRepository.deleteById(id);
+        }
+        return "redirect:/events";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String processDelete(@PathVariable int id) {
+        eventRepository.deleteById(id);
+        return "redirect:/events";
+    }
+
+    @GetMapping("/update/{id}")
+    public String showUpdateForm(@PathVariable int id, Model model) {
+        Event event = eventRepository.findById(id).orElse(null);
+
+        if (event == null) {
+            return "redirect:/events";
+        }
+
+        model.addAttribute("event", event);
+        model.addAttribute("artists", artistRepository.findAll());
+        model.addAttribute("venues", venueRepository.findAll());
+        return "events/update";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateEvent(@PathVariable int id, @ModelAttribute @Valid Event updatedEvent, Errors errors) {
+        if (errors.hasErrors()) {
+            return "events/update";
+        }
+
+        Event existingEvent = eventRepository.findById(id).orElse(null);
+
+        if (existingEvent == null) {
+
+            return "redirect:/events";
+        }
+
+        existingEvent.setEventName(updatedEvent.getEventName());
+        existingEvent.setPrice(updatedEvent.getPrice());
+        existingEvent.setDate(updatedEvent.getDate());
+        existingEvent.setArtist(updatedEvent.getArtist());
+        existingEvent.setVenue(updatedEvent.getVenue());
+
+        eventRepository.save(existingEvent);
+
+        return "redirect:/events";
+    }
+
+
 }
