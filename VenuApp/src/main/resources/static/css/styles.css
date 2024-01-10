@@ -151,5 +151,40 @@ textarea {
 text-align:center;
 }
 
+.container {
+   background-color: rgba(255, 255, 255, 0.7);
+   padding: 10px;
+   border-radius: 10px;
+}
+
+.btn-custom {
+   background-color: #965CD3;
+   color: white;
+}
+
+.btn-custom:hover {
+   background-color: #2CABAF;
+}
+
+
+.venue-header {
+   font-size: 15px;
+}
+
+.venue-header-sm {
+   font-size: 14px;
+}
+
+.venue-content {
+   font-size: 13px;
+}
+
+.venue-content-sm {
+   font-size: 12px;
+}
+
+
+
+
 
 

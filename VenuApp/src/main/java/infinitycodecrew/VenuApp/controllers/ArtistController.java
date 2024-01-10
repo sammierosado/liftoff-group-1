@@ -55,6 +55,38 @@ public class ArtistController {
        return "redirect:/artists";
     }
 
+    @GetMapping("/update/{id}")
+    public String showUpdateArtistForm(@PathVariable int id, Model model) {
+        Artist artist = artistRepository.findById(id).orElse(null);
+
+        if (artist == null) {
+            return "redirect:/artists";
+        }
+
+        model.addAttribute("artist", artist);
+        return "artists/update";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateArtist(@PathVariable int id, @ModelAttribute @Valid Artist updatedArtist, Errors errors) {
+        if (errors.hasErrors()) {
+            return "artists/update";
+        }
+
+        Artist existingArtist = artistRepository.findById(id).orElse(null);
+
+        if (existingArtist == null) {
+            return "redirect:/artists";
+        }
+
+
+        existingArtist.setArtistName(updatedArtist.getArtistName());
+        existingArtist.setGenre(updatedArtist.getGenre());
+
+        artistRepository.save(existingArtist);
+
+        return "redirect:/artists";
+    }
 
 
 
