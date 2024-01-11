@@ -19,7 +19,7 @@ const SearchBar = ({ handleSearch }) => {
                <input
                    type="text"
                    className="search-input"
-                   placeholder="Search By: Event Name, Aritst, Genre, Venue, or Date..."
+                   placeholder="Search By: Event Name, Artist, Genre, Venue, or Date..."
                    value={searchTerm}
                    onChange={handleChange}
                />

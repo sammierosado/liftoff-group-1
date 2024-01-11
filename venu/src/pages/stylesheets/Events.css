@@ -4,18 +4,18 @@
         background-image: url('../../public/images/concertbg.png');
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: relative;
 }
 
+{/* event search box */}
 .events-container {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
   position: relative;
-  margin: 20px auto;
+  {/*20px in margin was causing the white sliver above, auto should keep it centered*/}
+  margin: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 800px;
-
 
   overflow: hidden;
 }
