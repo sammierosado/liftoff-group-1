@@ -32,7 +32,7 @@ const EventDetails = () => {
   return (
       <div className="page-background">
       <Navbar />
-      <div className="events-container event details-container">
+      <div className="events-container event-details-container">
         <h2>{eventDetails.eventName}</h2>
         <p><strong>Artist:</strong> {eventDetails.artist?.artistName}</p>
         <p><strong>Genre:</strong> {eventDetails.artist?.genre}</p>
