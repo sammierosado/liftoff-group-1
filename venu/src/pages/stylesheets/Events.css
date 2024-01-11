@@ -1,0 +1,85 @@
+.page-background {
+    min-height: 100dvh;
+        min-width: 100dvw;
+        background-image: url('../../public/images/concertbg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: relative;
+}
+
+.events-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+
+
+  overflow: hidden;
+}
+
+.event-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.event-card a {
+  text-decoration: none;
+  color: #333;
+}
+
+.event-card strong {
+  font-size: 20px;
+  color: #333;
+}
+
+.event-card div {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.event-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.event-name {
+  color: #9c27b0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.event-name:hover {
+  color: #45a049;
+  text-decoration: underline;
+}
+
+.clickable-icon {
+  margin-left: 5px;
+  color: #45a049;
+}
+
+@keyframes musicNote {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.event-card .music-note {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.2em;
+  animation: musicNote 1s infinite;
+}
