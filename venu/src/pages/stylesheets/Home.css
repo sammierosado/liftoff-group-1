@@ -10,7 +10,7 @@
     /* alt: background-size: 100dvw 100dvh; */
 }
 
-/* map screen position/size on home screen */
+/* map box position/size on home screen */
 .VENU-map {
     position: absolute;  
     top: 25%; 

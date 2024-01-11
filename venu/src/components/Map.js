@@ -1,11 +1,12 @@
 import { React, useMemo } from 'react';
 import { useJsApiLoader, GoogleMap } from '@react-google-maps/api';
 
-
 export default function Map() {
 
     // geographical location on which the Google map is centered. feel free to change it!
     const mapCenter = useMemo(() => ({lat: 38.627003, lng: -90.199402}), []);
+    // disableDefaultUI removes the grid/satellite map toggle and street view options for a cleaner, more basic map.
+    // mapId is the key for applying map styling created on Google Maps Platform in Google Cloud.
     const mapOptions = useMemo(() => ({
         disableDefaultUI: true,
         clickableIcons: false,
@@ -20,10 +21,12 @@ export default function Map() {
 
     return (
         <div>
-            {/* google map information */}
+            {/* google map screen position from Home.css */}
             <div className="VENU-map">
-                {/* may end up separating out parameters, this was just to make sure it worked correctly */}
-                <GoogleMap center={mapCenter} zoom={10} mapContainerClassName="map-container" options={mapOptions} />
+                {/* basic parameters required to render map on Home page */}
+                <GoogleMap center={mapCenter} zoom={10} mapContainerClassName="map-container" options={mapOptions}>
+                    {/* marker goes here */}
+                </GoogleMap>
             </div>
         </div>
     )
