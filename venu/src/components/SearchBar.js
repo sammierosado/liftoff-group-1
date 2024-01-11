@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const SearchBar = ({ handleSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');
-};
 
     const handleChange = (e) => {
        setSearchTerm(e.target.value);
@@ -14,23 +13,23 @@ const SearchBar = ({ handleSearch }) => {
        handleSearch(searchTerm);
     };
 
-    return (
-        <from onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Search Events"
-                value={searchTerm}
-                onChange={handleChange}
-            />
-            <button type="submit">
-                Search
-            </button>
-        </from>
-    );
-);
+  return (
+           <form onSubmit={handleSubmit}>
+               <input
+                   type="text"
+                   placeholder="Search Events"
+                   value={searchTerm}
+                   onChange={handleChange}
+               />
+               <button type="submit">
+                   Search
+               </button>
+           </form>
+       );
+   };
 
-SearchBar.propTypes = {
-    handleSearch: PropTypes.func.isRequired,
-};
+   SearchBar.propTypes = {
+       handleSearch: PropTypes.func.isRequired,
+   };
 
 export default SearchBar;
