@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
+
+<body>
+
+<div class="container">
+    <h2 class="headTitle">Create Event</h2>
+
+    <form action="/events/add" method="POST">
+        <div class="form-group">
+            <label th:for="eventName" class="form-label">Event Name:</label>
+            <input type="text" class="form-control" th:field="${event.eventName}" />
+        </div>
+
+        <div class="form-group">
+            <label th:for="artist" class="form-label">Artist:</label>
+            <select class="form-control" th:field="${event.artist}">
+                <option th:each="artist : ${artists}" th:value="${artist.id}" th:text="${artist.artistName}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="venue" class="form-label">Venue:</label>
+            <select class="form-control" th:field="${event.venue}">
+                <option th:each="venue : ${venues}" th:value="${venue.id}" th:text="${venue.venueName}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="price" class="form-label">Price:</label>
+            <input type="text" class="form-control" th:field="${event.price}" />
+        </div>
+
+        <div class="form-group">
+            <label th:for="date" class="form-label">Date:</label>
+            <input type="date" class="form-control" th:field="${event.date}" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Event</button>
+    </form>
+</div>
+
+</body>
+</html>

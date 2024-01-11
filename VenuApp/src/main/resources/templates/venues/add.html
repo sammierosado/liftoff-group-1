@@ -1,88 +1,144 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
+
 <body>
-<h3>Here is where we add a venue.</h3>
 
+<div class="container">
+    <h2 class="headTitle">Add a Venue</h2>
 
-<form action='/venues/add' method='POST'>
-    <div>
-        <label th:for="venueName">Venue Name</label>
-        <input th:field="${venue.venueName}" />
-        <p class="error" th:errors="${venue.venueName}"></p>
-    </div>
-    <div>
-        <label th:for="venueAddress">Venue Address</label>
-        <input th:field="${venue.venueAddress}" />
-        <p class="error" th:errors="${venue.venueAddress}"></p>
-    </div>
+    <form action='/venues/add' method='POST'>
+        <div class="form-group">
+            <label th:for="venueName" class="form-label">Venue Name</label>
+            <input class="form-control" th:field="${venue.venueName}" />
+            <p class="error" th:errors="${venue.venueName}"></p>
+        </div>
 
-    <div>
-        <label th:for="venueCity">Venue City</label>
-        <input th:field="${venue.venueCity}" />
-        <p class="error" th:errors="${venue.venueCity}"></p>
-    </div>
-    <div>
-        <label th:for="venueState">Venue State</label>
-        <input th:field="${venue.venueState}" />
-        <p class="error" th:errors="${venue.venueState}"></p>
-    </div>
-    <div>
-        <label th:for="venueZip">Venue Zip Code</label>
-        <input th:field="${venue.venueZip}" />
-        <p class="error" th:errors="${venue.venueZip}"></p>
-    </div>
-    <div>
-        <label th:for="wheelchairAccessible">Wheelchair Accessible</label>
-        <input type="checkbox" name="wheelchairAccessible" th:field="${venue.wheelchairAccessible}">
-    </div>
-    <div>
-        <label th:for="ADABathrooms">ADA Bathrooms</label>
-        <input type="checkbox" name="ADABathrooms" th:field="${venue.ADABathrooms}">
-    </div>
+        <div class="form-group">
+            <label th:for="venueAddress" class="form-label">Venue Address</label>
+            <input class="form-control" th:field="${venue.venueAddress}" />
+            <p class="error" th:errors="${venue.venueAddress}"></p>
+        </div>
 
-    <div>
-        <label th:for="ADASeating">ADA Seating Options</label>
-        <input type="checkbox" name="ADASeating" th:field="${venue.ADASeating}">
-    </div>
+        <div class="form-group">
+            <label th:for="venueCity" class="form-label">Venue City</label>
+            <input class="form-control" th:field="${venue.venueCity}" />
+            <p class="error" th:errors="${venue.venueCity}"></p>
+        </div>
 
-    <div>
-        <label th:for="busStopClose">Public Transportation Nearby</label>
-        <input type="checkbox" name="busStopClose" th:field="${venue.busStopClose}">
-    </div>
+        <div class="form-group">
+            <label th:for="venueState" class="form-label">Venue State</label>
+            <select class="form-control" th:field="${venue.venueState}">
+                <option th:value="AL">Alabama</option>
+                <option th:value="AK">Alaska</option>
+                <option th:value="AZ">Arizona</option>
+                <option th:value="AR">Arkansas</option>
+                <option th:value="CA">California</option>
+                <option th:value="CO">Colorado</option>
+                <option th:value="CT">Connecticut</option>
+                <option th:value="DE">Delaware</option>
+                <option th:value="DC">Dist of Columbia</option>
+                <option th:value="FL">Florida</option>
+                <option th:value="GA">Georgia</option>
+                <option th:value="HI">Hawaii</option>
+                <option th:value="ID">Idaho</option>
+                <option th:value="IL">Illinois</option>
+                <option th:value="IN">Indiana</option>
+                <option th:value="IA">Iowa</option>
+                <option th:value="KS">Kansas</option>
+                <option th:value="KY">Kentucky</option>
+                <option th:value="LA">Louisiana</option>
+                <option th:value="ME">Maine</option>
+                <option th:value="MD">Maryland</option>
+                <option th:value="MA">Massachusetts</option>
+                <option th:value="MI">Michigan</option>
+                <option th:value="MN">Minnesota</option>
+                <option th:value="MS">Mississippi</option>
+                <option th:value="MO">Missouri</option>
+                <option th:value="MT">Montana</option>
+                <option th:value=" 'NE' ">Nebraska</option>
+                <option th:value="NV">Nevada</option>
+                <option th:value="NH">New Hampshire</option>
+                <option th:value="NJ">New Jersey</option>
+                <option th:value="NM">New Mexico</option>
+                <option th:value="NY">New York</option>
+                <option th:value="NC">North Carolina</option>
+                <option th:value="ND">North Dakota</option>
+                <option th:value="OH">Ohio</option>
+                <option th:value="OK">Oklahoma</option>
+                <option th:value=" 'OR' ">Oregon</option>
+                <option th:value="PA">Pennsylvania</option>
+                <option th:value="RI">Rhode Island</option>
+                <option th:value="SC">South Carolina</option>
+                <option th:value="SD">South Dakota</option>
+                <option th:value="TN">Tennessee</option>
+                <option th:value="TX">Texas</option>
+                <option th:value="UT">Utah</option>
+                <option th:value="VT">Vermont</option>
+                <option th:value="VA">Virginia</option>
+                <option th:value="WA">Washington</option>
+                <option th:value="WV">West Virginia</option>
+                <option th:value="WI">Wisconsin</option>
+                <option th:value="WY">Wyoming</option>
 
-    <div>
-        <label th:for="signLanguage">Sign Language</label>
-        <input type="checkbox" name="signLanguage" th:field="${venue.signLanguage}">
-    </div>
+            </select>
+        </div>
 
-    <div>
-        <label th:for="clearPathways">Clear Pathways</label>
-        <input type="checkbox" name="clearPathways" th:field="${venue.clearPathways}">
-    </div>
+        <div class="form-group">
+            <label th:for="venueZip" class="form-label">Venue Zip Code</label>
+            <input class="form-control" th:field="${venue.venueZip}" />
+            <p class="error" th:errors="${venue.venueZip}"></p>
+        </div>
 
-    <div>
-        <label th:for="descriptiveAudio">Descriptive Audio</label>
-        <input type="checkbox" name="descriptiveAudio" th:field="${venue.descriptiveAudio}">
-    </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="wheelchairAccessible" th:field="${venue.wheelchairAccessible}" />
+            <label class="form-check-label" th:for="wheelchairAccessible">Wheelchair Accessible</label>
+        </div>
 
-    <div>
-        <label th:for="elevators">Elevators</label>
-        <input type="checkbox" name="descriptiveAudio" th:field="${venue.elevators}">
-    </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="ADABathrooms" th:field="${venue.ADABathrooms}" />
+            <label class="form-check-label" th:for="ADABathrooms">ADA Bathrooms</label>
+        </div>
 
-    <div>
-        <label th:for="multiLevel">Multiple Levels</label>
-        <input type="checkbox" name="multiLevel" th:field="${venue.multiLevel}">
-    </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="ADASeating" th:field="${venue.ADASeating}" />
+            <label class="form-check-label" th:for="ADASeating">ADA Seating Options</label>
+        </div>
 
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="busStopClose" th:field="${venue.busStopClose}" />
+            <label class="form-check-label" th:for="busStopClose">Public Transportation Nearby</label>
+        </div>
 
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="signLanguage" th:field="${venue.signLanguage}" />
+            <label class="form-check-label" th:for="signLanguage">Sign Language</label>
+        </div>
 
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="clearPathways" th:field="${venue.clearPathways}" />
+            <label class="form-check-label" th:for="clearPathways">Clear Pathways</label>
+        </div>
 
-    <button type="submit">Add Your Venue!</button>
-</form>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="descriptiveAudio" th:field="${venue.descriptiveAudio}" />
+            <label class="form-check-label" th:for="descriptiveAudio">Descriptive Audio</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="elevators" th:field="${venue.elevators}" />
+            <label class="form-check-label" th:for="elevators">Elevators</label>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="multiLevel" th:field="${venue.multiLevel}" />
+            <label class="form-check-label" th:for="multiLevel">Multiple Levels</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create a Venue</button>
+    </form>
+</div>
+
 </body>
 </html>

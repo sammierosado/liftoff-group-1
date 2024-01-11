@@ -8,11 +8,55 @@
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
 
 </head>
+
+
 <header th:fragment = "header">
 <div class = "header">
-    <img width="100%" th:src="@{images/venulogo.png}" />
+    <div class ="navbar">
+
+        <div class="dropdown">
+            <button class="nav">Events</button>
+            <div class="dropdown-content">
+                <a href="/events/add">Add Event</a>
+                <a href="/events/delete">Delete Event</a>
+                <a href="/events">View All Events</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="nav">Arists</button>
+            <div class="dropdown-content">
+                <a href="/artists/add">Add Artist</a>
+                <a href="/artists/delete">Delete Artist</a>
+                <a href="/artists">View All Artists</a>
+            </div>
+        </div>
+        <a href = "/"> <img width="100%" th:src="@{/images/venulogo3.png}" class = "logo" /></a>
+
+        <div class="dropdown">
+            <button class="nav">Venues</button>
+            <div class="dropdown-content">
+                <a href="/venues/add">Add Venue</a>
+                <a href="/venues/delete">Delete Venue</a>
+                <a href="/venues">View All Venues</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="nav">User</button>
+            <div class="dropdown-content">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </div>
+        </div>
+
+
+
+
+    </div>
 </div>
 </header>
+
 
 
 

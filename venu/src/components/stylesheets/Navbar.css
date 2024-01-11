@@ -1,0 +1,35 @@
+/* styling for the basic nav bar at top of screen. ideally will make it overlay the background image/make it more responsive, time allowing. */
+.topmenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000000e0;
+    font-size: calc(1.7vmin);
+    width: calc(100dvw);
+  }
+  
+  /* where the buttons appear on screen */
+  .topmenu li {
+    float: left;
+  }
+  
+  /* parameters of the buttons not current active */
+  .topmenu li a {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.665);
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+  }
+  
+  /* color of the button the cursor is hovering over */
+  .topmenu li a:hover {
+    background-color: #424242;
+  }
+  
+  /* color of the button and button text of the page the user is on */
+  .topmenu li a.active {
+    color: white;
+    background-color: #5810008b;
+  }

@@ -2,55 +2,73 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="~{fragments :: head}"></head>
 <header th:replace="~{fragments :: header}"></header>
+
+
 <body>
-<h2 class ="headTitle">
-    Venues
-</h2>
-<p th:unless="${venues} and ${venues.size()}">
-    <em>No contents to display.</em>
-</p>
-<table id="venuTable">
-    <thead>
-    <tr>
-        <th>Venue Id</th>
-        <th>Venue Name</th>
-        <th>Venue Address</th>
-        <th>Venue City</th>
-        <th>Venue State</th>
-        <th>Venue Zip Code</th>
-        <th>Wheelchair Accessible</th>
-        <th>ADA Bathrooms</th>
-        <th>ADA Seating</th>
-        <th>Bus Stop Close</th>
-        <th>Sign Language</th>
-        <th>Clear Pathways</th>
-        <th>Descriptive Audio</th>
-        <th>Multi Level</th>
-        <th>Elevators</th>
+<div class="container mt-4">
+    <h2 class="headTitle">
+        Venues
+        <a th:href="@{/venues/add}" class="btn btn-primary btn-sm ml-2 btn-custom">Add a Venue</a>
+    </h2>
+    <p th:unless="${venues} and ${venues.size()}">
+        <em>No contents to display.</em>
+    </p>
+    <table class="table table-striped mt-3">
+        <thead class="thead-dark">
+        <tr>
+        <th class="venue-header">Venue Id</th>
+        <th class="venue-header">Venue Name</th>
+        <th class="venue-header">Venue Address</th>
+        <th class="venue-header">Venue City</th>
+        <th class="venue-header">Venue State</th>
+        <th class="venue-header">Venue Zip Code</th>
+            <th class="venue-header-sm">Wheelchair Accessible</th>
+            <th class="venue-header-sm">ADA Bathrooms</th>
+            <th class="venue-header-sm">ADA Seating</th>
+            <th class="venue-header-sm">Bus Stop Close</th>
+            <th class="venue-header-sm">Sign Language</th>
+            <th class="venue-header-sm">Clear Pathways</th>
+            <th class="venue-header-sm">Descriptive Audio</th>
+            <th class="venue-header-sm">Multi Level</th>
+            <th class="venue-header-sm">Elevators</th>
+            <th class="venue-header-sm">Update Venue</th>
+            <th class="venue-header-sm">Delete Venue</th>
 
     </tr>
     </thead>
+    <tbody>
     <tr th:each="venue : ${venues}">
-        <td th:text="${venue.id}"></td>
-        <td th:text="${venue.venueName}"></td>
-        <td th:text="${venue.venueAddress}"></td>
+        <td class="venue-content" th:text="${venue.id}"></td>
+        <td class="venue-content" th:text="${venue.venueName}"></td>
+        <td class="venue-content" th:text="${venue.venueAddress}"></td>
 
-        <td th:text="${venue.venueCity}"></td>
-        <td th:text="${venue.venueState}"></td>
-        <td th:text="${venue.venueZip}"></td>
-        <td th:text="${venue.wheelchairAccessible}"></td>
-        <td th:text="${venue.ADABathrooms}"></td>
-        <td th:text="${venue.ADASeating}"></td>
-        <td th:text="${venue.busStopClose}"></td>
-        <td th:text="${venue.signLanguage}"></td>
-        <td th:text="${venue.clearPathways}"></td>
-        <td th:text="${venue.descriptiveAudio}"></td>
-        <td th:text="${venue.multiLevel}"></td>
-        <td th:text="${venue.elevators}"></td>
+        <td class="venue-content" th:text="${venue.venueCity}"></td>
+        <td class="venue-content" th:text="${venue.venueState}"></td>
+        <td class="venue-content" th:text="${venue.venueZip}"></td>
+        <td class="venue-content-sm" th:text="${venue.wheelchairAccessible}"></td>
+        <td class="venue-content-sm" th:text="${venue.ADABathrooms}"></td>
+        <td class="venue-content-sm" th:text="${venue.ADASeating}"></td>
+        <td class="venue-content-sm" th:text="${venue.busStopClose}"></td>
+        <td class="venue-content-sm" th:text="${venue.signLanguage}"></td>
+        <td class="venue-content-sm" th:text="${venue.clearPathways}"></td>
+        <td class="venue-content-sm" th:text="${venue.descriptiveAudio}"></td>
+        <td class="venue-content-sm" th:text="${venue.multiLevel}"></td>
+        <td class="venue-content-sm" th:text="${venue.elevators}"></td>
+        <td>
+            <form th:action="@{/venues/update/{id}(id=${venue.id})}" method="post">
+                <button type="submit" class="btn btn-primary btn-sm">Update</button>
+            </form>
 
+        </td>
+        <td>
+            <form th:action="@{/venues/delete/{id}(id=${venue.id})}" method="post" style="display: inline;">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+        </td>
     </tr>
-</table>
-<button><a href = "artists">Show List of Artists!</a></button>
+    </tbody>
+    </table>
+</div>
 
 </body>
 </html>

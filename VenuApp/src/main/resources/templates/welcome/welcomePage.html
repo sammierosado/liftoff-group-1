@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
 <head>
-    <base href="./"/>
     <meta charset="UTF-8"/>
-    <title>VENU</title>
-    <link href="./VenuApp/src/main/resources/templates/welcome/welcome.css" rel="stylesheet" />
+    <title></title>
 </head>
-<body>
-    <header>
-        <h1 class="title" style="color: blue">Welcome Infinity Code Crew!</h1>
-    </header>
-    <div>
-        <img src="/VenuApp/src/main/resources/images/concertbg.png" alt="concert stage with a crowd" />
-        <p>test</p>
-    </div>
+<body class ="adminHome">
+<div class="col"><h2 class = "centered">Welcome to the Venu Administration Center.<br> <br> Here you can add,update, and delete an artist, venue, or event
+    that can be displayed on the Venu Site.</h2>
+</div>
+
+
+<div class="d-flex align-items-start bg-body-tertiary mb-2" style="height: 100px;">
+    <div class="col"><img src = "/images/Live Music Tonight.png" width = "100%"></div>
+</div>
+
 </body>
 </html>

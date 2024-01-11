@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
-</head>
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
+
 <body>
-<h3>Here is where we add an artist.</h3>
 
+<div class="container">
+    <h2 class="headTitle">Add an Artist</h2>
 
-<form action='/artists/add' method='POST'>
-   <div>
-    <label th:for="artistName">Artist Name</label>
-    <input th:field="${artist.artistName}" />
-    <p class="error" th:errors="${artist.artistName}"></p>
-   </div>
-    <div>
-        <label th:for="genre">Genre</label>
-        <input th:field="${artist.genre}" />
-        <p class="error" th:errors="${artist.genre}"></p>
-    </div>
-    <button type="submit">Add Artist</button>
-</form>
+    <form action='/artists/add' method='POST'>
+        <div class="form-group">
+            <label th:for="artistName" class="form-label">Artist Name</label>
+            <input class="form-control" th:field="${artist.artistName}" />
+            <p class="error" th:errors="${artist.artistName}"></p>
+        </div>
+
+        <div class="form-group">
+            <label th:for="genre" class="form-label">Genre</label>
+            <input class="form-control" th:field="${artist.genre}" />
+            <p class="error" th:errors="${artist.genre}"></p>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create an Artist</button>
+    </form>
+</div>
+
 </body>
 </html>

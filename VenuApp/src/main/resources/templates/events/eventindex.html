@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
+
+<body>
+
+<div class="container mt-4">
+    <h2 class="headTitle">
+        Events
+        <a th:href="@{/events/add}" class="btn btn-primary btn-sm ml-2 btn-custom">Add an Event</a>
+    </h2>
+
+    <table class="table table-striped mt-3">
+        <thead class="thead-dark">
+        <tr>
+            <th>Event ID</th>
+            <th>Event</th>
+            <th>Artist</th>
+            <th>Venue</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Update Event</th>
+            <th>Delete Event</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.id}"></td>
+            <td th:text="${event.eventName}" style="font-size: 16px; font-weight: bold;"></td>
+            <td th:text="${event.artist}" style="font-size: 16px;"></td>
+            <td th:text="${event.venue}" style="font-size: 16px;"></td>
+            <td th:text="${event.date}" style="font-size: 16px;"></td>
+            <td th:text="${event.price}" style="font-size: 16px;"></td>
+            <td>
+                <form th:action="@{'/events/update/' + ${event.id}}" method="get">
+                    <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                </form>
+
+            </td>
+            <td>
+                <form th:action="@{/events/delete/{id}(id=${event.id})}" method="post">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

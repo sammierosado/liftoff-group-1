@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-  <meta charset="UTF-8"/>
-  <title>Register</title>
-</head>
-<body class="container">
+<head th:replace="~{fragments :: head}"></head>
+<header th:replace="~{fragments :: header}"></header>
+<body>
+<div class="container">
+<h2 class ="headTitle">
+  Register
 
+</h2>
+<body>
 <form method="post">
   <div class="form-group">
     <label>Username
@@ -25,9 +28,10 @@
 
     </label>
   </div>
-
-  <input type="submit" class="btn btn-primary" value="Join the Party" />
+<br>
+  <input type="submit" class="btn btn-primary btn-custom" value="Join the Party" />
 </form>
 
+</div>
 </body>
 </html>
