@@ -1,5 +1,5 @@
 .Home {
-    /* background */
+    /* home screen background */
     min-height: 100dvh;
     min-width: 100dvw;
 
@@ -10,7 +10,7 @@
     /* alt: background-size: 100dvw 100dvh; */
 }
 
-/* map screen position/size */
+/* map screen position/size on home screen */
 .VENU-map {
     position: absolute;  
     top: 25%; 
@@ -19,11 +19,20 @@
     height: 60dvh;
 }
 
+/* map position/size in its individual box */
+.map-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* upcoming events box position and styling */
 .upcoming-events-container {
     background: linear-gradient(to bottom, #FFA500, #FFFF00);
     padding: 20px;
     border-radius: 10px;
     position: relative;
+    width: 40dvh;
+    height: 100%dvh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
 }
