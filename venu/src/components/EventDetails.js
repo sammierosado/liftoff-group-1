@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './stylesheets/EventDetails.css';
+import Navbar from './Navbar';
 
 const EventDetails = () => {
   const [eventDetails, setEventDetails] = useState({});
@@ -28,9 +30,12 @@ const EventDetails = () => {
 //  console.log('Rendered event details:', eventDetails);
 
   return (
-      <div>
+      <div className="page-background">
+      <Navbar />
+      <div className="events-container event-details-container">
         <h2>{eventDetails.eventName}</h2>
         <p><strong>Artist:</strong> {eventDetails.artist?.artistName}</p>
+        <p><strong>Genre:</strong> {eventDetails.artist?.genre}</p>
         <p>
           <strong>Venue:</strong> {eventDetails.venue?.venueName}
           <br />
@@ -51,6 +56,7 @@ const EventDetails = () => {
         <p><strong>Price:</strong> ${eventDetails.price?.toFixed(2)}</p>
         <p><strong>Date:</strong> {eventDetails.date}</p>
 
+      </div>
       </div>
     );
   };

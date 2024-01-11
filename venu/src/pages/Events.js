@@ -5,6 +5,11 @@ import React, { useState, useEffect } from 'react';
 import StarRating from '../components/StarRating';
 import './stylesheets/StarRating.css';
 import SearchBar from '../components/SearchBar';
+import './stylesheets/Events.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FaMusic, FaArrowRight } from 'react-icons/fa';
+
 
 
 const Events = () => {
@@ -48,34 +53,36 @@ const Events = () => {
     const normalizedSearchTerm = searchTerm.replace('/', '-');
 
     const filtered = events.filter((event) => {
-    const { eventsName, arist, genre, venue, date } = event;
-    const normalizedDate = parseDate(date)?.replaec('/', '-');
-    const searchTermLower = normalizedSearchTerm.toLowerCase();
+          const { eventName, artist, genre, venue, date } = event;
+          const normalizedDate = parseDate(date)?.replace('/', '-');
+          const searchTermLower = normalizedSearchTerm.toLowerCase();
 
-    return (
-        eventName.toLowerCase().includes(searchTermLower) ||
-        artist.artistName.toLowerCase().includes(searchTermLower) ||
-        artist.genre.toLowerCase().includes(searchTermLower) ||
-        venue.venueName.toLowerCase().includes(searchTermLower) ||
-        (normalizedDate && normalizedDate.includes(searchTermLower))
-    );
-    });
+          return (
+            eventName.toLowerCase().includes(searchTermLower) ||
+            artist.artistName.toLowerCase().includes(searchTermLower) ||
+            artist.genre.toLowerCase().includes(searchTermLower) ||
+            venue.venueName.toLowerCase().includes(searchTermLower) ||
+            (normalizedDate && normalizedDate.includes(searchTermLower))
+          );
+        });
 
-    console.log('Filtered Events:', filtered);
-    setFilteredEvents(filtered);
-   };
+        console.log('Filtered Events:', filtered);
+        setFilteredEvents(filtered);
+      };
 
    return (
-       <div>
+       <div className="page-background">
        <Navbar />
-       <div>
+       <div className="events-container">
          <SearchBar handleSearch={handleSearch} />
 
          {filteredEvents.length > 0 ? (
            filteredEvents.map((event) => (
-            <div key={event.id}>
+            <div key={event.id} className="event-card">
                <Link to={`/events/${event.id}`}>
-                 <strong>{event.eventName}
+                 <strong className="event-name">{event.eventName}
+                 <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
+                 <FaMusic className="music-note" />
                  </strong>
                  </Link>
                <div><strong>Artist:</strong> {event.artist.artistName}</div>
@@ -86,15 +93,18 @@ const Events = () => {
            ))
          ) : (
            events.map((event) => (
-             <div key={event.id}>
+             <div key={event.id} className="event-card">
                <Link to={`/events/${event.id}`}>
-                 <strong>{event.eventName}
+                 <strong className="event-name">{event.eventName}
+                 <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
+                 <FaMusic className="music-note" />
                  </strong>
                </Link>
                <div><strong>Artist:</strong> {event.artist.artistName}</div>
                <div><strong>Genre:</strong> {event.artist.genre}</div>
                <div><strong>Venue:</strong> {event.venue.venueName}</div>
                <div><strong>Date:</strong> {event.date}</div>
+               <StarRating />
              </div>
            ))
          )}
