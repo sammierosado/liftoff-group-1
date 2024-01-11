@@ -2,7 +2,6 @@ package infinitycodecrew.VenuApp.controllers;
 
 import infinitycodecrew.VenuApp.models.User;
 import infinitycodecrew.VenuApp.models.data.UserRepository;
-import infinitycodecrew.VenuApp.models.dto;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
