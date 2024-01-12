@@ -10,6 +10,7 @@ function App() {
      <Routes>
         <Route path="/" element={<Pages.Home />} />
         <Route path="/about" element={<Pages.About />} />
+        <Route path="/venues" element={<Pages.Venues />} />
         <Route path="/events" element={<Pages.Events />} />
         <Route path="/events/:id" element={<EventDetails />} />
       </Routes>    
