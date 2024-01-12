@@ -33,19 +33,21 @@ public class UserRegistrationSecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
-
     }
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
         return httpSecurity.csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
+                .headers(headers-> headers
+                        .contentTypeOptions(contentTypeOptions -> contentTypeOptions.disable())
+                )
                 .authorizeHttpRequests(request ->{
-                    request.requestMatchers("/", "events/**", "artists/**", "venues/**").permitAll();
-                    request.requestMatchers("/register/**").permitAll();
+                    request.requestMatchers("/", "/register/**", "events/**", "artists/**", "venues/**", "api/**").permitAll();
                     request.requestMatchers("/users/**")
                             .hasAnyAuthority("USER", "ADMIN");
                      request.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll();
                      request.requestMatchers("/resources/**").permitAll();
+                     request.anyRequest().denyAll();
                 }).formLogin(Customizer.withDefaults()).build();
     }
 }

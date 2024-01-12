@@ -22,7 +22,7 @@ const Events = () => {
       const response = await fetch('http://localhost:8080/api/events', {
         method: 'GET',
         headers: {
-          'Content-Type': 'text/html',
+          'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': 'http://localhost:3000'
         },
       });
@@ -32,8 +32,7 @@ const Events = () => {
 
       }
 
-      const data = await response.text();
-      console.log('response data;', data);
+      const data = await response.json();
       setEvents(data);
     } catch (error) {
       console.log('Error fetching events:', error);
