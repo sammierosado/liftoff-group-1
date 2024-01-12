@@ -16,6 +16,8 @@ public class RegistrationController {
     private final UserService userService;
     private final ApplicationEventPublisher publisher;
     private final VerificationTokenRepository tokenRepository;
+
+
     @PostMapping
     public String registerUser(@RequestBody RegistrationRequest registrationRequest, final HttpServletRequest request){
         User user = userService.registerUser(registrationRequest);
