@@ -14,6 +14,7 @@ function Home() {
             </div>
             <div className="VENU-map" />
                 <Map />
+                
           </div>
         </div>
     );
