@@ -29,13 +29,13 @@ const Spotify = () => {
         return params;
     }
 
-    const getData = async (endpoint, seFunction) => {
+    const getData = async (endpoint, setFunction) => {
         await axios.get(endpoint, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
         }).then( response => {
-            seFunction(response.data);
+            setFunction(response.data);
             console.log(response.data);
         }).catch(error => {
             console.log(error);
@@ -63,11 +63,32 @@ const Spotify = () => {
     return (
         <div>
         <Navbar />
-        <div className='spotify-background'>
+        <div className='spotify-page'>
             {
-                profile.display_name &&
+                profile.display_name && profile.images &&
                 <div className='profile-name'>
+                    <img src={profile.images[0].url} alt='profile img'/>
                     <h1>Howdy, {profile.display_name}!</h1>
+                </div>
+            }
+
+            {
+                tracks.items &&
+                <div className='tracks'>
+                    <h2>Top Tracks</h2>
+                    <div>
+                        {
+                            tracks.items.map((track, index) => {
+                                return (
+                                    <div key={index}>
+                                        <img src={track.album.images[0].url} alt='album img'/>
+                                        <h2>{track.name}</h2>
+                                        <h3>{track.artists[0].name}</h3>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             }
         </div>
