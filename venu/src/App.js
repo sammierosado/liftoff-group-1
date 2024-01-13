@@ -12,6 +12,8 @@ function App() {
         <Route path="/about" element={<Pages.About />} />
         <Route path="/venues" element={<Pages.Venues />} />
         <Route path="/events" element={<Pages.Events />} />
+        <Route path="/spotify" element={<Pages.Spotify />} />
+        <Route path="/spotify-login" element={<Pages.SpotifyLogin />} />
         <Route path="/events/:id" element={<EventDetails />} />
       </Routes>    
     </Router>

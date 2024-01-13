@@ -1,0 +1,8 @@
+const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
+const REDIRECT_URI = process.env.REACT_APP_SPOTIFY_REDIRECT_URI;
+const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
+const SPACE_DELIMITER = "%20";
+const RESPONSE_TYPE = "token";
+
+module.exports = { CLIENT_ID, CLIENT_SECRET, AUTH_ENDPOINT, REDIRECT_URI, SPACE_DELIMITER, RESPONSE_TYPE }
