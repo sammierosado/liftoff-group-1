@@ -4,5 +4,12 @@ const REDIRECT_URI = process.env.REACT_APP_SPOTIFY_REDIRECT_URI;
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const SPACE_DELIMITER = "%20";
 const RESPONSE_TYPE = "token";
+const SCOPES = [
+    'user-top-read',
+    'user-read-private',
+    'user-library-read',
+    'playlist-read-private',
+];
+const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
-module.exports = { CLIENT_ID, CLIENT_SECRET, AUTH_ENDPOINT, REDIRECT_URI, SPACE_DELIMITER, RESPONSE_TYPE }
+module.exports = { CLIENT_ID, CLIENT_SECRET, AUTH_ENDPOINT, REDIRECT_URI, SPACE_DELIMITER, RESPONSE_TYPE, SCOPES, SCOPES_URL_PARAM }
