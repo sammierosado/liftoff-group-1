@@ -47,6 +47,7 @@ const EventDetails = () => {
           console.log(error);
        })
   }
+  console.log(getArtistTracks);
 
   useEffect(() => {
     const fetchEventDetails = async () => {
@@ -96,12 +97,26 @@ const EventDetails = () => {
         </ul>
         <p><strong>Price:</strong> ${eventDetails.price?.toFixed(2)}</p>
         <p><strong>Date:</strong> {eventDetails.date}</p>
-      <div>
-        <button className="search-tracks" onClick={() => searchArtist(eventDetails.artist?.artistName, 0)}>View Top 5 Tracks on Spotify</button>
-      </div>
-      <div className="search-tracks-results">
-        {/* return artist tracks gathered in getArtistTracks and display first 5 along with album image */}
-      </div>
+        <div>
+            {/*TODO: turn this into a toggle button. if token, search-tracks, else login. OR hide one of the two*/}
+        </div>
+        <div className="search-tracks-button">
+         <button onClick={() => searchArtist(eventDetails.artist?.artistName, 0)}>
+           View Top 5 Tracks on Spotify
+         </button>
+         </div>
+        <div>
+          <a className="login-link" href="http://localhost:3000/spotify-login">
+              Login to Spotify to See Top Artist Tracks
+          </a>
+         </div>
+        <div class="flex-container">
+            <div>Track 1</div>
+            <div>Track 2</div>
+            <div>Track 3</div>
+            <div>Track 4</div>
+            <div>Track 5</div>
+        </div>
       </div>
       </div>
     );

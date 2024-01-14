@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-//import EventDetails from './EventDetails';
-
-const VenueAddresses = [
-    //Get physical addresses from event details. Store in array. iterate over array using from address
-
-  // TODO responsive markers, custom icon?, info box on click, title on hover
-  { lat: 38.604900, lng: -90.171770 }, // Pop's Nightclub, Sauget IL
-  { lat: 38.581690, lng: -90.420190 }, // St. Louis Amphitheatre, Maryland Heights MO
-];
-=======
 import React, { useState, useEffect } from 'react';
+
+// TODO responsive markers, custom icon?, info box on click, title on hover
 
 const VenueAddresses = () => {
   const [venues, setVenues] = useState([]);
@@ -51,6 +42,5 @@ const VenueAddresses = () => {
     </div>
   );
 };
->>>>>>> e61c41f5b74ccdc008cf83e46cc3814e561fa9a2
 
 export default VenueAddresses;

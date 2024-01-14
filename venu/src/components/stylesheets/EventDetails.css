@@ -31,13 +31,26 @@
 .event-details-container li {
   font-size: 16px;
   margin-top: 5px;
-
-.search-tracks {
-  font-size: 16px;
 }
 
-.search-tracks-results {
-  margin-top: 5px;
+.search-tracks-button {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
 }
 
+.login-link {
+    font-size: x-small;
+}
+
+.flex-container {
+    background-color: #ffff;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
