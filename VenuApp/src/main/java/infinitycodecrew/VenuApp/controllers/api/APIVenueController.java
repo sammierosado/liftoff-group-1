@@ -1,7 +1,6 @@
 package infinitycodecrew.VenuApp.controllers.api;
 
 import infinitycodecrew.VenuApp.models.Venue;
-
 import infinitycodecrew.VenuApp.models.data.VenueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,18 +16,16 @@ import java.util.Optional;
 public class APIVenueController {
 
     @Autowired
-    VenueRepository venueRepository;
-
-
+    private VenueRepository venueRepository;
 
     @GetMapping
-    public ResponseEntity<List<Venue>> getAllVenues(){
-        List <Venue> venues = (List<Venue>) venueRepository.findAll();
+    public ResponseEntity<List<Venue>> getAllVenues() {
+        List<Venue> venues = (List<Venue>) venueRepository.findAll();
         return new ResponseEntity<>(venues, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getVenuesById(@PathVariable Integer id) {
+    public ResponseEntity<?> getVenueById(@PathVariable Integer id) {
         Optional<Venue> venueOptional = venueRepository.findById(id);
         if (venueOptional.isPresent()) {
             return new ResponseEntity<>(venueOptional.get(), HttpStatus.OK);
@@ -36,5 +33,4 @@ public class APIVenueController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
 }
