@@ -84,6 +84,7 @@ const Spotify = () => {
                                         <img src={track.album.images[0].url} alt='album img'/>
                                         <h2>{track.name}</h2>
                                         <h3>{track.artists[0].name}</h3>
+                                        {/* TODO: not you? log out [logout button] */}
                                     </div>
                                 )
                             })

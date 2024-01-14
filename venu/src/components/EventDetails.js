@@ -25,29 +25,28 @@ const EventDetails = () => {
     let artistSearchReturn;
     let searchName = artistName.replace("'", '');
      await axios.get(`https://api.spotify.com/v1/search?q=artist:${searchName}&type=artist&limit=50&offset=${offset}`, {
-                headers: {
-                   Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-                }).then( response => {
-                    artistSearchReturn = response.data.artists.items.find(item => item.name === artistName);
-                }).catch(error => {
-                    console.log(error);
-                })
+         headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+         }
+         }).then( response => {
+            artistSearchReturn = response.data.artists.items.find(item => item.name === artistName);
+         }).catch(error => {
+            console.log(error);
+         })
     return artistSearchReturn;
   }
 
-    const getArtistTracks = async (artistId) => {
-        await axios.get(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-            }).then( response => {
-                console.log(response.data);
-            }).catch(error => {
-                console.log(error);
-            })
-    }
-
+  const getArtistTracks = async (artistId) => {
+    await axios.get(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`, {
+       headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+       }
+       }).then( response => {
+          console.log(response.data);
+       }).catch(error => {
+          console.log(error);
+       })
+  }
 
   useEffect(() => {
     const fetchEventDetails = async () => {
@@ -100,9 +99,9 @@ const EventDetails = () => {
       <div>
         <button className="search-tracks" onClick={() => searchArtist(eventDetails.artist?.artistName, 0)}>View Top 5 Tracks on Spotify</button>
       </div>
-      {/*<div className="search-tracks-results">*/}
-        {/* TODO code here. return getArtistTracks?? but that uses id, searchArtist doesn't anymore*/}
-      {/*</div>*/}
+      <div className="search-tracks-results">
+        {/* return artist tracks gathered in getArtistTracks and display first 5 along with album image */}
+      </div>
       </div>
       </div>
     );

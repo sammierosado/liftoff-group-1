@@ -1,6 +1,6 @@
 //import EventDetails from './EventDetails';
 
-const MapMarkers = [
+const VenueAddresses = [
     //Get physical addresses from event details. Store in array. iterate over array using from address
 
   // TODO responsive markers, custom icon?, info box on click, title on hover
@@ -8,4 +8,4 @@ const MapMarkers = [
   { lat: 38.581690, lng: -90.420190 }, // St. Louis Amphitheatre, Maryland Heights MO
 ];
 
-export default MapMarkers;
+export default VenueAddresses;
