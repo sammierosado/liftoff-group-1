@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-
-// TODO responsive markers, custom icon?, info box on click, title on hover
+import React, { useEffect, useState } from 'react';
 
 const VenueAddresses = () => {
   const [venues, setVenues] = useState([]);
@@ -27,20 +25,34 @@ const VenueAddresses = () => {
     fetchVenues();
   }, []);
 
-  return (
-    <div className="venue-list">
-      {Array.isArray(venues) && venues.length > 0 ? (
-        venues.map((venue) => (
-          <div key={venue.id}>
-            <p><strong>Venue:</strong> {venue.venueName}</p>
-            <p><strong>Address:</strong> {venue.venueAddress}, {venue.venueCity}, {venue.venueState}</p>
-          </div>
-        ))
-      ) : (
-        <p>No venues found</p>
-      )}
-    </div>
-  );
-};
+    // Perform geocoding for each venue
+    const geocodeVenues = async () => {
+      const venueAddresses = venues.map((venue) => {
+        return `${venue.venueAddress}, ${venue.venueCity}, ${venue.venueState}`;
+      });
 
-export default VenueAddresses;
+      // Use the Google Maps Geocoding API to get coordinates for each address
+      const coordinatesPromises = venueAddresses.map(async (address) => {
+        let googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+        const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=googleMapsApiKey`);
+        const data = await response.json();
+        const location = data.results[0].geometry.location;
+        return { address, location };
+      });
+
+      // Wait for all geocoding promises to resolve
+      const coordinates = await Promise.all(coordinatesPromises);
+
+      console.log(coordinates);
+      // Now 'coordinates' is an array of objects, each containing address and location
+    };
+
+    // Trigger geocoding when venues change
+    useEffect(() => {
+      geocodeVenues();
+    }, [venues]);
+
+    return null;
+  };
+
+  export default VenueAddresses;
