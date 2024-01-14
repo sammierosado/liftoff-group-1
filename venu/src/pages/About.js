@@ -1,6 +1,8 @@
 import './stylesheets/About.css';
 import Navbar from "../components/Navbar";
 
+
+// TODO: simple about the team page
 function About() {
 
     return (
