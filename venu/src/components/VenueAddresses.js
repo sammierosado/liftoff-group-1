@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+// TODO responsive markers, custom icon?, info box on click, title on hover
+
 const VenueAddresses = () => {
   const [venues, setVenues] = useState([]);
 
