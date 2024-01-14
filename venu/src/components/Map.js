@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
-import VenueAddresses from './VenueAddresses.js';
+import MapMarkers from './MapMarkers.js';
 
 export default function Map() {
 
@@ -26,7 +26,7 @@ export default function Map() {
             <div className="VENU-map">
                 {/* basic parameters required to render map on Home page */}
                 <GoogleMap center={mapCenter} zoom={10} mapContainerClassName="map-container" options={mapOptions}>
-                    {VenueAddresses.map((venue, index) => (
+                    {MapMarkers.map((venue, index) => (
                         <Marker key={index} position={{ lat: venue.lat, lng: venue.lng }} />
                     ))}
                 </GoogleMap>

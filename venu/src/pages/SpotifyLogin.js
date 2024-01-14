@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 const SpotifyLogin = () =>  {
 
     const handleLogin = () => {
-        window.location = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`;
+        window.location = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES_URL_PARAM}`;
     }
 {/* can abstract into a component if decide want to use it elsewhere */}
     return (

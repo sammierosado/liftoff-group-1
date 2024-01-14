@@ -32,4 +32,12 @@
   font-size: 16px;
   margin-top: 5px;
 
+.search-tracks {
+  font-size: 16px;
+}
+
+.search-tracks-results {
+  margin-top: 5px;
+}
+
 }
