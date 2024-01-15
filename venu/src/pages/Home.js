@@ -1,7 +1,7 @@
 import './stylesheets/Home.css';
 import Navbar from '../components/Navbar';
 import UpcomingEvents from '../components/UpcomingEvents';
-import Map from '../components/Map';
+import VenuGoogleMap from '../components/VenuGoogleMap';
 
 function Home() {
 
@@ -13,7 +13,7 @@ function Home() {
                 <UpcomingEvents />
             </div>
             <div className="VENU-map" />
-                <Map />
+                <VenuGoogleMap />
           </div>
         </div>
     );
