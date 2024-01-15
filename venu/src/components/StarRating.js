@@ -28,7 +28,9 @@ const StarRating = () =>{
             </label>
             );
         })}
+        {rating != null ? <div><p>You rate this event a {rating} out of 5 stars.</p></div> : null }
         
+
         </div>
 }
 export default StarRating;

@@ -9,13 +9,14 @@ function Home() {
         <div>
           <Navbar/> 
           <div className="Home" >
-            <div className="upcoming-events-container">
+              <div className="VENU-map">
+                  <Map />
+              </div>
+              <div className="upcoming-events-container">
                 <UpcomingEvents />
-            </div>
-            <div className="VENU-map" />
-                <Map />
-          </div>
+              </div>
         </div>
+    </div>
     );
 }
 

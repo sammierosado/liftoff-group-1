@@ -1,7 +1,46 @@
-const VenueAddresses = [
-  // hard coding for now because I cannot for the life of me get my fetch and geocoding conversions to play nice
-  { lat: 38.604900, lng: -90.171770 }, // Pop's Nightclub, Sauget IL
-  { lat: 38.581690, lng: -90.420190 }, // St. Louis Amphitheatre, Maryland Heights MO
-];
+import React, { useState, useEffect } from 'react';
+
+// TODO responsive markers, custom icon?, info box on click, title on hover
+
+const VenueAddresses = () => {
+  const [venues, setVenues] = useState([]);
+
+  useEffect(() => {
+    const fetchVenues = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/venues');
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setVenues(data);
+      } catch (error) {
+        console.error('Error fetching venues:', error);
+        if (error.response) {
+          console.error('Response status:', error.response.status);
+        }
+      }
+    };
+
+    fetchVenues();
+  }, []);
+
+  return (
+    <div className="venue-list">
+      {Array.isArray(venues) && venues.length > 0 ? (
+        venues.map((venue) => (
+          <div key={venue.id}>
+            <p><strong>Venue:</strong> {venue.venueName}</p>
+            <p><strong>Address:</strong> {venue.venueAddress}, {venue.venueCity}, {venue.venueState}</p>
+          </div>
+        ))
+      ) : (
+        <p>No venues found</p>
+      )}
+    </div>
+  );
+};
 
 export default VenueAddresses;

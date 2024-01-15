@@ -1,15 +1,16 @@
 import './stylesheets/About.css';
 import Navbar from "../components/Navbar";
 
+
+// TODO: simple about the team page
 function About() {
 
     return (
     <div>   
         <Navbar/>
-
+        
         <div className="About"/>
         <p>Intros!</p> 
-
         <div className="Team">
             <ul>
             <li>People!</li>
@@ -17,6 +18,7 @@ function About() {
             <li>Words!</li>
             </ul>
         </div>
+        
     </div>
     );
 

@@ -26,9 +26,11 @@ export default function Map() {
             <div className="VENU-map">
                 {/* basic parameters required to render map on Home page */}
                 <GoogleMap center={mapCenter} zoom={10} mapContainerClassName="map-container" options={mapOptions}>
+                {/*
                     {VenueAddresses.map((venue, index) => (
                         <Marker key={index} position={{ lat: venue.lat, lng: venue.lng }} />
                     ))}
+                */}
                 </GoogleMap>
             </div>
         </div>

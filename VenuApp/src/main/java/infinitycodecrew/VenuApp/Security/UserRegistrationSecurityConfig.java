@@ -3,6 +3,7 @@ package infinitycodecrew.VenuApp.Security;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -45,10 +46,12 @@ public class UserRegistrationSecurityConfig {
                     request.requestMatchers("/", "/login", "registration/**", "/error", "events/**", "artists/**", "venues/**", "api/**").permitAll();
                     request.requestMatchers("/users/**")
                             .hasAnyAuthority("USER", "ADMIN");
+registration-login-pages
                      request.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll();
                      request.requestMatchers("/resources/**").permitAll();
                      request.anyRequest().authenticated();
                 }).formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer.loginPage("/login")).build();
+
 
     }
 }
