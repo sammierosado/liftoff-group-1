@@ -1,13 +1,15 @@
 package infinitycodecrew.VenuApp.models;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
 import java.util.Objects;
+
 
 @Entity
 public class Venue extends AbstractEntity{
@@ -37,6 +39,9 @@ public class Venue extends AbstractEntity{
     private boolean descriptiveAudio;
     private boolean elevators;
     private boolean multiLevel;
+
+
+
 
 
 
