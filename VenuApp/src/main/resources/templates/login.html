@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}">
+    <title>User Login</title>
+</head>
+<header th:replace="~{fragments :: header}"></header>
+
+<body>
+<div class="container col-md-offset-3 col-md-8 mt-lg-5">
+
+    <div class="row mt-4">
+        <div th:if="${param.error}" class="col-sm-8">
+            <p class="alert alert-danger alert-dismissible fade show" role="alert">Invalid username or password</p>
+        </div>
+
+        <div th:if="${param.verified}" class="col-sm-8">
+            <p class="alert alert-info alert-dismissible fade show" role="alert">This account has already been verified,  please log in here.</p>
+        </div>
+        <div th:if="${param.valid}" class="col-sm-8">
+            <p class="alert alert-info alert-dismissible">Email verified successfully, please log in here.</p>
+        </div>
+
+        <!-- show logout warning alert when logged out. -->
+        <div th:if="${param.logout}" class="col-sm-8">
+            <p class="alert alert-warning">You have been logged out.</p>
+        </div>
+    </div>
+
+    <form th:action="@{/login}" method="post" class="px-4">
+        <h2 class="mb-4">User Login Form </h2>
+        <div class="mb-3 row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="email" name="email"
+                       required autofocus="autofocus">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" name="password" id="password" required
+                       autofocus="autofocus">
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" name="login" id="login" class="btn btn-success"> Login</button>
+           <div> <span> Not registered yet? <a href="#" th:href="@{/registration/register}">Register.</a> </span></div>
+            <div class="vr"></div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
