@@ -46,7 +46,6 @@ public class UserRegistrationSecurityConfig {
                     request.requestMatchers("/", "/login", "registration/**", "/error", "events/**", "artists/**", "venues/**", "api/**").permitAll();
                     request.requestMatchers("/users/**")
                             .hasAnyAuthority("USER", "ADMIN");
-registration-login-pages
                      request.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll();
                      request.requestMatchers("/resources/**").permitAll();
                      request.anyRequest().authenticated();

@@ -34,6 +34,14 @@ public class User extends AbstractEntity {
         this.isEnabled = isEnabled;
     }
 
+    public User(String username, String email, String password, Collection<Role> roles) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
+
     public String getUsername() {
         return username;
     }
