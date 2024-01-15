@@ -1,9 +1,7 @@
 import * as Pages from './pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import EventDetails from './components/EventDetails';
-
-
-
+import VenueDetails from './components/VenueDetails';
 
 function App() {
 
@@ -16,6 +14,7 @@ function App() {
         <Route path="/" element={<Pages.Home />} />
         <Route path="/about" element={<Pages.About />} />
         <Route path="/venues" element={<Pages.Venues />} />
+        <Route path="/venues/:id" element={<VenueDetails />} />
         <Route path="/events" element={<Pages.Events />} />
         <Route path="/spotify" element={<Pages.Spotify />} />
         <Route path="/spotify-login" element={<Pages.SpotifyLogin />} />

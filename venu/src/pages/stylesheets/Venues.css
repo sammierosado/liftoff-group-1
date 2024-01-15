@@ -1,0 +1,62 @@
+.venue-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.venue-card a {
+  text-decoration: none;
+  color: #333;
+}
+
+.venue-card strong {
+  font-size: 20px;
+  color: #333;
+}
+
+.venue-card div {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.venue-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.venue-name {
+  color: #9c27b0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.venue-name:hover {
+  color: #45a049;
+  text-decoration: underline;
+}
+
+.clickable-icon {
+  margin-left: 5px;
+  color: #45a049;
+}
+
+@keyframes infoCircleAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.venue-card .info-icon {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 1.2em;
+    animation: infoCircleAnimation 1s infinite;
+    }
