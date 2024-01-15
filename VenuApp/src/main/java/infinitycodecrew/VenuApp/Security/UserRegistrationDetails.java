@@ -23,9 +23,9 @@ public class UserRegistrationDetails implements UserDetails {
         this.username = user.getEmail();
         this.password = user.getPassword();
         this.isEnabled = user.isEnabled();
-        this.authorities = Arrays.stream(user.getRole()
-                .split(", "))
-                .map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+        this.authorities = Arrays.stream(user.getRoles().toString().split(","))
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
     }
 
     public void setUsername(String username) {

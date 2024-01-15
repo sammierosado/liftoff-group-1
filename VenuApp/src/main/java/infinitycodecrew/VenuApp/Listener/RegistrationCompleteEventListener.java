@@ -24,7 +24,7 @@ public class RegistrationCompleteEventListener
         User theUser = event.getUser();
         String verificationToken = UUID.randomUUID().toString();
         userService.saveUserVerificationToken(theUser, verificationToken);
-        String url = event.getApplicationUrl()+"/register/verifyEmail?token="+verificationToken;
+        String url = event.getApplicationUrl()+"/registration/verifyEmail?token="+verificationToken;
         System.out.println("Click the link to verify your registration and join the party: " + url);
     }
 }

@@ -42,12 +42,13 @@ public class UserRegistrationSecurityConfig {
                         .contentTypeOptions(contentTypeOptions -> contentTypeOptions.disable())
                 )
                 .authorizeHttpRequests(request ->{
-                    request.requestMatchers("/", "/register/**", "events/**", "artists/**", "venues/**", "api/**").permitAll();
+                    request.requestMatchers("/", "/login", "registration/**", "/error", "events/**", "artists/**", "venues/**", "api/**").permitAll();
                     request.requestMatchers("/users/**")
                             .hasAnyAuthority("USER", "ADMIN");
                      request.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll();
                      request.requestMatchers("/resources/**").permitAll();
-                     request.anyRequest().denyAll();
-                }).formLogin(Customizer.withDefaults()).build();
+                     request.anyRequest().authenticated();
+                }).formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer.loginPage("/login")).build();
+
     }
 }

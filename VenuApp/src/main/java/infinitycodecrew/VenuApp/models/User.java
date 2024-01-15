@@ -1,9 +1,12 @@
 package infinitycodecrew.VenuApp.models;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import org.hibernate.annotations.NaturalId;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class User extends AbstractEntity {
@@ -13,16 +16,21 @@ public class User extends AbstractEntity {
     @NaturalId(mutable = true)
     private String email;
     private String password;
-    private String role;
+    @Getter
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
     private boolean isEnabled = false;
 
     public User() {}
 
-    public User(String username, String email, String password, String role, boolean isEnabled) {
+    public User(String username, String email, String password, Collection<Role> roles, boolean isEnabled) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.roles = roles;
         this.isEnabled = isEnabled;
     }
 
@@ -50,12 +58,11 @@ public class User extends AbstractEntity {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public Collection<Role> getRoles() {
+        return roles;
     }
-
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 
     public boolean isEnabled() {
@@ -65,4 +72,5 @@ public class User extends AbstractEntity {
     public void setEnabled(boolean enabled) {
         isEnabled = enabled;
     }
+
 }
