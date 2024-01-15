@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from "../components/Navbar";
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/SearchBarVenue';
 import './stylesheets/Venues.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
