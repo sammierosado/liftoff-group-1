@@ -14,8 +14,9 @@ function Home() {
               </div>
               <div className="upcoming-events-container">
                 <UpcomingEvents />
+              </div>
+          </div>
         </div>
-    </div>
     );
 }
 
