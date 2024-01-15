@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './stylesheets/UpcomingEvents.css';
+import { FaMusic, FaArrowRight } from 'react-icons/fa';
 
 const UpcomingEvents = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
@@ -36,11 +38,13 @@ const UpcomingEvents = () => {
    return (
       <div>
         <h2>Upcoming Events</h2>
-        <ul>
+        <ul className="upcoming-events-list">
           {upcomingEvents.map(event => (
-            <li key={event.id}>
+            <li key={event.id} className="event-card">
               <Link to={`/events/${event.id}`}>
-                <strong>{event.eventName}</strong>
+                <strong className="event-name">{event.eventName}</strong>
+                <FaArrowRight className="clickable-icon" />
+                <FaMusic className="music-note" />
               </Link>
               <br />
               <strong>Artist:</strong> {event.artist.artistName} <br />
