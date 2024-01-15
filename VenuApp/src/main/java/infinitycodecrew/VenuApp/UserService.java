@@ -6,6 +6,7 @@ import infinitycodecrew.VenuApp.models.Role;
 import infinitycodecrew.VenuApp.models.User;
 import infinitycodecrew.VenuApp.models.data.UserRepository;
 import infinitycodecrew.VenuApp.models.data.VerificationTokenRepository;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -32,23 +33,49 @@ public class UserService implements IUserService{
     }
 
 
-@Override
-public User registerUser(RegistrationRequest registration) {
-        Optional<User> user = this.findByEmail(registration.getEmail());
-        if (user.isPresent()){
-            throw new UserAlreadyExistsException("A user with the email " +registration.getEmail()+ "already exists!");
-        }
-    var newUser = new User();
-        newUser.setUsername(registration.getUsername());
-        newUser.setPassword(passwordEncoder.encode(registration.getPassword()));
-        newUser.setEmail(registration.getEmail());
-        newUser.setRoles(registration.getRoles());
-        return userRepository.save(newUser);
-}
+    @Override
+    public User registerUser(RegistrationRequest registration) {
+        var user = new User(registration.getUsername(),
+                registration.getEmail(),
+                passwordEncoder.encode(registration.getPassword()),
+                Arrays.asList(new Role("ROLE_USER")));
+        return userRepository.save(user);
+    }
+
+
+//@Override
+//public User registerUser(RegistrationRequest registration) {
+//        Optional<User> user = this.findByEmail(registration.getEmail());
+//        if (user.isPresent()){
+//            throw new UserAlreadyExistsException("A user with the email " +registration.getEmail()+ "already exists!");
+//        }
+//    var newUser = new User();
+//        newUser.setUsername(registration.getUsername());
+//        newUser.setPassword(passwordEncoder.encode(registration.getPassword()));
+//        newUser.setEmail(registration.getEmail());
+//        newUser.setRoles(registration.getRoles());
+//        return userRepository.save(newUser);
+//}
+
+//    @Override
+//    public Optional<User> findByEmail(String email) {
+//        return Optional.ofNullable(userRepository.findByEmail(email))
+//                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+//    }
+//@Override
+//public Optional<User> findByEmail(String email) {
+//    return Optional.ofNullable(userRepository.findByEmail(email));
+//}
 
     @Override
     public Optional<User> findByEmail(String email) {
-        return userRepository.findByEmail(email);
+        return Optional.ofNullable(userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found")));
+    }
+
+    @Override
+    public Optional<User> findById(int id) {
+        return userRepository.findById(id);
     }
 
     @Override
@@ -73,10 +100,4 @@ public User registerUser(RegistrationRequest registration) {
         userRepository.save(user);
         return "valid";
     }
-
-    public boolean isMatchingPassword(String password){
-        return passwordEncoder.matches(password, passwordEncoder.encode(password));
-    }
-
-
 }
