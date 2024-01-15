@@ -61,17 +61,21 @@ const Spotify = () => {
     }, []);
 
     return (
-        <div>
+        <div className='page-background'>
         <Navbar />
         <div className='spotify-page'>
             {
-                profile.display_name && profile.images &&
-                <div className='profile-name'>
-                    <img src={profile.images[0].url} alt='profile img'/>
-                    <h1>Howdy, {profile.display_name}!</h1>
+                    profile.display_name && profile.images &&
+                <div>
+                    <div className='profile-name' id='title-box' class='flex-container'>
+                        <img className='profile-image' src={profile.images[0].url} alt='profile img'/>
+                    </div>
+                    <div className>
+                        <h1>Howdy, {profile.display_name}!</h1>
+                    </div>
                 </div>
             }
-
+            <div className='user-top-tracks'>
             {
                 tracks.items &&
                 <div className='tracks'>
@@ -81,7 +85,7 @@ const Spotify = () => {
                             tracks.items.map((track, index) => {
                                 return (
                                     <div key={index}>
-                                        <img src={track.album.images[0].url} alt='album img'/>
+                                        <img className='album-image' src={track.album.images[0].url} alt='album img'/>
                                         <h2>{track.name}</h2>
                                         <h3>{track.artists[0].name}</h3>
                                         {/* TODO: not you? log out [logout button] */}
@@ -92,6 +96,7 @@ const Spotify = () => {
                     </div>
                 </div>
             }
+            </div>
         </div>
         </div>
     );

@@ -1,3 +1,4 @@
+/*TODO add border/shadow to map or expand to take up entire page-~20% upcoming events column?*/
 .Home {
     /* home screen background */
     min-height: 100dvh;
@@ -13,7 +14,7 @@
 /* map box position/size on home screen */
 .VENU-map {
     position: absolute;  
-    top: 25%; 
+    top: 25%;
     left: 25%;
     width: 100dvh;
     height: 60dvh;
