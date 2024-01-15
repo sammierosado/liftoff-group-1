@@ -2,12 +2,14 @@ package infinitycodecrew.VenuApp;
 
 import infinitycodecrew.VenuApp.Exception.UserAlreadyExistsException;
 import infinitycodecrew.VenuApp.Token.VerificationToken;
+import infinitycodecrew.VenuApp.models.Role;
 import infinitycodecrew.VenuApp.models.User;
 import infinitycodecrew.VenuApp.models.data.UserRepository;
 import infinitycodecrew.VenuApp.models.data.VerificationTokenRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
@@ -29,19 +31,20 @@ public class UserService implements IUserService{
         return userRepository.findAll();
     }
 
-    @Override
-    public User registerUser(RegistrationRequest request) {
-        Optional<User> user = this.findByEmail(request.email());
+
+@Override
+public User registerUser(RegistrationRequest registration) {
+        Optional<User> user = this.findByEmail(registration.getEmail());
         if (user.isPresent()){
-            throw new UserAlreadyExistsException("A user with the email "  +request.email() + " already exists!");
+            throw new UserAlreadyExistsException("A user with the email " +registration.getEmail()+ "already exists!");
         }
-        var newUser = new User();
-        newUser.setUsername(request.username());
-        newUser.setEmail((request.email()));
-        newUser.setPassword(passwordEncoder.encode(request.password()));
-        newUser.setRole(request.role());
+    var newUser = new User();
+        newUser.setUsername(registration.getUsername());
+        newUser.setPassword(passwordEncoder.encode(registration.getPassword()));
+        newUser.setEmail(registration.getEmail());
+        newUser.setRoles(registration.getRoles());
         return userRepository.save(newUser);
-    }
+}
 
     @Override
     public Optional<User> findByEmail(String email) {
@@ -70,4 +73,10 @@ public class UserService implements IUserService{
         userRepository.save(user);
         return "valid";
     }
+
+    public boolean isMatchingPassword(String password){
+        return passwordEncoder.matches(password, passwordEncoder.encode(password));
+    }
+
+
 }

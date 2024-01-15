@@ -8,34 +8,42 @@ import infinitycodecrew.VenuApp.models.User;
 import infinitycodecrew.VenuApp.models.data.VerificationTokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/register")
+@Controller
+@RequestMapping("/")
 public class RegistrationController {
     private final UserService userService;
     private final ApplicationEventPublisher publisher;
     private final VerificationTokenRepository tokenRepository;
 
-
-    @PostMapping
-    public String registerUser(@RequestBody RegistrationRequest registrationRequest, final HttpServletRequest request){
-        User user = userService.registerUser(registrationRequest);
-        publisher.publishEvent(new RegistrationComplete(user, applicationUrl(request)));
-        return "Successfully created new user. Please check your email to confirm your all access pass!";
+    @GetMapping("registration/register")
+    public String showRegistrationForm (Model model){
+        model.addAttribute("user", new RegistrationRequest());
+        return "/registration";
     }
 
-    @GetMapping("/verifyEmail")
+    @PostMapping("registration/register")
+    public String registerUser(@ModelAttribute("user") RegistrationRequest registration, HttpServletRequest request){
+        User user = userService.registerUser(registration);
+        publisher.publishEvent(new RegistrationComplete(user, applicationUrl(request)));
+        return "redirect:/registration/register?success";
+        //return "Successfully created new user. Please check your email to confirm your all access pass!";
+    }
+
+    @GetMapping("registration/verifyEmail")
     public String verifyEmail(@RequestParam("token") String token){
         VerificationToken theToken = tokenRepository.findByToken(token);
         if (theToken.getUser().isEnabled()){
-            return "Your account has already been verified. Please login to join the party!";
+            return "redirect:/login?verified";
         }
         String verificationResult = userService.validateToken(token);
         if (verificationResult.equalsIgnoreCase("valid")){
-            return "Your email has successfully been verified and you are officially welcomed to the party! Please login to get started with your musical adventure.";
+            return "redirect:/login?valid";
         }
-        return "Invalid verification token";
+        return "redirect:/error?invalid";
     }
 
     public String applicationUrl(HttpServletRequest request) {
