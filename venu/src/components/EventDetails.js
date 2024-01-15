@@ -47,7 +47,6 @@ const EventDetails = () => {
           console.log(error);
        })
   }
-  console.log(getArtistTracks);
 
   useEffect(() => {
     const fetchEventDetails = async () => {
