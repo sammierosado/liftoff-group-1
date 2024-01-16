@@ -95,7 +95,7 @@ const Events = () => {
               </div>
             ))
           ) : (
-            events.map((event) => (
+            events.map((event, index) => (
               <div key={event.id} className="event-card">
                 <Link to={`/events/${event.id}`}>
                   <strong className="event-name">{event.eventName}
@@ -107,7 +107,7 @@ const Events = () => {
                 <div><strong>Genre:</strong> {event.artist.genre}</div>
                 <div><strong>Venue:</strong> {event.venue.venueName}</div>
                 <div><strong>Date:</strong> {event.date}</div>
-                <StarRating />
+                <StarRating key={'star-event.id'} index = {event.id}   />
                 
 
               </div>

@@ -27,8 +27,9 @@ public class APIStarRatingController {
     }
 
     @PostMapping("/rateVenue")
-    public String RateVenue(Stars stars){
-        return "You are almost there";
+    public String RateVenue(@RequestBody Stars stars){
+        starRatingRepository.save(stars);
+    return "Rating Saved Successfully";
     }
 }
 

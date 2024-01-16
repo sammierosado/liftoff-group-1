@@ -5,10 +5,14 @@ import SearchBar from '../components/SearchBarVenue';
 import './stylesheets/Venues.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import StarRating from '../components/StarRating';
 
 const Venues = () => {
   const [venues, setVenues] = useState([]);
   const [filteredVenues, setFilteredVenues] = useState([]);
+  const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
+  const [totalStars, setTotalStars] = useState(5);
 
   const fetchData = async () => {
     try {
@@ -82,6 +86,7 @@ const Venues = () => {
                         <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
                       </strong>
                     </Link>
+         
                     <div><strong>Address:</strong> {venue.venueAddress}</div>
                     <div><strong>City:</strong> {venue.venueCity}</div>
                     <div><strong>State:</strong> {venue.venueState}</div>
@@ -99,7 +104,7 @@ const Venues = () => {
                   </div>
                 ))
               ) : (
-                venues.map((venue) => (
+                venues.map((venue, index) => (
                   <div key={venue.id} className="venue-card">
                     <Link to={`/venues/${venue.id}`}>
                       <strong className="venue-name">{venue.venueName}
@@ -107,6 +112,9 @@ const Venues = () => {
                         <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
                       </strong>
                     </Link>
+                    <StarRating key={'venue.id'} index={venue.id} />
+                   
+
                     <div><strong>Address:</strong> {venue.venueAddress}</div>
                     <div><strong>City:</strong> {venue.venueCity}</div>
                     <div><strong>State:</strong> {venue.venueState}</div>
