@@ -1,25 +1,24 @@
 import './stylesheets/About.css';
 import Navbar from "../components/Navbar";
 
+
+// TODO: simple about the team page
 function About() {
 
     return (
-    <div>   
-        <Navbar/>
-
-        <div className="About">
+        <div>
+          <Navbar/>
+          <div className="About">
             <p>Intros!</p>
             <div className="Team">
-                
                 <ul>
-
                 <li>People!</li>
                 <li>Things!</li>
                 <li>Words!</li>
                 </ul>
             </div>
+          </div>
         </div>
-    </div>
     );
 
 }

@@ -1,0 +1,17 @@
+.StarRating{
+
+    display: flex;
+    justify-content: center;
+    align-items:right;
+    min-height: 100vh;
+
+}
+
+input[type="radio"] {
+    visibility: hidden;
+}
+
+.star{
+    cursor: pointer;
+    transition: color 200ms;
+}

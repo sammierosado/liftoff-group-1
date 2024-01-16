@@ -1,0 +1,44 @@
+.upcoming-events-container .event-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.upcoming-events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.upcoming-events-container .event-card a {
+  text-decoration: none;
+  color: #333;
+}
+
+.upcoming-events-container .event-card strong {
+  font-size: 20px;
+  color: #333;
+}
+
+.upcoming-events-container .event-card div {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+.upcoming-events-container .event-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.upcoming-events-container .event-name {
+  color: #9c27b0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.upcoming-events-container .event-name:hover {
+  color: #45a049;
+  text-decoration: underline;
+}

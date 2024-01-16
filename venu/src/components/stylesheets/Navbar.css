@@ -5,7 +5,7 @@
     padding: 0;
     overflow: hidden;
     background-color: #000000e0;
-    font-size: calc(1.7vmin);
+    font-size: calc(2vmin);
     width: calc(100dvw);
   }
   
@@ -19,7 +19,7 @@
     display: inline-block;
     color: rgba(255, 255, 255, 0.665);
     text-align: center;
-    padding: 8px;
+    padding: 9px;
     text-decoration: none;
   }
   
