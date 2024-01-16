@@ -4,15 +4,17 @@
 <header th:replace="~{fragments :: header}"></header>
 
 <body>
+<div class="container col-md-offset-3 col-md-8 mt-lg-5">
 <div class = "container mt-4"></div>
 <div class="row mt-2">
   <div th:if="${param.success}" class=" alert alert-info">
     Registration successful!
     Please check your email to complete your registration and join the party.
   </div>
-  <h2 class="headTitle">User Registration Form</h2>
+
 </div>
 <form th:action="@{/registration/register}" method="post" th:object="${user}" class="px-4">
+  <h2 class="headTitle">User Registration Form</h2>
   <div class="mb-3 row">
     <label for="username" class="col-sm-2 col-form-label">Username</label>
     <div class="col-sm-6">
