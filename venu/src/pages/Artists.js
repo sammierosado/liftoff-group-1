@@ -5,7 +5,8 @@ import SearchBar from '../components/SearchBarArtist';
 import ArtistDetails from '../components/ArtistDetails';
 import './stylesheets/Artists.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 
 const Artists = () => {
   const [artists, setArtists] = useState([]);
@@ -63,11 +64,11 @@ const Artists = () => {
           {filteredArtists.length > 0 ? (
             filteredArtists.map((artist) => (
               <div key={artist.id} className="artist-card">
-                <Link to={`/artists/${artist.id}`}>
+                <Link to={`/artists/${artist.id}`} onClick={() => console.log('Clicked Artist ID:', artist.id)}>
                   <strong className="artist-name">
                     {artist.artistName}
                     <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
-                    <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
+                    <FontAwesomeIcon icon={faSpotify} className="spotify-icon" />
                   </strong>
                 </Link>
                 <div>
@@ -78,11 +79,11 @@ const Artists = () => {
           ) : (
             artists.map((artist) => (
               <div key={artist.id} className="artist-card">
-                <Link to={`/artists/${artist.id}`}>
+                <Link to={`/artists/${artist.id}`} onClick={() => console.log('Clicked Artist ID:', artist.id)}>
                   <strong className="artist-name">
                     {artist.artistName}
                     <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
-                    <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
+                    <FontAwesomeIcon icon={faSpotify} className="spotify-icon" />
                   </strong>
                 </Link>
                 <div>

@@ -42,7 +42,7 @@
   color: #45a049;
 }
 
-@keyframes infoCircleAnimation {
+@keyframes spotifyIconAnimation {
   0% {
     transform: translateY(0);
   }
@@ -54,9 +54,10 @@
   }
 }
 
-.artist-card .info-icon {
+.artist-card .spotify-icon {
+  color: #1DB954;
   display: inline-block;
   margin-left: 5px;
   font-size: 1.2em;
-  animation: infoCircleAnimation 1s infinite;
+  animation: spotifyIconAnimation 1s infinite;
 }
