@@ -8,7 +8,9 @@
 <body>
 <div class="container col-md-offset-3 col-md-8 mt-lg-5">
 
-    <div class="row mt-4">
+<!--    <div class="row mt-4">-->
+<div class = "container mt-4"></div>
+<div class="row mt-2">
         <div th:if="${param.error}" class="col-sm-8">
             <p class="alert alert-danger alert-dismissible fade show" role="alert">Invalid username or password</p>
         </div>
@@ -27,7 +29,7 @@
     </div>
 
     <form th:action="@{/login}" method="post" class="px-4">
-        <h2 class="mb-4">User Login Form </h2>
+        <h2 class="headTitle">User Login</h2>
         <div class="mb-3 row">
             <label for="email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-6">

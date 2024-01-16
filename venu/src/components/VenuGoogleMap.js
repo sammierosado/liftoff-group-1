@@ -78,7 +78,7 @@ const VenuGoogleMap = () => {
           {geocodedData.map((venue) => (
             <Marker
               key={venue.address}
-              position={{ lat: venue.location.lat, lng: venue.location.lng }}
+              position={venue.location ? { lat: venue.location.lat, lng: venue.location.lng } : null}
             />
           ))}
         </GoogleMap>

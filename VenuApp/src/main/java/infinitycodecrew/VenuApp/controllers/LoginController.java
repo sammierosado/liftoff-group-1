@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.swing.text.html.Option;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -52,7 +51,6 @@ public class LoginController {
 
     @PostMapping("/login")
     public String processLoginForm(@ModelAttribute @Valid UserRegistrationDetails userDetails,
-                                   UserService userService,
                                    Errors errors, HttpServletRequest request,
                                    Model model){
         Optional<User> theUser = userRepository.findByEmail(userDetails.getUsername());
@@ -71,7 +69,9 @@ public class LoginController {
             model.addAttribute("title", "Log In");
             return "/login";
         }
-        setUserInSession(request.getSession(), theUser);
+       setUserInSession(request.getSession(), theUser);
         return "redirect:";
     }
+
+
 }
