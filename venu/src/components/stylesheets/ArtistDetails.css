@@ -1,0 +1,35 @@
+.page-background {
+  min-height: 100dvh;
+  min-width: 100dvw;
+  background-image: url('../../public/images/concertbg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.artist-details-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.artist-details-container h2 {
+  color: green;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.artist-details-container p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.artist-details-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.artist-details-container li {
+  font-size: 16px;
+  margin-top: 5px;
+}
