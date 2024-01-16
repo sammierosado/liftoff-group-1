@@ -31,7 +31,7 @@ const VenuGoogleMap = () => {
 
         // Geocoding for each venue
         const venueAddresses = venuesData.map((venue) => {
-          return `${venue.venueAddress}, ${venue.venueCity}, ${venue.venueState}`;
+          return `${venue.venueName}, ${venue.venueAddress}, ${venue.venueCity}, ${venue.venueState}`;
         });
 
         const coordinatesPromises = venueAddresses.map(async (address) => {
@@ -44,6 +44,7 @@ const VenuGoogleMap = () => {
             }
 
             const data = await response.json();
+            console.log("const data: ", data);
 
             if (data.results && data.results.length > 0) {
               const location = data.results[0].geometry.location;
@@ -57,6 +58,7 @@ const VenuGoogleMap = () => {
             return { address, location: null };
           }
         });
+        console.log("venueAddresses (33): ", venueAddresses);
 
         // Wait for all geocoding promises to resolve
         const coordinates = await Promise.all(coordinatesPromises);
@@ -76,9 +78,12 @@ const VenuGoogleMap = () => {
     setSelectedVenue(venue);
   };
 
+  console.log("selectedVenue: ", selectedVenue);
+
   const handleInfoWindowClose = () => {
     setSelectedVenue(null);
   };
+
 
   return isLoaded ? (
     <div>
