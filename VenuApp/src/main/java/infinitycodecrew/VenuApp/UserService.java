@@ -100,4 +100,8 @@ public class UserService implements IUserService{
         userRepository.save(user);
         return "valid";
     }
+
+    public boolean isMatchingPassword(String password, String pwHash){
+        return passwordEncoder.matches(password, pwHash);
+    }
 }
