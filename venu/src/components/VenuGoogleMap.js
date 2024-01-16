@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { useJsApiLoader, GoogleMap, Marker } from '@react-google-maps/api';
+import { useJsApiLoader, GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 
 const VenuGoogleMap = () => {
   const { isLoaded, loadError } = useJsApiLoader({
@@ -14,6 +14,7 @@ const VenuGoogleMap = () => {
   }), []);
 
   const [geocodedData, setGeocodedData] = useState([]);
+  const [selectedVenue, setSelectedVenue] = useState(null);
 
   useEffect(() => {
     const fetchAndGeocodeVenues = async () => {
@@ -26,8 +27,9 @@ const VenuGoogleMap = () => {
         }
 
         const venuesData = await response.json();
+        console.log("venuesData: ", venuesData);
 
-        // Perform geocoding for each venue
+        // Geocoding for each venue
         const venueAddresses = venuesData.map((venue) => {
           return `${venue.venueAddress}, ${venue.venueCity}, ${venue.venueState}`;
         });
@@ -70,6 +72,14 @@ const VenuGoogleMap = () => {
     fetchAndGeocodeVenues();
   }, []);
 
+  const handleMarkerClick = (venue) => {
+    setSelectedVenue(venue);
+  };
+
+  const handleInfoWindowClose = () => {
+    setSelectedVenue(null);
+  };
+
   return isLoaded ? (
     <div>
       <div className="VENU-map">
@@ -79,8 +89,20 @@ const VenuGoogleMap = () => {
             <Marker
               key={venue.address}
               position={{ lat: venue.location.lat, lng: venue.location.lng }}
+              onClick={() => handleMarkerClick(venue)}
             />
           ))}
+          {/* Render InfoWindow for the selected venue */}
+          {selectedVenue && (
+            <InfoWindow
+              position={{ lat: selectedVenue.location.lat, lng: selectedVenue.location.lng }}
+              onCloseClick={handleInfoWindowClose}
+            >
+              <div>
+                {selectedVenue.address}
+              </div>
+            </InfoWindow>
+          )}
         </GoogleMap>
       </div>
     </div>
