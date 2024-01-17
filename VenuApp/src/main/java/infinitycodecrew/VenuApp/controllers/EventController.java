@@ -53,8 +53,10 @@ public class EventController {
             return "events/add";
         } else {
             try {
+                event.setFlyerImage(flyer.getBytes());
+                event.setFlyerContentType(flyer.getContentType());
                 eventRepository.save(event);
-                return "redirect:/events"
+                return "redirect:/events";
             } catch (IOException e) {
                 e.printStackTrace();
 

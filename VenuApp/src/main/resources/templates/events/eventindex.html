@@ -20,6 +20,7 @@
             <th>Venue</th>
             <th>Date</th>
             <th>Price</th>
+            <th>Event Flyer</th>
             <th>Update Event</th>
             <th>Delete Event</th>
         </tr>
@@ -33,6 +34,15 @@
             <td th:text="${event.venue}" style="font-size: 16px;"></td>
             <td th:text="${event.date}" style="font-size: 16px;"></td>
             <td th:text="${event.price}" style="font-size: 16px;"></td>
+            <td>
+                <div th:if="${event.flyerImage != null}">
+                    <form th:action="@{/events/flyer/{id}(id=${event.id})}" method="get" target="_blank">
+                        <button type="submit" class="btn-purple btn-sm">
+                            Event Flyer
+                        </button>
+                    </form>
+                </div>
+            </td>
             <td>
                 <form th:action="@{'/events/update/' + ${event.id}}" method="get">
                     <button type="submit" class="btn btn-primary btn-sm">Update</button>
