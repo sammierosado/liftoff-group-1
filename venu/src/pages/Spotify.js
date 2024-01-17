@@ -7,12 +7,10 @@ const Spotify = () => {
 
     const [token, setToken] = useState('');
 
-    const [playlists, setPlaylists] = useState({});
     const [artists, setArtists] = useState({});
     const [tracks, setTracks] = useState({});
     const [profile, setProfile] = useState({});
 
-    const PLAYLISTS_ENDPOINT = "https://api.spotify.com/v1/me/playlists";
     const TRACKS_ENDPOINT = "https://api.spotify.com/v1/me/top/tracks?time_range=long_term";
     const ARTISTS_ENDPOINT = "https://api.spotify.com/v1/me/top/artists?time_range=long_term";
     const PROFILE_ENDPOINT = "https://api.spotify.com/v1/me";
@@ -54,7 +52,6 @@ const Spotify = () => {
             setToken(token.access_token);
             window.history.pushState({}, null, '/spotify');
         }
-        getData(PLAYLISTS_ENDPOINT, setPlaylists);
         getData(TRACKS_ENDPOINT, setTracks);
         getData(ARTISTS_ENDPOINT, setArtists);
         getData(PROFILE_ENDPOINT, setProfile);
