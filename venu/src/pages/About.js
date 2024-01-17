@@ -1,5 +1,7 @@
 import './stylesheets/About.css';
 import Navbar from "../components/Navbar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord, faLinkedin, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 
 // TODO: simple about the team page
@@ -30,18 +32,18 @@ function About() {
                                         Software Developer
                                     </p>
                                     <div className="social-media-links">
-                                        <a href="http://www.twitter.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg" />
+                                        <a href="http://www.github.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faGithub} className="github-icon" />
                                         </a>
-                                        <a href="http://www.facebook.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg" />
+                                        <a href="http://www.linkedin.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
                                         </a>
-                                        <a href="http://www.instagram.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg" />
+                                        <a href="http://www.discord.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faDiscord} className="discord-icon" />
                                         </a>
                                         {/*target="_blank" should open the link in a new tab*/}
                                         <a href="http://www.gmail.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg" />
+                                            <FontAwesomeIcon icon={faGoogle} className="gmail-icon" />
                                         </a>
                                     </div>
                                 </div>
@@ -59,17 +61,17 @@ function About() {
                                         Software Developer
                                     </p>
                                     <div className="social-media-links">
-                                        <a href="http://www.twitter.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg" />
+                                        <a href="http://www.github.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faGithub} className="github-icon" />
                                         </a>
-                                        <a href="http://www.facebook.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg" />
+                                        <a href="http://www.linkedin.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
                                         </a>
-                                        <a href="http://www.instagram.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg" />
+                                        <a href="http://www.discord.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faDiscord} className="discord-icon" />
                                         </a>
                                         <a href="http://www.gmail.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg" />
+                                            <FontAwesomeIcon icon={faGoogle} className="gmail-icon" />
                                         </a>
                                     </div>
                                 </div>
@@ -87,17 +89,17 @@ function About() {
                                         Software Developer
                                     </p>
                                     <div className="social-media-links">
-                                        <a href="http://www.twitter.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg" />
+                                        <a href="http://www.github.com/" target="_blank">
+                                           <FontAwesomeIcon icon={faGithub} className="github-icon" />
                                         </a>
-                                        <a href="http://www.facebook.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg" />
+                                        <a href="http://www.linkedin.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
                                         </a>
-                                        <a href="http://www.instagram.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg" />
+                                        <a href="http://www.discord.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faDiscord} className="discord-icon" />
                                         </a>
                                         <a href="http://www.gmail.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg" />
+                                            <FontAwesomeIcon icon={faGoogle} className="gmail-icon" />
                                         </a>
                                     </div>
                                 </div>
@@ -115,17 +117,17 @@ function About() {
                                         Software Developer
                                     </p>
                                     <div className="social-media-links">
-                                        <a href="http://www.twitter.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-twitter.svg" />
+                                        <a href="http://www.github.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faGithub} className="github-icon" />
                                         </a>
-                                        <a href="http://www.facebook.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-fb.svg" />
+                                        <a href="http://www.linkedin.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
                                         </a>
-                                        <a href="http://www.instagram.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-insta.svg" />
+                                        <a href="http://www.discord.com/" target="_blank">
+                                            <FontAwesomeIcon icon={faDiscord} className="discord-icon" />
                                         </a>
                                         <a href="http://www.gmail.com/" target="_blank">
-                                            <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/gray-mail.svg" />
+                                            <FontAwesomeIcon icon={faGoogle} className="gmail-icon" />
                                         </a>
                                     </div>
                                 </div>

@@ -8,13 +8,13 @@
     font-size: calc(2vmin);
     width: calc(100dvw);
   }
-  
+
   /* where the buttons appear on screen */
   .topmenu li {
     float: left;
     background-color: #1e1d1d;
   }
-  
+
   /* parameters of the buttons not current active */
   .topmenu li a {
     display: inline-block;
@@ -24,12 +24,12 @@
     padding: 9px;
     text-decoration: none;
   }
-  
+
   /* color of the button the cursor is hovering over */
   .topmenu li a:hover {
     background-color: #424242;
   }
-  
+
   /* color of the button and button text of the page the user is on */
   .topmenu li a.active {
     color: white;

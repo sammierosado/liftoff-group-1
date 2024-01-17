@@ -1,8 +1,6 @@
 package infinitycodecrew.VenuApp.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -23,6 +21,13 @@ public class Event extends AbstractEntity {
     @ManyToOne
     @JoinColumn(name="venue_id")
     private Venue venue;
+
+    @Lob
+    @Column(name = "flyer_image", columnDefinition = "LONGBLOB")
+    private byte[] flyerImage;
+
+    @Column(name = "flyer_content_type")
+    private String flyerContentType;
 
 
     @DateTimeFormat(pattern = "MM-dd-yyyy")
@@ -83,5 +88,21 @@ public class Event extends AbstractEntity {
 
     public void setVenue(Venue venue) {
         this.venue = venue;
+    }
+
+    public byte[] getFlyerImage() {
+        return flyerImage;
+    }
+
+    public void setFlyerImage(byte[] flyerImage) {
+        this.flyerImage = flyerImage;
+    }
+
+    public String getFlyerContentType() {
+        return flyerContentType;
+    }
+
+    public void setFlyerContentType(String flyerContentType) {
+        this.flyerContentType = flyerContentType;
     }
 }
