@@ -1,10 +1,11 @@
-.page-background {
+.event-details-page-background {
   min-height: 100dvh;
   min-width: 100dvw;
   background-image: url('../../public/images/concertbg.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .event-details-container {
   margin-top: 20px;
   text-align: center;
@@ -34,23 +35,54 @@
 }
 
 .search-tracks-button {
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 10px;
 }
 
 .login-link {
-    font-size: x-small;
+  font-size: x-small;
 }
 
 .flex-container {
-    background-color: #ffff;
-    padding: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 5px;
+  background-color: #ffff;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.artist-details-message {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #888;
+}
+
+.clickable-icon {
+  margin-left: 4px;
+  color: #007bff;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.spotify-logo {
+  color: #1DB954;
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.2em;
+  animation: bounce 1s infinite;
 }

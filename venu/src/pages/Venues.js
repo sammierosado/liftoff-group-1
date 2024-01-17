@@ -70,6 +70,7 @@ const Venues = () => {
 
 
 
+
     return (
         <div>
           <Navbar />
@@ -92,6 +93,7 @@ const Venues = () => {
                     <div><strong>State:</strong> {venue.venueState}</div>
                     <div><strong>Zip:</strong> {venue.venueZip}</div>
                     {/*<div><strong>Wheelchair Accessible:</strong> {venue.wheelchairAccessible ? 'Yes' : 'No'}</div>
+
                     <div><strong>ADA Bathrooms:</strong> {venue.ADABathrooms ? 'Yes' : 'No'}</div>
                     <div><strong>ADA Seating:</strong> {venue.ADASeating ? 'Yes' : 'No'}</div>
                     <div><strong>Bus Stop Close:</strong> {venue.busStopClose ? 'Yes' : 'No'}</div>
@@ -100,6 +102,7 @@ const Venues = () => {
                     <div><strong>Descriptive Audio:</strong> {venue.descriptiveAudio ? 'Yes' : 'No'}</div>
                     <div><strong>Elevators:</strong> {venue.elevators ? 'Yes' : 'No'}</div>
                     <div><strong>Multi-Level:</strong> {venue.multiLevel ? 'Yes' : 'No'}</div>*/}
+
 
                   </div>
                 ))
@@ -120,7 +123,7 @@ const Venues = () => {
                     <div><strong>State:</strong> {venue.venueState}</div>
                     <div><strong>Zip:</strong> {venue.venueZip}</div>
                     {/*<div><strong>Wheelchair Accessible:</strong> {venue.wheelchairAccessible ? 'Yes' : 'No'}</div>
-                    <div><strong>ADA Bathrooms:</strong> {venue.ADABathrooms ? 'Yes' : 'No'}</div>
+                <div><strong>ADA Bathrooms:</strong> {venue.ADABathrooms ? 'Yes' : 'No'}</div>
                     <div><strong>ADA Seating:</strong> {venue.ADASeating ? 'Yes' : 'No'}</div>
                     <div><strong>Bus Stop Close:</strong> {venue.busStopClose ? 'Yes' : 'No'}</div>
                     <div><strong>Sign Language:</strong> {venue.signLanguage ? 'Yes' : 'No'}</div>
@@ -129,13 +132,13 @@ const Venues = () => {
                     <div><strong>Elevators:</strong> {venue.elevators ? 'Yes' : 'No'}</div>
                     <div><strong>Multi-Level:</strong> {venue.multiLevel ? 'Yes' : 'No'}</div>*/}
 
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
+              </div>
+            ))
+          )}
         </div>
-      );
-    };
+      </div>
+    </div>
+  );
+};
 
-  export default Venues;
+export default Venues;

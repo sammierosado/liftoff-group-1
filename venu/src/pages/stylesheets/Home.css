@@ -1,32 +1,26 @@
 /*TODO add border/shadow to map or expand to take up entire page-~20% upcoming events column?*/
-.Home {
-    /* home screen background */
-    min-height: 100dvh;
-    min-width: 100dvw;
-    background-image: url('../../public/images/concertbg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    /* alt: background-size: 100dvw 100dvh; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 /* map box position/size on home screen */
 .VENU-map {
   position: absolute;
-  top: 29%;
+  top: 32%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70vw;
-  height: 50vh;
+  width: 65vw;
+  height: 45vh;
 }
 
-/* map position/size in its individual box */
-.map-container {
-    width: 100%;
-    height: 100%;
+
+.Home {
+   /* home screen background */
+  min-height: 100dvh;
+  min-width: 100dvw;
+  background-image: url('../../public/images/concertbg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* upcoming events box position and styling */
@@ -44,7 +38,13 @@
   margin-bottom: 30px;
 }
 
+/* map position/size in its individual box */
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
 body, html {
-   margin: 0;
-   padding: 0;
+  margin: 0;
+  padding: 0;
 }

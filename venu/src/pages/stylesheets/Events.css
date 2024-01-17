@@ -1,9 +1,13 @@
-.page-background {
-    min-height: 100dvh;
-        min-width: 100dvw;
-        background-image: url('../../public/images/concertbg.png');
-        background-size: cover;
-        background-repeat: no-repeat;
+.events-page-background {
+  min-height: 100dvh;
+  min-width: 100dvw;
+  background-image: url('../../public/images/concertbg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+  {
+  /* event search box */
 }
 
 .events-container {
@@ -11,6 +15,7 @@
   padding: 20px;
   border-radius: 15px;
   position: relative;
+
   margin: auto;
   margin-left: 15vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -67,9 +72,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
+
   100% {
     transform: translateY(0);
   }

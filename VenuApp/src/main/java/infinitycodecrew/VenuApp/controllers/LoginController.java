@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -25,6 +26,9 @@ import java.util.Optional;
 public class LoginController {
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @Autowired
     UserService userService;
@@ -55,7 +59,9 @@ public class LoginController {
                                    UserService userService,
                                    Errors errors, HttpServletRequest request,
                                    Model model){
+        System.out.println(userDetails);
         Optional<User> theUser = userRepository.findByEmail(userDetails.getUsername());
+
         if (theUser == null){
             errors.rejectValue("username", "user.invalid", "This user does not exist!");
             model.addAttribute("title", "Log In");
@@ -65,13 +71,15 @@ public class LoginController {
         String password = userDetails.getPassword();
         String newUser = userRepository.findByEmail((userDetails.getPassword())).toString();
 
-        if (!Objects.equals(newUser, password)){
-//        if (!theUser.userService.isMatchingPassword(password)){
+
+        if (!userService.isMatchingPassword(password,  theUser.get().getPassword())){
             errors.rejectValue("password", "password.invalid", "Incorrect password!");
             model.addAttribute("title", "Log In");
             return "/login";
         }
+
+        System.out.println("lpgged in");
         setUserInSession(request.getSession(), theUser);
-        return "redirect:";
+        return "redirect:/";
     }
 }
