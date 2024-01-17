@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from "axios";
 import './stylesheets/EventDetails.css';
 import Navbar from './Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+
 
 const EventDetails = () => {
   const [eventDetails, setEventDetails] = useState({});
@@ -75,7 +79,15 @@ const EventDetails = () => {
       <Navbar />
       <div className="events-container event-details-container">
         <h2>{eventDetails.eventName}</h2>
-        <p><strong>Artist:</strong> {eventDetails.artist?.artistName}</p>
+       <p>
+                 <strong>Artist:</strong>{' '}
+                 <Link to={`/artists/${eventDetails.artist?.id}`}>
+                   {eventDetails.artist?.artistName}
+                   <span className="artist-details-message">Click to view artist details</span>
+                   <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
+                   <FontAwesomeIcon icon={faSpotify} className="spotify-logo" />
+                 </Link>
+               </p>
         <p><strong>Genre:</strong> {eventDetails.artist?.genre}</p>
         <p>
           <strong>Venue:</strong> {eventDetails.venue?.venueName}
