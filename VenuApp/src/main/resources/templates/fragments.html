@@ -43,36 +43,13 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-        <div class="dropdown">
-=======
         <div class="dropdown" sec:authorize="!isAuthenticated()">
->>>>>>> 6b70d1e (Navbar updates upon login and logout)
             <button class="nav">User</button>
             <div class="dropdown-content">
                 <a href="/login">Login</a>
                 <a href="/registration/register">Register</a>
             </div>
         </div>
-<<<<<<< HEAD
-<!--        <li sec:authorize="!isAuthenticated()" class="nav-item">-->
-<!--            <a class="btn btn-outline-light" th:href="@{/login}">Login</a>-->
-<!--        </li>-->
-<!--        <li sec:authorize="isAuthenticated()" class="nav-item dropdown">-->
-<!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
-<!--               aria-haspopup="true" aria-expanded="false" sec:authentication="name">-->
-<!--            </a>-->
-<!--            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                <a class="pl-3" th:href="@{/password}">Passwort ändern</a>-->
-<!--                <div class="dropdown-divider"></div>-->
-<!--                <a class="pl-3" th:href="@{/logout}">Logout</a>-->
-<!--            </div>-->
-<!--        </li>-->
-
-
-
-
-=======
 
         <div class="dropdown" sec:authorize="isAuthenticated()">
             <button class="nav" sec:authentication="name">User</button>
@@ -80,7 +57,6 @@
                 <a href="/logout">Logout</a>
             </div>
         </div>
->>>>>>> 6b70d1e (Navbar updates upon login and logout)
     </div>
 </div>
 </header>
