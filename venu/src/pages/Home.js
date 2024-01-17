@@ -1,6 +1,7 @@
 import './stylesheets/Home.css';
 import Navbar from '../components/Navbar';
 import UpcomingEvents from '../components/UpcomingEvents';
+import VenuGoogleMap from '../components/VenuGoogleMap';
 
 
 // geographical location on which the Google map is centered. feel free to change it!
