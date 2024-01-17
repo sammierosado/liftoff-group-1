@@ -8,6 +8,7 @@ function Navbar() {
             <li><a href="/" className="active">Home</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/venues">Venues</a></li>
+            <li><a href="/artists">Artists</a></li>
             <li><a href="/about">About Us</a></li>
         </ul>
     );

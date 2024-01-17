@@ -1,4 +1,4 @@
-.venues-page-background {
+.artists-page-background {
   min-height: 100dvh;
   min-width: 100dvw;
   background-image: url('../../public/images/concertbg.png');
@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
 }
 
-.venue-card {
+.artist-card {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -14,33 +14,33 @@
   margin-bottom: 20px;
 }
 
-.venue-card a {
+.artist-card a {
   text-decoration: none;
   color: #333;
 }
 
-.venue-card strong {
+.artist-card strong {
   font-size: 20px;
   color: #333;
 }
 
-.venue-card div {
+.artist-card div {
   margin-top: 10px;
   font-size: 16px;
   color: #555;
 }
 
-.venue-card:hover {
+.artist-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.venue-name {
+.artist-name {
   color: #9c27b0;
   text-decoration: underline;
   cursor: pointer;
 }
 
-.venue-name:hover {
+.artist-name:hover {
   color: #45a049;
   text-decoration: underline;
 }
@@ -50,7 +50,7 @@
   color: #45a049;
 }
 
-@keyframes infoCircleAnimation {
+@keyframes spotifyIconAnimation {
   0% {
     transform: translateY(0);
   }
@@ -64,9 +64,10 @@
   }
 }
 
-.venue-card .info-icon {
+.artist-card .spotify-icon {
+  color: #1DB954;
   display: inline-block;
   margin-left: 5px;
   font-size: 1.2em;
-  animation: infoCircleAnimation 1s infinite;
+  animation: spotifyIconAnimation 1s infinite;
 }

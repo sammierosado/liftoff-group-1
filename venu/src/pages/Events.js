@@ -9,7 +9,7 @@ import './stylesheets/Events.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FaMusic, FaArrowRight } from 'react-icons/fa';
-// does FaArrowRight need to be imported from two sources?
+
 
 
 
@@ -75,7 +75,7 @@ const Events = () => {
   return (
     <div>
       <Navbar />
-      <div className="page-background">
+      <div className="events-page-background">
         <div className="events-container">
           <SearchBar handleSearch={handleSearch} />
 
@@ -108,7 +108,7 @@ const Events = () => {
                 <div><strong>Venue:</strong> {event.venue.venueName}</div>
                 <div><strong>Date:</strong> {event.date}</div>
                 <StarRating />
-                
+
 
               </div>
 
