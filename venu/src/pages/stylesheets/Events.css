@@ -6,13 +6,11 @@
         background-repeat: no-repeat;
 }
 
-{/* event search box */}
 .events-container {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 15px;
   position: relative;
-  {/*20px in margin was causing the white sliver above, auto should keep it centered*/}
   margin: auto;
   margin-left: 15vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

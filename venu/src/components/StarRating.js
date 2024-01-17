@@ -1,18 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { FaMicrophone } from 'react-icons/fa';
+import axios from 'axios';
 
-const StarRating = ({ index }) => {
-  const [rating, setRating] = useState(() => {
-    const storedRating = localStorage.getItem(`userRating_${index}`);
-    return storedRating ? parseInt(storedRating, 10) : null;
+const StarRating = ({ index, venueId }) => {
+ 
+
+{/*STORE TO LOCAL STORAGE */}
+
+const [stars, setStars] = useState(() => {
+    const storedStars = localStorage.getItem(`userRating_${index}`);
+    return storedStars ? parseInt(storedStars) : null;
   });
   const [hover, setHover] = useState(null);
 
-  useEffect(() => {
-    if (rating !== null) {
-      localStorage.setItem(`userRating_${index}`, rating.toString());
+useEffect(() => {
+    if (stars !== null) {
+      localStorage.setItem(`userRating_${index}`, stars.toString());
     }
-  }, [rating, index]);
+  }, [stars, index]);
+
+
+{/* AXIOS POST TO SERVER*/}
+  const postRatingToServer = (rating) => {
+    const APIURL = 'http://localhost:8080/api/starratings/rateVenue';
+    const ratingData = {
+      "venueId":index, // Use the provided venueId prop
+      "starRating": stars,
+    };
+
+    axios.post(APIURL, ratingData)
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error('Error posting the rating data:', error);
+      });
+  };
+
+  const handleRatingChange = (newRating) => {
+    setStars(newRating);
+
+    // Call the function to post the rating when the user selects a rating
+    postRatingToServer(newRating);
+  };
 
   return (
     <div>
@@ -25,11 +55,11 @@ const StarRating = ({ index }) => {
               type="radio"
               name={`rating_${index}`}
               value={ratingValue}
-              onClick={() => setRating(ratingValue)}
+              onClick={() => handleRatingChange(ratingValue)}
             />
             <FaMicrophone
               className="star"
-              color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+              color={ratingValue <= (hover || stars) ? "#ffc107" : "#e4e5e9"}
               size={20}
               onMouseEnter={() => setHover(ratingValue)}
               onMouseLeave={() => setHover(null)}
@@ -37,9 +67,9 @@ const StarRating = ({ index }) => {
           </label>
         );
       })}
-      {rating !== null ? (
+      {stars !== null ? (
         <div>
-          <p>You rated this event {rating} out of 5 stars.</p>
+          <p>You rated this venue {stars} out of 5 stars.</p>
         </div>
       ) : null}
     </div>
@@ -47,4 +77,5 @@ const StarRating = ({ index }) => {
 };
 
 export default StarRating;
+
 
