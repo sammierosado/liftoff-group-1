@@ -33,10 +33,6 @@ public class APIStarRatingController {
       return  new ResponseEntity<>("Rating Saved Successfully", HttpStatus.OK);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Stars>> getRatingsByVenueId(@Query) {
-        List<Stars> starRatings = (List<Stars>) starRatingRepository.findAll();
-        return new ResponseEntity<>(starRatings, HttpStatus.OK);
-    }
+
 }
 
