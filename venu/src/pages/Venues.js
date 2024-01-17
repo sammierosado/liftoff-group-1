@@ -14,6 +14,34 @@ const Venues = () => {
   const [hover, setHover] = useState(null);
   const [totalStars, setTotalStars] = useState(5);
 
+  {/*FETCH FOR RATINGS INFORMATION*/}
+const fetchRatings = async () => {
+  try {
+    const response = await fetch('http://localhost:8080/api/starratings', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'http://localhost:3000'
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    const ratingData = await response.json();
+    setRating(ratingData);
+    
+  } catch (error) {
+    console.log('Error fetching ratings:', error);
+  }
+};
+useEffect(() => {
+  fetchRatings();
+}, []);
+
+{/*End of FETCH FOR RATINGS INFORMATION*/}
+console.log(rating);
   const fetchData = async () => {
     try {
       const response = await fetch('http://localhost:8080/api/venues', {
@@ -67,7 +95,6 @@ const Venues = () => {
     console.log('Filtered Venues:', filtered);
     setFilteredVenues(filtered);
   };
-
 
 
 
