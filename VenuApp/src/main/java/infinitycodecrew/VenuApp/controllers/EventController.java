@@ -7,10 +7,17 @@ import infinitycodecrew.VenuApp.models.data.VenueRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/events")
@@ -38,12 +45,23 @@ public class EventController {
     }
 
     @PostMapping("/add")
-    public String createEvent(@ModelAttribute @Valid Event event, Errors errors) {
+    public String createEvent(@ModelAttribute @Valid Event event,
+                              @RequestParam("flyer") MultipartFile flyer,
+                              Errors errors,
+                              Model model) {
         if (errors.hasErrors()) {
             return "events/add";
         } else {
-            eventRepository.save(event);
-            return "redirect:/events";
+            try {
+                eventRepository.save(event);
+                return "redirect:/events"
+            } catch (IOException e) {
+                e.printStackTrace();
+
+                model.addAttribute("errorMessage", "Error processing the flyer image. Please try again.");
+
+                return "events/add";
+            }
         }
     }
 
@@ -105,5 +123,15 @@ public class EventController {
         return "redirect:/events";
     }
 
+    @GetMapping("/flyer/{eventId}")
+    public ResponseEntity<byte[]> getEventFlyer(@PathVariable int eventId) {
+        Event event = eventRepository.findById(eventId).orElse(null);
+        if (event != null && event.getFlyerImage() != null) {
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.IMAGE_PNG);
+            return new ResponseEntity<>(event.getFlyerImage(), headers, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 
 }
