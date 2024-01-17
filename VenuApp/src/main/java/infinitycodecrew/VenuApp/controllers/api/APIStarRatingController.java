@@ -4,6 +4,7 @@ import infinitycodecrew.VenuApp.models.Stars;
 import infinitycodecrew.VenuApp.models.data.StarRatingRepository;
 import infinitycodecrew.VenuApp.models.data.VenueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +28,11 @@ public class APIStarRatingController {
     }
 
     @PostMapping("/rateVenue")
-    public String RateVenue(Stars stars){
-        return "You are almost there";
+    public ResponseEntity<String> RateVenue(@RequestBody Stars stars){
+        starRatingRepository.save(stars);
+      return  new ResponseEntity<>("Rating Saved Successfully", HttpStatus.OK);
     }
+
+
 }
 
