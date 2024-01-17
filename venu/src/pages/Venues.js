@@ -74,7 +74,7 @@ const Venues = () => {
     return (
         <div>
           <Navbar />
-          <div className="page-background">
+          <div className="venues-page-background">
             <div className="events-container">
               <SearchBar handleSearch={handleSearch} />
 
