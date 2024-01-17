@@ -108,7 +108,7 @@ const Events = () => {
                 <div><strong>Venue:</strong> {event.venue.venueName}</div>
                 <div><strong>Date:</strong> {event.date}</div>
 
-                <StarRating key={'star-event.id'} index = {event.id}   />
+                
                 
 
 
