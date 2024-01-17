@@ -5,10 +5,14 @@ import SearchBar from '../components/SearchBarVenue';
 import './stylesheets/Venues.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import StarRating from '../components/StarRating';
 
 const Venues = () => {
   const [venues, setVenues] = useState([]);
   const [filteredVenues, setFilteredVenues] = useState([]);
+  const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
+  const [totalStars, setTotalStars] = useState(5);
 
   const fetchData = async () => {
     try {
@@ -66,27 +70,30 @@ const Venues = () => {
 
 
 
-  return (
-    <div>
-      <Navbar />
-      <div className="venues-page-background">
-        <div className="events-container">
-          <SearchBar handleSearch={handleSearch} />
 
-          {filteredVenues.length > 0 ? (
-            filteredVenues.map((venue) => (
-              <div key={venue.id} className="venue-card">
-                <Link to={`/venues/${venue.id}`}>
-                  <strong className="venue-name">{venue.venueName}
-                    <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
-                    <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
-                  </strong>
-                </Link>
-                <div><strong>Address:</strong> {venue.venueAddress}</div>
-                <div><strong>City:</strong> {venue.venueCity}</div>
-                <div><strong>State:</strong> {venue.venueState}</div>
-                <div><strong>Zip:</strong> {venue.venueZip}</div>
-                {/*<div><strong>Wheelchair Accessible:</strong> {venue.wheelchairAccessible ? 'Yes' : 'No'}</div>
+    return (
+        <div>
+          <Navbar />
+          <div className="venues-page-background">
+            <div className="events-container">
+              <SearchBar handleSearch={handleSearch} />
+
+              {filteredVenues.length > 0 ? (
+                filteredVenues.map((venue) => (
+                  <div key={venue.id} className="venue-card">
+                    <Link to={`/venues/${venue.id}`}>
+                      <strong className="venue-name">{venue.venueName}
+                        <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
+                        <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
+                      </strong>
+                    </Link>
+         
+                    <div><strong>Address:</strong> {venue.venueAddress}</div>
+                    <div><strong>City:</strong> {venue.venueCity}</div>
+                    <div><strong>State:</strong> {venue.venueState}</div>
+                    <div><strong>Zip:</strong> {venue.venueZip}</div>
+                    {/*<div><strong>Wheelchair Accessible:</strong> {venue.wheelchairAccessible ? 'Yes' : 'No'}</div>
+
                     <div><strong>ADA Bathrooms:</strong> {venue.ADABathrooms ? 'Yes' : 'No'}</div>
                     <div><strong>ADA Seating:</strong> {venue.ADASeating ? 'Yes' : 'No'}</div>
                     <div><strong>Bus Stop Close:</strong> {venue.busStopClose ? 'Yes' : 'No'}</div>
@@ -96,23 +103,27 @@ const Venues = () => {
                     <div><strong>Elevators:</strong> {venue.elevators ? 'Yes' : 'No'}</div>
                     <div><strong>Multi-Level:</strong> {venue.multiLevel ? 'Yes' : 'No'}</div>*/}
 
-              </div>
-            ))
-          ) : (
-            venues.map((venue) => (
-              <div key={venue.id} className="venue-card">
-                <Link to={`/venues/${venue.id}`}>
-                  <strong className="venue-name">{venue.venueName}
-                    <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
-                    <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
-                  </strong>
-                </Link>
-                <div><strong>Address:</strong> {venue.venueAddress}</div>
-                <div><strong>City:</strong> {venue.venueCity}</div>
-                <div><strong>State:</strong> {venue.venueState}</div>
-                <div><strong>Zip:</strong> {venue.venueZip}</div>
-                {/*<div><strong>Wheelchair Accessible:</strong> {venue.wheelchairAccessible ? 'Yes' : 'No'}</div>
-                    <div><strong>ADA Bathrooms:</strong> {venue.ADABathrooms ? 'Yes' : 'No'}</div>
+
+                  </div>
+                ))
+              ) : (
+                venues.map((venue, index) => (
+                  <div key={venue.id} className="venue-card">
+                    <Link to={`/venues/${venue.id}`}>
+                      <strong className="venue-name">{venue.venueName}
+                        <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
+                        <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
+                      </strong>
+                    </Link>
+                    <StarRating key={'venue.id'} index={venue.id} />
+                   
+
+                    <div><strong>Address:</strong> {venue.venueAddress}</div>
+                    <div><strong>City:</strong> {venue.venueCity}</div>
+                    <div><strong>State:</strong> {venue.venueState}</div>
+                    <div><strong>Zip:</strong> {venue.venueZip}</div>
+                    {/*<div><strong>Wheelchair Accessible:</strong> {venue.wheelchairAccessible ? 'Yes' : 'No'}</div>
+                <div><strong>ADA Bathrooms:</strong> {venue.ADABathrooms ? 'Yes' : 'No'}</div>
                     <div><strong>ADA Seating:</strong> {venue.ADASeating ? 'Yes' : 'No'}</div>
                     <div><strong>Bus Stop Close:</strong> {venue.busStopClose ? 'Yes' : 'No'}</div>
                     <div><strong>Sign Language:</strong> {venue.signLanguage ? 'Yes' : 'No'}</div>
