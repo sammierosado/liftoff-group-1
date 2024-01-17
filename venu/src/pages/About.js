@@ -21,10 +21,10 @@ function About() {
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                                 <div className="team-card">
                                     <div className="img-wrapper">
-                                        <img className="team-img" src="https://i.imgur.com/PtRFodz.png" />
+                                        <img className="team-img" src="https://i.imgur.com/j6MnzN1.jpg" />
                                     </div>
                                     <p className="text-blk name">
-                                        Teammate 1
+                                        Keyona Damm
                                     </p>
                                     <p className="text-blk position">
                                         Software Developer
@@ -50,10 +50,10 @@ function About() {
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                                 <div className="team-card">
                                     <div className="img-wrapper">
-                                        <img className="team-img" src="https://i.imgur.com/TvnNIbrh.jpg" />
+                                        <img className="team-img" src="https://i.imgur.com/PTHvlN9.jpg" />
                                     </div>
                                     <p className="text-blk name">
-                                        Teammate 2
+                                        Jay Hamrick
                                     </p>
                                     <p className="text-blk position">
                                         Software Developer
@@ -78,10 +78,10 @@ function About() {
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                                 <div className="team-card">
                                     <div className="img-wrapper">
-                                        <img className="team-img" src="https://i.imgur.com/jfqloduh.png?1" />
+                                        <img className="team-img" src="https://i.imgur.com/Vt7r4N5.png" />
                                     </div>
                                     <p className="text-blk name">
-                                        Teammate 3
+                                        Andrew Bond
                                     </p>
                                     <p className="text-blk position">
                                         Software Developer
@@ -106,10 +106,10 @@ function About() {
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                                 <div className="team-card">
                                     <div className="img-wrapper">
-                                        <img className="team-img" src="https://i.imgur.com/HrBZObdh.png" />
+                                        <img className="team-img" src="https://i.imgur.com/dX2J9Gx.png" />
                                     </div>
                                     <p className="text-blk name">
-                                        Teammate 4
+                                        Mal Durham
                                     </p>
                                     <p className="text-blk position">
                                         Software Developer

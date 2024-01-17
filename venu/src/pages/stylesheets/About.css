@@ -1,5 +1,6 @@
 * {
   font-family: Nunito, sans-serif;
+  background-color: rgb(244, 252, 255);
 }
 
 {/*adjusts spacing text under images*/}
@@ -31,7 +32,7 @@
   padding-right: 50px;
   padding-bottom: 10px;
   padding-left: 0px;
-  background-color: rgb(244, 252, 255);
+  {/*background-color: rgb(244, 252, 255);*/}
 }
 
 .inner-container {
@@ -73,6 +74,7 @@
 {/*size of image wrapper*/}
 .img-wrapper {
   width: 100%;
+  align-items: center;
 }
 
 {/*Where images and texts appear in their flex container*/}
@@ -115,21 +117,23 @@
 {/*Image size in its container*/}
 .team-img {
   clip-path: circle();
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 95%;
+  margin-top: 3px;
+  margin-left: 2px;
 }
 
-{/*Image container size*/}
+{/*Image container*/}
 .team-card-container {
   width: 300px;
   height: 300px;
-  margin: 0 0 40px 0;
+  align-items: center;
 }
 
 {/*May be okay to delete? Check at end*/}
 @media (max-width: 500px) {
   .outer-container {
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px 10px 10px;
   }
 
   .section-head-text {
