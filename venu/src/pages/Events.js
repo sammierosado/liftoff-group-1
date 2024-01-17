@@ -75,7 +75,7 @@ const Events = () => {
   return (
     <div>
       <Navbar />
-      <div className="page-background">
+      <div className="events-page-background">
         <div className="events-container">
           <SearchBar handleSearch={handleSearch} />
 
@@ -108,7 +108,7 @@ const Events = () => {
                 <div><strong>Venue:</strong> {event.venue.venueName}</div>
                 <div><strong>Date:</strong> {event.date}</div>
                 <StarRating />
-                
+
 
               </div>
 

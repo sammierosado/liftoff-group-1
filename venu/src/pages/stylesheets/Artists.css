@@ -1,3 +1,11 @@
+.artists-page-background {
+  min-height: 100dvh;
+  min-width: 100dvw;
+  background-image: url('../../public/images/concertbg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .artist-card {
   background-color: #fff;
   padding: 20px;
@@ -46,9 +54,11 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
+
   100% {
     transform: translateY(0);
   }
