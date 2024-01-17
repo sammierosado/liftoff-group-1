@@ -10,11 +10,11 @@ public class Stars {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "star_rating")
     private int starRating;
 
-    @ManyToOne
-    @JoinColumn(name = "venue_id")
-    private Venue venue;
+    @Column(name = "venue_id")
+    private int venueId;
 
 
     public Stars() {}
@@ -35,12 +35,12 @@ public class Stars {
         this.starRating = starRating;
     }
 
-    public Venue getVenue() {
-        return venue;
+    public int getVenueId() {
+        return venueId;
     }
 
-    public void setVenue(Venue venue) {
-        this.venue = venue;
+    public void setVenueId(int venueId) {
+        this.venueId = venueId;
     }
 
     @Override
@@ -48,11 +48,11 @@ public class Stars {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Stars that = (Stars) o;
-        return starRating == that.starRating && Objects.equals(id, that.id) && Objects.equals(venue, that.venue);
+        return starRating == that.starRating && Objects.equals(id, that.id) && Objects.equals(venueId, that.venueId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, starRating, venue);
+        return Objects.hash(id, starRating, venueId);
     }
 }

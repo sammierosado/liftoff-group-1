@@ -57,7 +57,7 @@ const Artists = () => {
   return (
     <div>
       <Navbar />
-      <div className="page-background">
+      <div className="artists-page-background">
         <div className="events-container">
           <SearchBar handleSearch={handleSearch} />
 

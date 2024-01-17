@@ -28,7 +28,7 @@ const ArtistDetails = () => {
   }, [id]);
 
   return (
-    <div className="page-background">
+    <div className="artist-details-page-background">
       <Navbar />
       <div className="events-container artist-details-container">
         <h2>{artistDetails.artistName}</h2>

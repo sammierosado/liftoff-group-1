@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #000000e0;
+    background-color: #1e1d1d;
     font-size: calc(2vmin);
     width: calc(100dvw);
   }
@@ -12,12 +12,14 @@
   /* where the buttons appear on screen */
   .topmenu li {
     float: left;
+    background-color: #1e1d1d;
   }
   
   /* parameters of the buttons not current active */
   .topmenu li a {
     display: inline-block;
     color: rgba(255, 255, 255, 0.665);
+    background-color: #1e1d1d;
     text-align: center;
     padding: 9px;
     text-decoration: none;
