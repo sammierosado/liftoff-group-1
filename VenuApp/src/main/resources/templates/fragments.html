@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <title>VenU</title>
@@ -49,6 +50,19 @@
                 <a href="/registration/register">Register</a>
             </div>
         </div>
+<!--        <li sec:authorize="!isAuthenticated()" class="nav-item">-->
+<!--            <a class="btn btn-outline-light" th:href="@{/login}">Login</a>-->
+<!--        </li>-->
+<!--        <li sec:authorize="isAuthenticated()" class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
+<!--               aria-haspopup="true" aria-expanded="false" sec:authentication="name">-->
+<!--            </a>-->
+<!--            <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                <a class="pl-3" th:href="@{/password}">Passwort ändern</a>-->
+<!--                <div class="dropdown-divider"></div>-->
+<!--                <a class="pl-3" th:href="@{/logout}">Logout</a>-->
+<!--            </div>-->
+<!--        </li>-->
 
 
 
