@@ -7,25 +7,21 @@ const StarRating = ({ index, venueId }) => {
 
 {/*STORE TO LOCAL STORAGE */}
 
-const [stars, setStars] = useState(() => {
-    const storedStars = localStorage.getItem(`userRating_${index}`);
-    return storedStars ? parseInt(storedStars) : null;
-  });
+const [stars, setStars] = useState(null);
   const [hover, setHover] = useState(null);
 
-useEffect(() => {
-    if (stars !== null) {
-      localStorage.setItem(`userRating_${index}`, stars.toString());
-    }
-  }, [stars, index]);
 
 
-{/* AXIOS POST TO SERVER*/}
+
+
+
+  const handleRatingChange = (newRating) => {
+    {/* AXIOS POST TO SERVER*/}
   const postRatingToServer = (rating) => {
     const APIURL = 'http://localhost:8080/api/starratings/rateVenue';
     const ratingData = {
       "venueId":index, // Use the provided venueId prop
-      "starRating": stars,
+      "starRating": newRating,
     };
 
     axios.post(APIURL, ratingData)
@@ -36,8 +32,6 @@ useEffect(() => {
         console.error('Error posting the rating data:', error);
       });
   };
-
-  const handleRatingChange = (newRating) => {
     setStars(newRating);
 
     // Call the function to post the rating when the user selects a rating
@@ -48,7 +42,7 @@ useEffect(() => {
     <div>
       {[...Array(5)].map((star, i) => {
         const ratingValue = i + 1;
-
+  
         return (
           <label key={i}>
             <input
@@ -74,8 +68,7 @@ useEffect(() => {
       ) : null}
     </div>
   );
-};
-
+      }
 export default StarRating;
 
 

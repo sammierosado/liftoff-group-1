@@ -8,7 +8,7 @@
 <div class="container">
     <h2 class="headTitle">Create Event</h2>
 
-    <form action="/events/add" method="POST">
+    <form action="/events/add" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label th:for="eventName" class="form-label">Event Name:</label>
             <input type="text" class="form-control" th:field="${event.eventName}" />
@@ -36,6 +36,11 @@
         <div class="form-group">
             <label th:for="date" class="form-label">Date:</label>
             <input type="date" class="form-control" th:field="${event.date}" />
+        </div>
+
+        <div class="form-group">
+            <label th:for="flyer" class="form-label">Event Flyer:</label>
+            <input type="file" name="flyer" class="form-control" accept="image/*" />
         </div>
 
         <button type="submit" class="btn btn-primary">Create Event</button>
