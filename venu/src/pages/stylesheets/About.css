@@ -140,3 +140,19 @@
     text-align: center;
   }
 }
+
+.linkedin-icon {
+   color: #0A66C2;
+}
+
+.github-icon {
+   color: #2b3137;
+}
+
+.gmail-icon {
+   color: #c71610;
+}
+
+.discord.icon {
+   color: #7289d9;
+}
