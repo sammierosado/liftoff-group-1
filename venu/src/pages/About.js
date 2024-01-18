@@ -17,7 +17,7 @@ function About() {
                             Meet the Team
                         </p>
                         <p className="text-blk section-subhead-text">
-                            Test text dadadada words go here yay!
+                            VENU is the capstone project of LaunchCode graduates Keyona, Jay, Andrew, and Mal. It was made over the course of 2 months and provided ample opportunity to practice skills new and old.
                         </p>
                         <div className="responsive-container-block">
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
@@ -37,9 +37,6 @@ function About() {
                                         </a>
                                         <a href="http://www.linkedin.com/" target="_blank">
                                             <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
-                                        </a>
-                                        <a href="http://www.discord.com/" target="_blank">
-                                            <FontAwesomeIcon icon={faDiscord} className="discord-icon" />
                                         </a>
                                         {/*target="_blank" should open the link in a new tab*/}
                                         <a href="http://www.gmail.com/" target="_blank">
@@ -61,14 +58,11 @@ function About() {
                                         Software Developer
                                     </p>
                                     <div className="social-media-links">
-                                        <a href="http://www.github.com/" target="_blank">
+                                        <a href="http://www.github.com/jaythemself" target="_blank">
                                             <FontAwesomeIcon icon={faGithub} className="github-icon" />
                                         </a>
-                                        <a href="http://www.linkedin.com/" target="_blank">
+                                        <a href="http://www.linkedin.com/in/jayhamrick" target="_blank">
                                             <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
-                                        </a>
-                                        <a href="http://www.discord.com/" target="_blank">
-                                            <FontAwesomeIcon icon={faDiscord} className="discord-icon" />
                                         </a>
                                         <a href="http://www.gmail.com/" target="_blank">
                                             <FontAwesomeIcon icon={faGoogle} className="gmail-icon" />
@@ -95,9 +89,6 @@ function About() {
                                         <a href="http://www.linkedin.com/" target="_blank">
                                             <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
                                         </a>
-                                        <a href="http://www.discord.com/" target="_blank">
-                                            <FontAwesomeIcon icon={faDiscord} className="discord-icon" />
-                                        </a>
                                         <a href="http://www.gmail.com/" target="_blank">
                                             <FontAwesomeIcon icon={faGoogle} className="gmail-icon" />
                                         </a>
@@ -122,9 +113,6 @@ function About() {
                                         </a>
                                         <a href="http://www.linkedin.com/" target="_blank">
                                             <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
-                                        </a>
-                                        <a href="http://www.discord.com/" target="_blank">
-                                            <FontAwesomeIcon icon={faDiscord} className="discord-icon" />
                                         </a>
                                         <a href="http://www.gmail.com/" target="_blank">
                                             <FontAwesomeIcon icon={faGoogle} className="gmail-icon" />

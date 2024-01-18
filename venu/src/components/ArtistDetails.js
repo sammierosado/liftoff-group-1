@@ -9,9 +9,10 @@ const ArtistDetails = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const { id } = useParams();
 
-  // TODO if time permits, -> if unfound and next has value, advance
+  // TODO if time permits, -> if not yet found and next has value, advance
+  // TODO if time permits, query user for token and if true hide login link
   const artistName = artistDetails.artistName;
-  console.log('13 artistName: ', artistName);
+  console.log('line 14 return artistName: ', artistName);
 
   const searchArtist = async (artistName, offset) => {
     await getData(artistName, offset).then(response => {
@@ -38,7 +39,7 @@ const ArtistDetails = () => {
     }).catch(error => {
       console.log(error);
     })
-    console.log('39 searchName: ', searchName);
+    console.log('line 41 return searchName: ', searchName);
     return artistSearchReturn;
   }
 
