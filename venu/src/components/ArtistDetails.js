@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 
 const ArtistDetails = () => {
   const [artistDetails, setArtistDetails] = useState({});
+  const [buttonClicked, setButtonClicked] = useState(false);
   const { id } = useParams();
 
   // TODO if time permits, -> if unfound and next has value, advance
@@ -20,6 +21,7 @@ const ArtistDetails = () => {
         searchArtist(artistName, offset + 50);
       } else {
         getArtistTracks(response.id);
+        setButtonClicked(true);
       }
     })
   }
@@ -83,22 +85,17 @@ const ArtistDetails = () => {
       <div className="events-container artist-details-container">
         <h2>{artistDetails.artistName}</h2>
         <p><strong>Genre:</strong> {artistDetails.genre}</p>
-        <div>
-          {/*TODO: turn this into a toggle button. if token, search-tracks, else login. OR hide one of the two*/}
-        </div>
-        <div className="search-tracks-button">
-          <button onClick={() => searchArtist(artistDetails.artist?.artistName, 0)}>
-            View Top Tracks on Spotify
-          </button>
-        </div>
-        <div>
-          <a className="login-link" href="http://localhost:3000/spotify-login">
-            Login to Spotify to See Top Artist Tracks
-          </a>
-        </div>
-        <div class="flex-container">
 
-            <div className='left-colum'>
+        {!buttonClicked && (
+            <div className="search-tracks-button">
+              <button onClick={() => searchArtist(artistDetails.artist?.artistName, 0)}>
+                View Top Tracks on Spotify
+              </button>
+            </div>
+        )}
+
+        <div class="flex-container">
+            <div className='left-column'>
                 {artistDetails.tracks && artistDetails.tracks.slice(0, 5).map((track, index) => (
                     <div key={index} className='track-container'>
                         <img className='album-image' src={track.album.images[0].url} alt='album img'/>
@@ -109,7 +106,6 @@ const ArtistDetails = () => {
                     </div>
                 ))}
             </div>
-
             <div className='right-column'>
                 {artistDetails.tracks && artistDetails.tracks.slice(5).map((track, index) => (
                     <div key={index} className='track-container'>
@@ -121,8 +117,14 @@ const ArtistDetails = () => {
                     </div>
                 ))}
             </div>
-
         </div>
+
+        <div>
+          <a className="login-link" href="http://localhost:3000/spotify-login">
+            Login to Spotify to See Top Artist Tracks
+          </a>
+        </div>
+
       </div>
     </div>
   );

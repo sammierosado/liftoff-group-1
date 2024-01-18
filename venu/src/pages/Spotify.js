@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import './stylesheets/AllSpotify.css';
 
 //TODO: Spotify css
 const Spotify = () => {
