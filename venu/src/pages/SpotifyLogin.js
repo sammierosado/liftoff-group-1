@@ -3,14 +3,14 @@ import { CLIENT_ID, CLIENT_SECRET, AUTH_ENDPOINT, REDIRECT_URI, SPACE_DELIMITER,
 import Navbar from "../components/Navbar";
 import './stylesheets/AllSpotify.css';
 
-//TODO: add section on events page that link directs to spotify login page
-//TODO: SpotifyLogin css
+
 const SpotifyLogin = () =>  {
 
+    // redirects user to spotify api authentication url including necessary client/scope/redirect return info
     const handleLogin = () => {
         window.location = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES_URL_PARAM}`;
     }
-{/* can abstract into a component if decide want to use it elsewhere */}
+
     return (
     <div className="spotify-login-background">
         <Navbar/>

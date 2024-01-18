@@ -19,19 +19,15 @@ const EventDetails = () => {
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
-
         const data = await response.json();
-        //        console.log('Fetched event details:', data);
         setEventDetails(data);
-        //        console.log('Fetched event details:', eventDetails);
       } catch (error) {
-        //        console.error('Error fetching event details:', error);
+          console.error('Error fetching event details:', error);
       }
     };
 
     fetchEventDetails();
   }, [id]);
-  //  console.log('Rendered event details:', eventDetails);
 
   return (
     <div className="event-details-page-background">
@@ -42,7 +38,7 @@ const EventDetails = () => {
           <strong>Artist:</strong>{' '}
           <Link to={`/artists/${eventDetails.artist?.id}`}>
             {eventDetails.artist?.artistName}
-            <span className="artist-details-message">Click to view artist details</span>
+            <span className="artist-details-message"></span>
             <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
             <FontAwesomeIcon icon={faSpotify} className="spotify-logo" />
           </Link>
@@ -76,8 +72,6 @@ const EventDetails = () => {
                    />
                  ) : (
                    <p>No flyer available for this event.</p>
-                 )
-              }
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import './stylesheets/AllSpotify.css';
 
-//TODO: Spotify css
+
 const Spotify = () => {
 
     const [token, setToken] = useState('');
@@ -16,6 +16,7 @@ const Spotify = () => {
     const ARTISTS_ENDPOINT = "https://api.spotify.com/v1/me/top/artists?time_range=long_term";
     const PROFILE_ENDPOINT = "https://api.spotify.com/v1/me";
 
+    // retrieves user access token (auth)
     const getParamsFromHash = (hash) => {
         const hashContent = hash.substring(1);
         const paramsSplit = hashContent.split('&');
@@ -28,6 +29,7 @@ const Spotify = () => {
         return params;
     }
 
+    // requests spotify api for endpoints specified in 11-13 consts
     const getData = async (endpoint, setFunction) => {
         await axios.get(endpoint, {
             headers: {
@@ -41,10 +43,12 @@ const Spotify = () => {
         })
     }
 
+    // sets/updates access token
     useEffect(() => {
         setToken(localStorage.getItem('token'));
     }, [token]);
 
+    // extracts token from URL hash and fetches data
     useEffect(() => {
         if(window.location.hash){
             const hash = window.location.hash;
