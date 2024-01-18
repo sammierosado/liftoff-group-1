@@ -97,15 +97,31 @@ const ArtistDetails = () => {
           </a>
         </div>
         <div class="flex-container">
-            {artistDetails.tracks && artistDetails.tracks.map((track, index) => (
-                <div key={index} className='track-container'>
-                    <img className='album-image' src={track.album.images[0].url} alt='album img'/>
-                    <div className='track-info'>
-                        <h3 className='artist-track'>{track.name}</h3>
-                        <p className='track-album'>{track.album.name}</p>
+
+            <div className='left-colum'>
+                {artistDetails.tracks && artistDetails.tracks.slice(0, 5).map((track, index) => (
+                    <div key={index} className='track-container'>
+                        <img className='album-image' src={track.album.images[0].url} alt='album img'/>
+                        <div className='track-info'>
+                            <h3>{track.name}</h3>
+                            <p>{track.album.name}</p>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+
+            <div className='right-column'>
+                {artistDetails.tracks && artistDetails.tracks.slice(5).map((track, index) => (
+                    <div key={index} className='track-container'>
+                        <img className='album-image' src={track.album.images[0].url} alt='album img'/>
+                        <div className='track-info'>
+                            <h3>{track.name}</h3>
+                            <p>{track.album.name}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
         </div>
       </div>
     </div>
