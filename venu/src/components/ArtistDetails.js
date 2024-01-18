@@ -86,14 +86,13 @@ const ArtistDetails = () => {
       <div className="events-container artist-details-container">
         <h2>{artistDetails.artistName}</h2>
         <p><strong>Genre:</strong> {artistDetails.genre}</p>
-
-        {!buttonClicked && (
-            <div className="search-tracks-button">
-              <button onClick={() => searchArtist(artistDetails.artist?.artistName, 0)}>
-                View Top Tracks on Spotify
-              </button>
-            </div>
-        )}
+        <div>
+            {!buttonClicked && (
+                <button className='search-tracks-button' onClick={() => searchArtist(artistDetails.artist?.artistName, 0)}>
+                     View Top Tracks on Spotify
+                </button>
+            )}
+        </div>
 
         <div class="flex-container">
             <div className='left-column'>
