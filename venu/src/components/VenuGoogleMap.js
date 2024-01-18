@@ -74,16 +74,12 @@ const VenuGoogleMap = () => {
       }
     };
 
-    // Fetch and geocode venues when the component mounts
     fetchAndGeocodeVenues();
   }, []);
 
   const handleMarkerClick = (venue) => {
     setSelectedVenue(venue);
   };
-
-  console.log("selectedVenue: ", selectedVenue);
-
   const handleInfoWindowClose = () => {
     setSelectedVenue(null);
   };
