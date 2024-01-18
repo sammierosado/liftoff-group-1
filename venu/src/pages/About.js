@@ -17,7 +17,7 @@ function About() {
                             Meet the Team
                         </p>
                         <p className="text-blk section-subhead-text">
-                            VENU is the capstone project of LaunchCode graduates Keyona, Jay, Andrew, and Mal. It was made over the course of 2 months and provided ample opportunity to practice skills new and old.
+                            VENU is the capstone project of LaunchCode graduates Keyona, Jay, Andrew, and Mal. It was made over the course of six weeks and provided ample opportunity to practice skills new and old.
                         </p>
                         <div className="responsive-container-block">
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
