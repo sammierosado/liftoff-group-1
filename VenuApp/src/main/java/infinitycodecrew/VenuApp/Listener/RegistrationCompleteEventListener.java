@@ -50,11 +50,11 @@ public class RegistrationCompleteEventListener
             //props.put("mail.smtp.starttls.enable", "true");
             String subject = "Welcome to the Party!";
             String senderName = "The VENU Team";
-            String mailContent = "<p> Hi, "+ theUser.getUsername()+ ", </p>"+
-                    "<p>Thank you for registering with us,"+"" +
-                    "Please, follow the link below to complete your registration.</p>"+
+            String mailContent = "<p> Hi "+ theUser.getUsername()+ ", </p>"+
+                    "<p>Thank you for registering with us and joining the party! "+"" +
+                    "Please follow the link below to complete your registration.</p>"+
                     "<a href=\"" +url+ "\">Verify your email to activate your account and get your all access pass.</a>"+
-                    "<p> Thank you <br> The VENU Team";
+                    "<p> Thank you, <br> The VENU Team";
             MimeMessage message = mailSender.createMimeMessage();
             var messageHelper = new MimeMessageHelper(message);
             messageHelper.setFrom("mdurham86@gmail.com", senderName);
