@@ -6,7 +6,9 @@ import infinitycodecrew.VenuApp.models.data.ArtistRepository;
 import infinitycodecrew.VenuApp.models.data.EventRepository;
 import infinitycodecrew.VenuApp.models.data.VenueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,5 +43,16 @@ public class APIEventController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/flyer/{eventId}")
+    public ResponseEntity<byte[]> getEventFlyer(@PathVariable int eventId) {
+        Event event = eventRepository.findById(eventId).orElse(null);
+        if (event != null && event.getFlyerImage() != null) {
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.IMAGE_PNG);
+            return new ResponseEntity<>(event.getFlyerImage(), headers, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }
