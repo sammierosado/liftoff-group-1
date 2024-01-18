@@ -11,7 +11,7 @@ function Navbar() {
     };
 
     return (
-        // Navbar buttons
+        // Navbar buttons and code to set buttons to active on click
         <ul className="topmenu">
             <li>
                 <Link to='/'

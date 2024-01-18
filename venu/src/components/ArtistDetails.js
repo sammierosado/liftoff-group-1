@@ -9,11 +9,9 @@ const ArtistDetails = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const { id } = useParams();
 
-  // TODO if time permits, -> if not yet found and next has value, advance
-  // TODO if time permits, query user for token and if true hide login link
   const artistName = artistDetails.artistName;
-  console.log('line 14 return artistName: ', artistName);
 
+  // uses getData function to search for Spotify artist and if found return their details/top tracks
   const searchArtist = async (artistName, offset) => {
     await getData(artistName, offset).then(response => {
       if (offset > 200) {
@@ -27,6 +25,7 @@ const ArtistDetails = () => {
     })
   }
 
+  // makes a request to spotify api to search and return artist details
   const getData = async (artistName, offset) => {
     let artistSearchReturn;
     let searchName = artistDetails.artistName.replace("'", '');
@@ -39,10 +38,10 @@ const ArtistDetails = () => {
     }).catch(error => {
       console.log(error);
     })
-    console.log('line 41 return searchName: ', searchName);
     return artistSearchReturn;
   }
 
+  // makes a request to spotify api to return specific artist top tracks
   const getArtistTracks = async (artistId) => {
     await axios.get(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`, {
       headers: {
@@ -54,12 +53,12 @@ const ArtistDetails = () => {
         ...prevState,
         tracks: tracks
       }));
-      console.log(response.data);
     }).catch(error => {
       console.log(error);
     });
   }
 
+  // useEffect hook to fetch artist details from backend when id changes
   useEffect(() => {
     const fetchArtistDetails = async () => {
       try {
@@ -70,7 +69,6 @@ const ArtistDetails = () => {
         }
 
         const data = await response.json();
-        console.log('Fetched artist details:', data);
         setArtistDetails(data);
       } catch (error) {
         console.error('Error fetching artist details:', error);

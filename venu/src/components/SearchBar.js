@@ -14,24 +14,24 @@ const SearchBar = ({ handleSearch }) => {
        handleSearch(searchTerm);
     };
 
-  return (
-           <form className="search-bar" onSubmit={handleSubmit}>
-               <input
-                   type="text"
-                   className="search-input"
-                   placeholder="Search By: Event Name, Artist, Genre, Venue, or Date..."
-                   value={searchTerm}
-                   onChange={handleChange}
-               />
-               <button className="search-button" type="submit">
-                   Search
-               </button>
-           </form>
-       );
-   };
+    return (
+       <form className="search-bar" onSubmit={handleSubmit}>
+           <input
+               type="text"
+               className="search-input"
+               placeholder="Search By: Event Name, Artist, Genre, Venue, or Date..."
+               value={searchTerm}
+               onChange={handleChange}
+           />
+           <button className="search-button" type="submit">
+               Search
+           </button>
+       </form>
+    );
+};
 
-   SearchBar.propTypes = {
-       handleSearch: PropTypes.func.isRequired,
-   };
+SearchBar.propTypes = {
+   handleSearch: PropTypes.func.isRequired,
+};
 
 export default SearchBar;

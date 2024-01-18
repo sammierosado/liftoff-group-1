@@ -20,6 +20,8 @@ function About() {
                             VENU is the capstone project of LaunchCode graduates Keyona, Jay, Andrew, and Mal. It was made over the course of six weeks and provided ample opportunity to practice skills new and old.
                         </p>
                         <div className="responsive-container-block">
+
+                        {/* Teammate Card 1*/}
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                                 <div className="team-card">
                                     <div className="img-wrapper">
@@ -46,6 +48,7 @@ function About() {
                                 </div>
                             </div>
 
+                        {/* Teammate Card 2 */}
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                                 <div className="team-card">
                                     <div className="img-wrapper">
@@ -71,6 +74,7 @@ function About() {
                                 </div>
                             </div>
 
+                        {/* Teammate Card 3 */}
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                                 <div className="team-card">
                                     <div className="img-wrapper">
@@ -96,6 +100,7 @@ function About() {
                                 </div>
                             </div>
 
+                        {/* Teammate Card 4 */}
                             <div className="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 team-card-container">
                                 <div className="team-card">
                                     <div className="img-wrapper">
