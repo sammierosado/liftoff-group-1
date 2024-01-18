@@ -76,8 +76,6 @@ const EventDetails = () => {
                    />
                  ) : (
                    <p>No flyer available for this event.</p>
-                 )}
-             </div>
         </div>
       </div>
     </div>
