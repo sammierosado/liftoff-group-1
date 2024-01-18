@@ -2,7 +2,7 @@
 /* map box position/size on home screen */
 .VENU-map {
   position: absolute;
-  top: 32%;
+  top: 16%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 65vw;

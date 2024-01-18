@@ -15,7 +15,8 @@ import { FaMusic, FaArrowRight } from 'react-icons/fa';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
-  const [filteredEvents, setFilteredEvents] = useState([])
+  const [filteredEvents, setFilteredEvents] = useState([]);
+   const [selectedFlyerId, setSelectedFlyerId] = useState(null);
 
   const fetchData = async () => {
     try {
@@ -72,6 +73,10 @@ const Events = () => {
     setFilteredEvents(filtered);
   };
 
+  const toggleFlyerVisibility = (eventId) => {
+      setSelectedFlyerId(eventId === selectedFlyerId ? null : eventId);
+    };
+
   return (
     <div>
       <Navbar />
@@ -92,6 +97,24 @@ const Events = () => {
                 <div><strong>Genre:</strong> {event.artist.genre}</div>
                 <div><strong>Venue:</strong> {event.venue.venueName}</div>
                 <div><strong>Date:</strong> {event.date}</div>
+                <div className="flyer-container">
+                  <span className="flyer-toggle" onClick={() => toggleFlyerVisibility(event.id)}>
+                    {selectedFlyerId === event.id ? 'Hide Flyer' : 'View Flyer'}
+                  </span>
+                  {selectedFlyerId === event.id && (
+                    <div className="flyer-content">
+                      {event.flyerImage ? (
+                        <img
+                          src={`http://localhost:8080/api/events/flyer/${event.id}`}
+                          alt="Event Flyer"
+                          className="flyer-image"
+                        />
+                      ) : (
+                        <p>No flyer available for this event.</p>
+                      )}
+                    </div>
+                   )}
+                 </div>
               </div>
             ))
           ) : (
@@ -107,13 +130,25 @@ const Events = () => {
                 <div><strong>Genre:</strong> {event.artist.genre}</div>
                 <div><strong>Venue:</strong> {event.venue.venueName}</div>
                 <div><strong>Date:</strong> {event.date}</div>
-
-                
-                
-
-
+                <div className="flyer-container">
+                  <span className="flyer-toggle" onClick={() => toggleFlyerVisibility(event.id)}>
+                    {selectedFlyerId === event.id ? 'Hide Flyer' : 'View Flyer'}
+                  </span>
+                  {selectedFlyerId === event.id && (
+                    <div className="flyer-content">
+                      {event.flyerImage ? (
+                        <img
+                          src={`http://localhost:8080/api/events/flyer/${event.id}`}
+                          alt="Event Flyer"
+                          className="flyer-image"
+                        />
+                      ) : (
+                         <p>No flyer available for this event.</p>
+                      )}
+                    </div>
+                   )}
+                 </div>
               </div>
-
             ))
           )}
         </div>
