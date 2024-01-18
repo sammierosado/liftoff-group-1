@@ -67,6 +67,18 @@ const EventDetails = () => {
         </ul>
         <p><strong>Price:</strong> ${eventDetails.price?.toFixed(2)}</p>
         <p><strong>Date:</strong> {eventDetails.date}</p>
+        <div className="event-flyer">
+              {eventDetails.flyerImage ? (
+                   <img
+                     src={`http://localhost:8080/api/events/flyer/${eventDetails.id}`}
+                     alt="Event Flyer"
+                     className="flyer-image"
+                   />
+                 ) : (
+                   <p>No flyer available for this event.</p>
+                 )}
+             </div>
+        <div>
       </div>
     </div>
   );

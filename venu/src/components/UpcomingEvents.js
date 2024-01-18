@@ -50,6 +50,15 @@ const UpcomingEvents = () => {
               <strong>Artist:</strong> {event.artist.artistName} <br />
               <strong>Venue:</strong> {event.venue.venueName} <br />
               <strong>Date:</strong> {event.date} <br />
+              {event.flyerImage ? (
+                 <img
+                   src={`http://localhost:8080/api/events/flyer/${event.id}`}
+                   alt="Event Flyer"
+                   className="flyer-image"
+                 />
+               ) : (
+                 <p>No flyer available for this event.</p>
+               )}
             </li>
           ))}
         </ul>

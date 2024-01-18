@@ -64,3 +64,15 @@
   font-size: 1.2em;
   animation: bounce 1s infinite;
 }
+
+.event-flyer {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.flyer-image {
+  max-width: 100%;
+  border-radius: 10px;
+}
