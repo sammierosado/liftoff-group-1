@@ -32,7 +32,7 @@
             <th class="venue-header-sm">Multi Level</th>
             <th class="venue-header-sm">Elevators</th>
             <th class="venue-header-sm">Update Venue</th>
-            <th class="venue-header-sm">Delete Venue</th>
+
 
     </tr>
     </thead>
@@ -55,16 +55,12 @@
         <td class="venue-content-sm" th:text="${venue.multiLevel}"></td>
         <td class="venue-content-sm" th:text="${venue.elevators}"></td>
         <td>
-            <form th:action="@{/venues/update/{id}(id=${venue.id})}" method="post">
+            <form th:action="@{/venues/update/{id}(id=${venue.id})}" method="get">
                 <button type="submit" class="btn btn-primary btn-sm">Update</button>
             </form>
 
         </td>
-        <td>
-            <form th:action="@{/venues/delete/{id}(id=${venue.id})}" method="post" style="display: inline;">
-                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-            </form>
-        </td>
+
     </tr>
     </tbody>
     </table>
