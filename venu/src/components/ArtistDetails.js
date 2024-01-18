@@ -98,10 +98,12 @@ const ArtistDetails = () => {
         </div>
         <div class="flex-container">
             {artistDetails.tracks && artistDetails.tracks.map((track, index) => (
-                <div key={index}>
+                <div key={index} className='track-container'>
                     <img className='album-image' src={track.album.images[0].url} alt='album img'/>
-                    <h4 className='artist-track'>{track.name}</h4>
-                    <p className='track-album'>{track.album.name}</p>
+                    <div className='track-info'>
+                        <h3 className='artist-track'>{track.name}</h3>
+                        <p className='track-album'>{track.album.name}</p>
+                    </div>
                 </div>
             ))}
         </div>

@@ -1,14 +1,16 @@
 .artist-details-page-background {
-  min-height: 100dvh;
-  min-width: 100dvw;
+  min-height: 100vh;
+  min-width: 100vw;
   background-image: url('../../public/images/concertbg.png');
   background-size: cover;
   background-repeat: no-repeat;
+  position: absolute;
 }
 
 .artist-details-container {
   margin-top: 20px;
   text-align: center;
+  align-items: center;
 }
 
 .artist-details-container h2 {
@@ -34,7 +36,7 @@
   margin-top: 5px;
 }
 
-{/*Spotify stuff starts here*/}
+{/*Spotify stuff in return starts here*/}
 
 .search-tracks-button {
   font-size: 16px;
@@ -47,13 +49,31 @@
 }
 
 .flex-container {
-  background-color: #ffff;
-  padding: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 5px;
+    align-items: center;
+    text-align: center;
 }
+
+.track-container {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.album-image {
+    max-height: 200px;
+    max-width: 200px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.artist-track {
+    padding-left: 25px;
+}
+
+.track-album {
+    padding-left: 25px;
+   text-align: left;
+}
+
