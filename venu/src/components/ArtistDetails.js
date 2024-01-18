@@ -11,6 +11,7 @@ const ArtistDetails = () => {
   // TODO if time permits, -> if unfound and next has value, advance
   const artistName = artistDetails.artistName;
   console.log('13 artistName: ', artistName);
+
   const searchArtist = async (artistName, offset) => {
     await getData(artistName, offset).then(response => {
       if (offset > 200) {
@@ -35,7 +36,7 @@ const ArtistDetails = () => {
     }).catch(error => {
       console.log(error);
     })
-    console.log('38 searchName: ', searchName);
+    console.log('39 searchName: ', searchName);
     return artistSearchReturn;
   }
 
@@ -45,10 +46,15 @@ const ArtistDetails = () => {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     }).then(response => {
+      const tracks = response.data.tracks;
+      setArtistDetails(prevState => ({
+        ...prevState,
+        tracks: tracks
+      }));
       console.log(response.data);
     }).catch(error => {
       console.log(error);
-    })
+    });
   }
 
   useEffect(() => {
@@ -82,7 +88,7 @@ const ArtistDetails = () => {
         </div>
         <div className="search-tracks-button">
           <button onClick={() => searchArtist(artistDetails.artist?.artistName, 0)}>
-            View Top 5 Tracks on Spotify
+            View Top Tracks on Spotify
           </button>
         </div>
         <div>
@@ -91,11 +97,13 @@ const ArtistDetails = () => {
           </a>
         </div>
         <div class="flex-container">
-          <div>Track 1</div>
-          <div>Track 2</div>
-          <div>Track 3</div>
-          <div>Track 4</div>
-          <div>Track 5</div>
+            {artistDetails.tracks && artistDetails.tracks.map((track, index) => (
+                <div key={index}>
+                    <img className='album-image' src={track.album.images[0].url} alt='album img'/>
+                    <h4 className='artist-track'>{track.name}</h4>
+                    <p className='track-album'>{track.album.name}</p>
+                </div>
+            ))}
         </div>
       </div>
     </div>
