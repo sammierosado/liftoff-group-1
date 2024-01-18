@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faLinkedin, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 
-// TODO: simple about the team page
 function About() {
 
     return (

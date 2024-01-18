@@ -62,10 +62,21 @@ const Spotify = () => {
         getData(PROFILE_ENDPOINT, setProfile);
     }, []);
 
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        window.location.href = '/spotify-login';
+    };
+
     return (
         <div className='spotify-user-background'>
             <Navbar />
             <div className='spotify-user-container'>
+                <div className='spotify-logout-container'>
+                    <button className='spotify-logout' onClick={handleLogout}>
+                        Not You? Logout
+                    </button>
+                </div>
+
                 <div className='user-profile-container'>
                     {profile.display_name && profile.images && (
                         <div>
