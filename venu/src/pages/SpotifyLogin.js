@@ -12,9 +12,9 @@ const SpotifyLogin = () =>  {
     }
 {/* can abstract into a component if decide want to use it elsewhere */}
     return (
-    <div>
+    <div className="spotify-login-background">
         <Navbar/>
-        <div className="spotify-background">
+        <div className="spotify-login-container">
             <div className="login-title">
                 <h1>Login with Spotify</h1>
             </div>
@@ -28,3 +28,23 @@ const SpotifyLogin = () =>  {
 };
 
 export default SpotifyLogin;
+
+
+
+
+/* ArtistDetails.js return setup, left right are same except div name
+
+<div class="flex-container">
+    <div className='left-column'>
+        {artistDetails.tracks && artistDetails.tracks.slice(0, 5).map((track, index) => (
+            <div key={index} className='track-container'>
+                <img className='album-image' src={track.album.images[0].url} alt='album img'/>
+                    <div className='track-info'>
+                        <h3>{track.name}</h3>
+                        <p>{track.album.name}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+*/
