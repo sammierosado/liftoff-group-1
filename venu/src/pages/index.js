@@ -3,10 +3,10 @@ import Home from "./Home";
 import Events from "./Events";
 import Venues from "./Venues";
 import Artists from "./Artists";
-import Spotify from "./Spotify"
-import SpotifyLogin from "./SpotifyLogin"
+import Spotify from "./Spotify";
+import SpotifyLogin from "./SpotifyLogin";
 
-// This is for routing (App.js import Pages) so we won't have to have a million import statements elsewhere.
+// This is for routing (App.js import Pages) so we won't have to have a million import statements.
 // Just import newly created pages with the above format and add them to the export statement.
 
 export {About, Home, Events, Venues, Artists, Spotify, SpotifyLogin};

@@ -12,4 +12,6 @@ const SCOPES = [
 ];
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
+// defining constants for use in SpotifyLogin.js
+
 module.exports = { CLIENT_ID, CLIENT_SECRET, AUTH_ENDPOINT, REDIRECT_URI, SPACE_DELIMITER, RESPONSE_TYPE, SCOPES, SCOPES_URL_PARAM }

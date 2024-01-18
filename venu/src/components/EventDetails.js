@@ -19,19 +19,15 @@ const EventDetails = () => {
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
-
         const data = await response.json();
-        //        console.log('Fetched event details:', data);
         setEventDetails(data);
-        //        console.log('Fetched event details:', eventDetails);
       } catch (error) {
-        //        console.error('Error fetching event details:', error);
+          console.error('Error fetching event details:', error);
       }
     };
 
     fetchEventDetails();
   }, [id]);
-  //  console.log('Rendered event details:', eventDetails);
 
   return (
     <div className="event-details-page-background">

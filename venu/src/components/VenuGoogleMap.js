@@ -6,11 +6,12 @@ const VenuGoogleMap = () => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   });
 
-  // geographical location on which the Google map is centered. feel free to change it!
+  // geolocation on which the Google map is centered. feel free to change it!
     // STL coordinates: {lat: 38.627003, lng: -90.199402}
     // KC coordinates: {lat: 	39.099724, lng: -94.578331}
     // PHILLY coordinates: {lat: 39.952583, lng: -75.165222}
-  const mapCenter = useMemo(() => ({ lat: 39.099724, lng: -94.578331 }), []);
+  const mapCenter = useMemo(() => ({ lat: 38.627003, lng: -90.199402 }), []);
+  // disables default google map street view and satellite etc options. useMemo keeps it from recalculating these options a bunch
   const mapOptions = useMemo(() => ({
     disableDefaultUI: true,
     clickableIcons: false,
@@ -20,6 +21,7 @@ const VenuGoogleMap = () => {
   const [geocodedData, setGeocodedData] = useState([]);
   const [selectedVenue, setSelectedVenue] = useState(null);
 
+  // useEffect hook to fetch venue data from backend and uses google geocoding api to convert to coordinates for map markers
   useEffect(() => {
     const fetchAndGeocodeVenues = async () => {
       try {
@@ -37,7 +39,6 @@ const VenuGoogleMap = () => {
         const venueAddresses = venuesData.map((venue) => {
           return `${venue.venueName}, ${venue.venueAddress}, ${venue.venueCity}, ${venue.venueState}`;
         });
-
         const coordinatesPromises = venueAddresses.map(async (address) => {
           try {
             const googleMapsApiKey = process.env.REACT_APP_GEOCODING_API_KEY;
@@ -74,10 +75,10 @@ const VenuGoogleMap = () => {
       }
     };
 
-    // Fetch and geocode venues when the component mounts
     fetchAndGeocodeVenues();
   }, []);
 
+  // onClick event for displaying venue name/address on map markers
   const handleMarkerClick = (venue) => {
     setSelectedVenue(venue);
   };
@@ -93,7 +94,7 @@ const VenuGoogleMap = () => {
     <div>
       <div className="VENU-map">
         <GoogleMap center={mapCenter} zoom={10} mapContainerStyle={{ height: '100%', width: '100%' }} options={mapOptions}>
-          {/* Render Markers using the geocoded data */}
+          {/* render Markers using the geocoded data */}
           {geocodedData.map((venue) => (
             <Marker
               key={venue.address}
@@ -101,7 +102,7 @@ const VenuGoogleMap = () => {
               onClick={() => handleMarkerClick(venue)}
             />
           ))}
-          {/* Render InfoWindow for the selected venue */}
+          {/* render InfoWindow for the selected venue onClick */}
           {selectedVenue && (
             <InfoWindow
               position={{ lat: selectedVenue.location.lat, lng: selectedVenue.location.lng }}
