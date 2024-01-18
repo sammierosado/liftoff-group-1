@@ -42,7 +42,7 @@ const EventDetails = () => {
           <strong>Artist:</strong>{' '}
           <Link to={`/artists/${eventDetails.artist?.id}`}>
             {eventDetails.artist?.artistName}
-            <span className="artist-details-message">Click to view artist details</span>
+            <span className="artist-details-message"></span>
             <FontAwesomeIcon icon={faArrowRight} className="clickable-icon" />
             <FontAwesomeIcon icon={faSpotify} className="spotify-logo" />
           </Link>
@@ -76,8 +76,6 @@ const EventDetails = () => {
                    />
                  ) : (
                    <p>No flyer available for this event.</p>
-                 )
-              }
         </div>
       </div>
     </div>
