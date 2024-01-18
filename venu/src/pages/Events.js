@@ -15,7 +15,8 @@ import { FaMusic, FaArrowRight } from 'react-icons/fa';
 
 const Events = () => {
   const [events, setEvents] = useState([]);
-  const [filteredEvents, setFilteredEvents] = useState([])
+  const [filteredEvents, setFilteredEvents] = useState([]);
+   const [selectedFlyerId, setSelectedFlyerId] = useState(null);
 
   const fetchData = async () => {
     try {
@@ -71,6 +72,10 @@ const Events = () => {
     console.log('Filtered Events:', filtered);
     setFilteredEvents(filtered);
   };
+
+  const toggleFlyerVisibility = (eventId) => {
+      setSelectedFlyerId(eventId === selectedFlyerId ? null : eventId);
+    };
 
   return (
     <div>
