@@ -31,11 +31,11 @@ const ArtistDetails = () => {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     }).then(response => {
-      artistSearchReturn = response.data.artists.items.find(item => item.name === artistName);
+      artistSearchReturn = response.data.artists.items.find(item => item.name === artistDetails.artistName);
     }).catch(error => {
       console.log(error);
     })
-    console.log('37 searchName: ', searchName);
+    console.log('38 searchName: ', searchName);
     return artistSearchReturn;
   }
 
