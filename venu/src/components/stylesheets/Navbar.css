@@ -5,7 +5,7 @@
     padding: 0;
     overflow: hidden;
     background-color: #1e1d1d;
-    font-size: calc(2vmin);
+    font-size: 19px;
     width: calc(100dvw);
   }
 
@@ -21,7 +21,8 @@
     color: rgba(255, 255, 255, 0.665);
     background-color: #1e1d1d;
     text-align: center;
-    padding: 9px;
+    padding: 10px;
+    padding-right: 10px;
     text-decoration: none;
   }
 
