@@ -43,7 +43,7 @@ public class UserRegistrationSecurityConfig {
                         .contentTypeOptions(contentTypeOptions -> contentTypeOptions.disable())
                 )
                 .authorizeHttpRequests(request ->{
-                    request.requestMatchers("/", "/login", "registration/**", "/error", "events/**", "artists/**", "venues/**", "api/**").permitAll();
+                    request.requestMatchers("/", "/login", "registration/**", "/error", "api/**").permitAll();
                     request.requestMatchers("/users/**")
                             .hasAnyAuthority("USER", "ADMIN");
                      request.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll();
