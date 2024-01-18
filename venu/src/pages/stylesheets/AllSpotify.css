@@ -29,7 +29,7 @@
 }
 
 .login-button:hover {
-    background-color: #121212;
+    background-color: #454545;
 }
 
 
@@ -122,4 +122,25 @@
     margin: 0;
     margin-top: 2px;
     font-size: 18px;
+}
+
+.spotify-logout-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+.logout-button {
+    background-color: #191414;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #454545;
 }
