@@ -1,6 +1,7 @@
 import React from 'react';
 import { CLIENT_ID, CLIENT_SECRET, AUTH_ENDPOINT, REDIRECT_URI, SPACE_DELIMITER, RESPONSE_TYPE, SCOPES, SCOPES_URL_PARAM } from '../auth/SpotifyAuth';
 import Navbar from "../components/Navbar";
+import './stylesheets/AllSpotify.css';
 
 //TODO: add section on events page that link directs to spotify login page
 //TODO: SpotifyLogin css

@@ -70,3 +70,7 @@
   font-size: 1.2em;
   animation: infoCircleAnimation 1s infinite;
 }
+
+.ratingResponse{
+  font-style: italic;
+}

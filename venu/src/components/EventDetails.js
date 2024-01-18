@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import axios from "axios";
 import './stylesheets/EventDetails.css';
 import Navbar from './Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,46 +10,6 @@ import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 const EventDetails = () => {
   const [eventDetails, setEventDetails] = useState({});
   const { id } = useParams();
-
-  // TODO if time permits, -> if unfound and next has value, advance
-  const searchArtist = async (artistName, offset) => {
-    await getData(artistName, offset).then(response => {
-      if (offset > 200) {
-        console.log('Unable to find artist.');
-      } else if (!response) {
-        searchArtist(artistName, offset + 50);
-      } else {
-        getArtistTracks(response.id);
-      }
-    })
-  }
-
-  const getData = async (artistName, offset) => {
-    let artistSearchReturn;
-    let searchName = artistName.replace("'", '');
-    await axios.get(`https://api.spotify.com/v1/search?q=artist:${searchName}&type=artist&limit=50&offset=${offset}`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      }
-    }).then(response => {
-      artistSearchReturn = response.data.artists.items.find(item => item.name === artistName);
-    }).catch(error => {
-      console.log(error);
-    })
-    return artistSearchReturn;
-  }
-
-  const getArtistTracks = async (artistId) => {
-    await axios.get(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=US`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`
-      }
-    }).then(response => {
-      console.log(response.data);
-    }).catch(error => {
-      console.log(error);
-    })
-  }
 
   useEffect(() => {
     const fetchEventDetails = async () => {
@@ -120,25 +79,6 @@ const EventDetails = () => {
                  )}
              </div>
         <div>
-          {/*TODO: turn this into a toggle button. if token, search-tracks, else login. OR hide one of the two*/}
-        </div>
-        <div className="search-tracks-button">
-          <button onClick={() => searchArtist(eventDetails.artist?.artistName, 0)}>
-            View Top 5 Tracks on Spotify
-          </button>
-        </div>
-        <div>
-          <a className="login-link" href="http://localhost:3000/spotify-login">
-            Login to Spotify to See Top Artist Tracks
-          </a>
-        </div>
-        <div class="flex-container">
-          <div>Track 1</div>
-          <div>Track 2</div>
-          <div>Track 3</div>
-          <div>Track 4</div>
-          <div>Track 5</div>
-        </div>
       </div>
     </div>
   );
