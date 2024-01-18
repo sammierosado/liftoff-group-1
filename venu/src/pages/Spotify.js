@@ -71,11 +71,6 @@ const Spotify = () => {
         <div className='spotify-user-background'>
             <Navbar />
             <div className='spotify-user-container'>
-                <div className='spotify-logout-container'>
-                    <button className='spotify-logout' onClick={handleLogout}>
-                        Not You? Logout
-                    </button>
-                </div>
 
                 <div className='user-profile-container'>
                     {profile.display_name && profile.images && (
@@ -122,6 +117,10 @@ const Spotify = () => {
                             </div>
                         )}
                     </div>
+                </div>
+
+                <div className='spotify-logout-container'>
+                    <button className='logout-button' onClick={handleLogout}>Not You? Logout</button>
                 </div>
             </div>
         </div>
