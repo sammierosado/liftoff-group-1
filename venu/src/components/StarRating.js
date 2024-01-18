@@ -4,14 +4,19 @@ import axios from 'axios';
 
 const StarRating = ({ index, venueId }) => {
  
-
 {/*STORE TO LOCAL STORAGE */}
 
-const [stars, setStars] = useState(null);
-  const [hover, setHover] = useState(null);
+const [stars, setStars] = useState(() => {
+  const storedStars = localStorage.getItem(`userRating_${index}`);
+  return storedStars ? parseInt(storedStars) : null;
+});
+const [hover, setHover] = useState(null);
 
-
-
+useEffect(() => {
+  if (stars !== null) {
+    localStorage.setItem(`userRating_${index}`, stars.toString());
+  }
+}, [stars, index]);
 
 
 
@@ -63,7 +68,7 @@ const [stars, setStars] = useState(null);
       })}
       {stars !== null ? (
         <div>
-          <p>You rated this venue {stars} out of 5 stars.</p>
+          <p class = "ratingResponse">You rated this venue {stars} out of 5 stars.</p>
         </div>
       ) : null}
     </div>
