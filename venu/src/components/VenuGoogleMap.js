@@ -7,10 +7,10 @@ const VenuGoogleMap = () => {
   });
 
   // geographical location on which the Google map is centered. feel free to change it!
-    // STL coordinates: {lat: 38.627003, lng: -90.199402}
-    // KC coordinates: {lat: 	39.099724, lng: -94.578331}
-    // PHILLY coordinates: {lat: 39.952583, lng: -75.165222}
-  const mapCenter = useMemo(() => ({ lat: 38.627003, lng: -90.199402 }), []);
+  // STL coordinates: {lat: 38.627003, lng: -90.199402}
+  // KC coordinates: {lat: 	39.099724, lng: -94.578331}
+  // PHILLY coordinates: {lat: 39.952583, lng: -75.165222}
+  const mapCenter = useMemo(() => ({ lat: 39.952583, lng: -75.165222 }), []);
   const mapOptions = useMemo(() => ({
     disableDefaultUI: true,
     clickableIcons: false,
