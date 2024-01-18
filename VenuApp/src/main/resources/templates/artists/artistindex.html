@@ -19,7 +19,8 @@
         <th>Artist Name</th>
         <th>Artist Genre</th>
         <th>Update Artist</th>
-        <th>Delete Artist</th>
+
+
     </tr>
     </thead>
     <tr th:each="artist : ${artists}">
@@ -27,20 +28,16 @@
         <td th:text="${artist.artistName}"></td>
         <td th:text="${artist.genre}"></td>
         <td>
-            <form th:action="@{/artists/update/{id}(id=${artist.id})}" method="post">
+            <form th:action="@{'/artists/update/' + ${artist.id}}" method="get">
 
                 <button type="submit" class="btn btn-primary btn-sm">Update</button>
             </form>
         </td>
-        <td>
-            <form th:action="@{/artists/delete/{id}(id=${artist.id})}" method="post">
-                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-            </form>
-        </td>
+
 
     </tr>
 </table>
-</div>
+
 
 </body>
 </html>
