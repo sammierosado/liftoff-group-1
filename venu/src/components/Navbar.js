@@ -1,15 +1,61 @@
+import React, {useState} from 'react';
+import {Link, useLocation} from 'react-router-dom';
 import './stylesheets/Navbar.css';
 
 function Navbar() {
+    const [activeButton, setActiveButton] = useState('');
+    const location = useLocation();
+
+    const handleButtonClick = (button) => {
+        setActiveButton(button);
+    };
+
     return (
         // Navbar buttons
-        // TODO Home page is currently hard coded to be "active", add code to change to actual current page.
         <ul className="topmenu">
-            <li><a href="/" className="active">Home</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/venues">Venues</a></li>
-            <li><a href="/artists">Artists</a></li>
-            <li><a href="/about">About Us</a></li>
+            <li>
+                <Link to='/'
+                    onClick={() => handleButtonClick('Home')}
+                    className={activeButton === 'Home' || location.pathname === '/' ? 'active' : ''}
+                >
+                    Home
+                </Link>
+            </li>
+            <li>
+                <Link to='/events'
+                    onClick={() => handleButtonClick('Events')}
+                    className={activeButton === 'Events' || location.pathname === '/events' ? 'active' : ''}
+                >
+                    Events
+                </Link>
+            </li>
+
+            <li>
+                <Link to='/venues'
+                    onClick={() => handleButtonClick('Venues')}
+                    className={activeButton === 'Venues' || location.pathname === '/venues' ? 'active' : ''}
+                >
+                    Venues
+                </Link>
+            </li>
+
+            <li>
+                <Link to='/artists'
+                    onClick={() => handleButtonClick('Artists')}
+                    className={activeButton === 'Artists' || location.pathname === '/artists' ? 'active' : ''}
+                >
+                    Artists
+                </Link>
+            </li>
+
+            <li>
+                <Link to='/about'
+                    onClick={() => handleButtonClick('About')}
+                    className={activeButton === 'About' || location.pathname === '/about' ? 'active' : ''}
+                >
+                    About Us
+                </Link>
+            </li>
         </ul>
     );
 }
