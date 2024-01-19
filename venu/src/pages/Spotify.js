@@ -3,7 +3,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import './stylesheets/AllSpotify.css';
 
-
+// TODO: switch spotify apis here to premium and display user profile and playlists?
 const Spotify = () => {
 
     const [token, setToken] = useState('');

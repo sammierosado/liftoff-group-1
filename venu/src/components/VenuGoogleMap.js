@@ -6,6 +6,7 @@ const VenuGoogleMap = () => {
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
   });
 
+  // TODO: query user for IP address, set mapCenter
   // geographical location on which the Google map is centered. feel free to change it!
   // STL coordinates: {lat: 38.627003, lng: -90.199402}
   // KC coordinates: {lat: 	39.099724, lng: -94.578331}

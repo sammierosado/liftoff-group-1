@@ -1,4 +1,5 @@
-/*TODO add border/shadow to map or expand to take up entire page-~20% upcoming events column?*/
+/* TODO: add border/shadow to map or expand to take up entire page-~20% upcoming events column? */
+/* TODO: make upcoming events fixed box size with ability to scroll through, map/upcoming events side by side on screen */
 /* map box position/size on home screen */
 .VENU-map {
   position: absolute;
