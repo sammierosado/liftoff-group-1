@@ -13,6 +13,7 @@ function Navbar() {
     return (
         // Navbar buttons and code to set buttons to active on click
         <ul className="topmenu">
+
             <li>
                 <Link to='/'
                     onClick={() => handleButtonClick('Home')}
@@ -56,6 +57,7 @@ function Navbar() {
                     About Us
                 </Link>
             </li>
+
         </ul>
     );
 }
