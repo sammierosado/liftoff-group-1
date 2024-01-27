@@ -22,6 +22,7 @@ function Navbar() {
                     Home
                 </Link>
             </li>
+
             <li>
                 <Link to='/events'
                     onClick={() => handleButtonClick('Events')}
@@ -55,6 +56,15 @@ function Navbar() {
                     className={activeButton === 'About' || location.pathname === '/about' ? 'active' : ''}
                 >
                     About Us
+                </Link>
+            </li>
+
+            <li className='user-login'>
+                <Link to='/login'
+                    onClick={() => handleButtonClick('Sign In')}
+                    className={activeButton === 'Sign In'}
+                >
+                    Sign In
                 </Link>
             </li>
 

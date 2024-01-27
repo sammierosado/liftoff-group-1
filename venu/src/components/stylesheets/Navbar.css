@@ -15,6 +15,13 @@
     background-color: #1e1d1d;
   }
 
+  /* where sign in appears on screen, currently cheesing it with padding-right not to overlap a scroll bar. Fix for responsiveness */
+  /* responsive issue #24354 if screen is very narrow buttons on right will appear BELOW buttons on left and widen nav bar */
+  li.user-login {
+    float: right;
+    padding-right: 1dvw;
+  }
+
   /* parameters of the buttons not current active */
   .topmenu li a {
     display: inline-block;
