@@ -43,3 +43,9 @@
     color: white;
     background-color: #5810008b;
   }
+
+  /* disabling red active button color for sign in button bc it looks gross */
+  li.user-login a.active {
+    color: white;
+    background-color: #1e1d1d;
+  }

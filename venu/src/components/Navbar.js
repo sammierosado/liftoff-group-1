@@ -62,7 +62,7 @@ function Navbar() {
             <li className='user-login'>
                 <Link to='/login'
                     onClick={() => handleButtonClick('Sign In')}
-                    className={activeButton === 'Sign In'}
+                    className={activeButton === 'Sign In' || location.pathname === '/login' ? 'active' : ''}
                 >
                     Sign In
                 </Link>
