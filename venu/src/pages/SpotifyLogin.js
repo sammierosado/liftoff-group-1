@@ -3,7 +3,7 @@ import { CLIENT_ID, CLIENT_SECRET, AUTH_ENDPOINT, REDIRECT_URI, SPACE_DELIMITER,
 import Navbar from "../components/Navbar";
 import './stylesheets/AllSpotify.css';
 
-
+// TODO: rename spotify login classNames to specify spotify vs generic login (SpotifyLogin.js, Spotify.js, AllSpotify.css, ArtistDetails.js, ArtistDetails.css)
 const SpotifyLogin = () =>  {
 
     // redirects user to spotify api authentication url including necessary client/scope/redirect return info
@@ -28,23 +28,3 @@ const SpotifyLogin = () =>  {
 };
 
 export default SpotifyLogin;
-
-
-
-
-/* ArtistDetails.js return setup, left right are same except div name
-
-<div class="flex-container">
-    <div className='left-column'>
-        {artistDetails.tracks && artistDetails.tracks.slice(0, 5).map((track, index) => (
-            <div key={index} className='track-container'>
-                <img className='album-image' src={track.album.images[0].url} alt='album img'/>
-                    <div className='track-info'>
-                        <h3>{track.name}</h3>
-                        <p>{track.album.name}</p>
-                    </div>
-                </div>
-            ))}
-        </div>
-
-*/
