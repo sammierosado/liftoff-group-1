@@ -13,6 +13,7 @@ function Navbar() {
     return (
         // Navbar buttons and code to set buttons to active on click
         <ul className="topmenu">
+
             <li>
                 <Link to='/'
                     onClick={() => handleButtonClick('Home')}
@@ -21,6 +22,7 @@ function Navbar() {
                     Home
                 </Link>
             </li>
+
             <li>
                 <Link to='/events'
                     onClick={() => handleButtonClick('Events')}
@@ -56,6 +58,16 @@ function Navbar() {
                     About Us
                 </Link>
             </li>
+
+            <li className='user-login'>
+                <Link to='/login'
+                    onClick={() => handleButtonClick('Sign In')}
+                    className={activeButton === 'Sign In' || location.pathname === '/login' ? 'active' : ''}
+                >
+                    Sign In
+                </Link>
+            </li>
+
         </ul>
     );
 }

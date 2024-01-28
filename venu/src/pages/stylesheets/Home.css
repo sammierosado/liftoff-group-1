@@ -1,9 +1,10 @@
 /* TODO: add border/shadow to map or expand to take up entire page-~20% upcoming events column? */
 /* TODO: make upcoming events fixed box size with ability to scroll through, map/upcoming events side by side on screen */
-/* map box position/size on home screen */
+/* map box position/size on home screen. adjust top % to fit your needs as of right now, it gets wonky depending
+   on what data you have populating upcoming events box (flyers, number of events, etc) */
 .VENU-map {
   position: absolute;
-  top: 25%;
+  top: 18%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 65vw;
