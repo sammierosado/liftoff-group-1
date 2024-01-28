@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import './stylesheets/Navbar.css';
 
+// TODO: modify-- hide login button when user logged in OR make login/profile button toggle depending on login status OR make submenu dropdown
+// TODO: add user logout submenu dropdown in user profile section
+
 function Navbar() {
     const [activeButton, setActiveButton] = useState('');
     const location = useLocation();
@@ -59,12 +62,21 @@ function Navbar() {
                 </Link>
             </li>
 
+            <li className='user-profile'>
+                <Link to='/profile'
+                    onClick={() => handleButtonClick('User')}
+                    className={activeButton === 'User' || location.pathname === '/profile' ? 'active' : ''}
+                >
+                    User
+                </Link>
+            </li>
+
             <li className='user-login'>
                 <Link to='/login'
-                    onClick={() => handleButtonClick('Sign In')}
-                    className={activeButton === 'Sign In' || location.pathname === '/login' ? 'active' : ''}
+                    onClick={() => handleButtonClick('Login')}
+                    className={activeButton === 'Login' || location.pathname === '/login' ? 'active' : ''}
                 >
-                    Sign In
+                    Login
                 </Link>
             </li>
 

@@ -15,11 +15,15 @@
     background-color: #1e1d1d;
   }
 
-  /* where sign in appears on screen, currently cheesing it with padding-right not to overlap a scroll bar. Fix for responsiveness */
+  /* where sign in and user profile appears on screen, currently cheesing it with padding-right not to overlap a scroll bar. Fix for responsiveness */
   /* responsive issue #24354 if screen is very narrow buttons on right will appear BELOW buttons on left and widen nav bar */
-  li.user-login {
+  li.user-profile {
     float: right;
     padding-right: 1dvw;
+  }
+
+  li.user-login {
+    float: right;
   }
 
   /* parameters of the buttons not current active */
@@ -44,8 +48,13 @@
     background-color: #5810008b;
   }
 
-  /* disabling red active button color for sign in button bc it looks gross */
+  /* disabling red active button color for sign in and user buttons bc it looks gross */
   li.user-login a.active {
+    color: white;
+    background-color: #1e1d1d;
+  }
+
+  li.user-profile a.active {
     color: white;
     background-color: #1e1d1d;
   }

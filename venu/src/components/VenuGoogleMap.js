@@ -23,6 +23,8 @@ const VenuGoogleMap = () => {
   const [selectedVenue, setSelectedVenue] = useState(null);
 
   // useEffect hook to fetch venue data from backend and uses google geocoding api to convert to coordinates for map markers
+  // Empty array on 82 should mean map only updates with new venues when page is refreshed or on initial load.
+  // To have it update every time new venue/event is added need to reference relevant state(s) in that array (check later)
   useEffect(() => {
     const fetchAndGeocodeVenues = async () => {
       try {
