@@ -9,6 +9,8 @@ const UserProfile = () =>  {
 // TODO: add user starred events/artists/icons
 // TODO: add user reviews/ratings
 // TODO: refactor so user spotify profile appears on profile page as a small addition? (Page->component may not work, in which case dropdown submenu?)
+// User logout-- submenu dropdown on navbar profile section makes most sense if I can refactor how login button displays
+// Can we fetch user info from backend for admin users while also handling front-end only users?
 
     return (
     <div className="user-profile-background">
